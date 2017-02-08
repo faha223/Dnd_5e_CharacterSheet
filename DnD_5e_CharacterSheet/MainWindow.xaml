@@ -111,7 +111,7 @@
                         <TextBox Text="{Binding PlayerName}" Width="91" Margin="585,55,0,0" />
                         <TextBox Text="{Binding Race}" Width="130" Margin="315,86,0,0" />
                         <TextBox Text="{Binding Alignment}" Width="130" Margin="450,86,0,0" />
-                        <TextBox Text="{Binding ExperiencePoints}" Width="91" Margin="585,86,0,0" />
+                        <TextBox Text="{Binding ExperiencePoints}" TextAlignment="Center" Width="91" Margin="585,86,0,0" />
                         <Grid>
                             <Grid.Resources>
                                 <Style TargetType="TextBox">

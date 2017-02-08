@@ -78,6 +78,57 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        private string race;
+        public string Race
+        {
+            get
+            {
+                return race;
+            }
+            set
+            {
+                if (race != value)
+                {
+                    race = value;
+                    OnPropertyChanged("Race");
+                }
+            }
+        }
+
+        private string alignment;
+        public string Alignment
+        {
+            get
+            {
+                return alignment;
+            }
+            set
+            {
+                if (alignment != value)
+                {
+                    alignment = value;
+                    OnPropertyChanged("Alignment");
+                }
+            }
+        }
+
+        private int experiencePoints;
+        public int ExperiencePoints
+        {
+            get
+            {
+                return experiencePoints;
+            }
+            set
+            {
+                if (experiencePoints != value)
+                {
+                    value = validXPValue(value);
+                    experiencePoints = value;
+                    OnPropertyChanged("ExperiencePoints");
+                }
+            }
+        }
 
         #endregion Header Region
 
@@ -266,6 +317,13 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 return 1;
             if (value > 30)
                 return 30;
+            return value;
+        }
+
+        private int validXPValue(int value)
+        {
+            if (value < 0)
+                return 0;
             return value;
         }
 
