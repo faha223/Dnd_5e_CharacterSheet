@@ -1,0 +1,13 @@
+﻿<Application x:Class="DnD_5e_CharacterSheet.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DnD_5e_CharacterSheet"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="D:\Users\fred.hallock\Documents\Visual Studio 2015\Projects\DnD_5e_CharacterSheet\DnD_5e_CharacterSheet\Resources\DnDCharacterSheet.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

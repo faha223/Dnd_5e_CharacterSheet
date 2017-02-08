@@ -1,0 +1,159 @@
+﻿<Window x:Class="DnD_5e_CharacterSheet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DnD_5e_CharacterSheet"
+        mc:Ignorable="d"
+        Title="Character Sheet" MinHeight="1000" Height="1000" MinWidth="740" Width="740">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Character Sheet">
+                <Grid>
+                    <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource CharacterSheetBackground}" />
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="7" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Text="CHARACTER NAME" Margin="75,104,0,0" />
+                        <TextBlock Text="CLASS &amp; LEVEL" Margin="316,72,0,0" />
+                        <TextBlock Text="BACKGROUND" Margin="454,72,0,0" />
+                        <TextBlock Text="PLAYER NAME" Margin="588,72,0,0" />
+                        <TextBlock Text="RACE" Margin="316,103,0,0" />
+                        <TextBlock Text="ALIGNMENT" Margin="454,104,0,0" />
+                        <TextBlock Text="EXPERIENCE POINTS" Margin="583,103,0,0" />
+                        <TextBlock Text="INSPIRIATION" Margin="162,159,0,0" />
+                        <TextBlock Text="PROFICIENCY BONUS" Margin="151,205,0,0" />
+                        <StackPanel HorizontalAlignment="Left" Margin="276,194,0,0">
+                            <TextBlock Text="ARMOR" TextAlignment="Center" />
+                            <TextBlock Text="CLASS" TextAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Text="INITIATIVE" Margin="340,205,0,0" />
+                        <TextBlock Text="SPEED" Margin="417,205,0,0" />
+                        <TextBlock Text="STRENGTH" Margin="40,167,0,0" />
+                        <TextBlock Text="DEXTERITY" Margin="40,254,0,0" />
+                        <TextBlock Text="CONSTITUTION" Margin="33,341,0,0" />
+                        <TextBlock Text="INTELLIGENCE" Margin="35,428,0,0" />
+                        <TextBlock Text="WISDOM" Margin="43,514,0,0" />
+                        <TextBlock Text="CHARISMA" Margin="40,600,0,0" />
+                        <TextBlock Text="SAVING THROWS" Margin="143,347,0,0" />
+                        <TextBlock Text="CURRENT HIT POINTS" Margin="323,292,0,0" />
+                        <TextBlock Text="TEMPORARY HIT POINTS" Margin="317,355,0,0" />
+                        <TextBlock Text="ATTACKS &amp; SPELLCASTING" Margin="315,684,0,0" />
+                        <TextBlock Text="OTHER PROFICIENCIES &amp; LANGUAGES" Margin="66,912,0,0" />
+                        <TextBlock Text="EQUIPMENT" Margin="340,912,0,0" />
+                        <TextBlock Text="FEATURES &amp; TRAITS" Margin="555,912,0,0" />
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="7" />
+                                <Setter Property="FontWeight" Value="Normal" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Text="Strength" Margin="146,245,-146,-244" />
+                        <TextBlock Text="Dexterity" Margin="146,262,-146,-244" />
+                        <TextBlock Text="Constitution" Margin="146,278,-146,-244" />
+                        <TextBlock Text="Intelligence" Margin="146,294,-146,-244" />
+                        <TextBlock Text="Wisdom" Margin="146,310,-146,-244" />
+                        <TextBlock Text="Charisma" Margin="146,327,-146,-244" />
+                        <TextBlock Text="Acrobatics (Dex)" Margin="146,385,-146,-385" />
+                        <TextBlock Text="Animal Handling (Wis)" Margin="146,402,-146,-385" />
+                        <TextBlock Text="Arcana (Int)" Margin="146,418,-146,-385" />
+                        <TextBlock Text="Athletics (Str)" Margin="146,434,-146,-385" />
+                        <TextBlock Text="Deception (Cha)" Margin="146,450,-146,-385" />
+                        <TextBlock Text="History (Int)" Margin="146,467,-146,-385" />
+                        <TextBlock Text="Insight (Wis)" Margin="146,483,-146,-385" />
+                        <TextBlock Text="Intimidation (Cha)" Margin="146,499,-146,-385" />
+                        <TextBlock Text="Investigation (Int)" Margin="146,515,-146,-385" />
+                        <TextBlock Text="Medicine (Wis)" Margin="146,532,-146,-385" />
+                        <TextBlock Text="Nature (Int)" Margin="146,548,-146,-385" />
+                        <TextBlock Text="Perception (Wis)" Margin="146,565,-146,-385" />
+                        <TextBlock Text="Performance (Cha)" Margin="146,581,-146,-385" />
+                        <TextBlock Text="Persuasion (Cha)" Margin="146,597,-146,-385" />
+                        <TextBlock Text="Religion (Int)" Margin="146,613,-146,-385" />
+                        <TextBlock Text="Sleight of Hand (Dex)" Margin="146,630,-146,-385" />
+                        <TextBlock Text="Stealth (Dex)" Margin="146,646,-146,-385" />
+                        <TextBlock Text="Survival (Wis)" Margin="146,662,-146,-385" />
+                        <TextBlock Text="PASSIVE WISDOM (PERCEPTION)" Margin="90,715,-146,-385" />
+                        <TextBlock Text="Hit Point Maximum" Margin="272,236,-146,-385" />
+                        <TextBlock Text="Total" Margin="268,382,-146,-385" />
+                        <TextBlock Text="HIT DICE" Margin="294,424,-146,-385" />
+                        <TextBlock Text="SUCCESSES" Margin="370,385,-146,-385" />
+                        <TextBlock Text="FAILURES" Margin="376,403,-146,-385" />
+                        <TextBlock Text="DEATH SAVES" Margin="388,424,-146,-385" />
+                        <TextBlock Text="NAME" Margin="259,458,-146,-385" />
+                        <TextBlock Text="ATK BONUS" Margin="342,458,-146,-385" />
+                        <TextBlock Text="DAMAGE/TYPE" Margin="385,458,-146,-385" />
+                        <TextBlock Text="PERSONALITY TRAITS" Margin="554,223,-146,-385" />
+                        <TextBlock Text="IDEALS" Margin="575,291,-146,-385" />
+                        <TextBlock Text="BONDS" Margin="575,358,-146,-385" />
+                        <TextBlock Text="FLAWS" Margin="576,424,-146,-385" />
+                        <TextBlock Text="CP" Margin="249,724,0,0" />
+                        <TextBlock Text="SP" Margin="249,756,0,0" />
+                        <TextBlock Text="EP" Margin="249,787,0,0" />
+                        <TextBlock Text="GP" Margin="249,819,0,0" />
+                        <TextBlock Text="PP" Margin="249,850,0,0" />
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBox Text="{Binding CharacterName}" FontSize="19" Width="215" Margin="42,68,0,0" />
+                        <TextBox Text="{Binding ClassAndLevel}" Width="130" Margin="315,55,0,0" />
+                        <TextBox Text="{Binding Background}" Width="130" Margin="450,55,0,0" />
+                        <TextBox Text="{Binding PlayerName}" Width="91" Margin="585,55,0,0" />
+                        <TextBox Text="{Binding Race}" Width="130" Margin="315,86,0,0" />
+                        <TextBox Text="{Binding Alignment}" Width="130" Margin="450,86,0,0" />
+                        <TextBox Text="{Binding ExperiencePoints}" Width="91" Margin="585,86,0,0" />
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                    <Setter Property="TextAlignment" Value="Center" />
+                                    <Setter Property="FontSize" Value="18" />
+                                </Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                    <Setter Property="TextAlignment" Value="Center" />
+                                    <Setter Property="FontSize" Value="12" />
+                                </Style>
+                            </Grid.Resources>
+                            <TextBox Text="{Binding Strength}" Width="40" Margin="39,183,0,0" />
+                            <TextBlock Text="{Binding StrengthModifier}" Width="20" Margin="48,220,0,0" />
+                            <TextBox Text="{Binding Dexterity}" Width="40" Margin="39,270,0,0" />
+                            <TextBlock Text="{Binding DexterityModifier}" Width="20" Margin="48,307,0,0" />
+                            <TextBox Text="{Binding Constitution}" Width="40" Margin="39,356,0,0" />
+                            <TextBlock Text="{Binding ConstitutionModifier}" Width="20" Margin="48,393,0,0" />
+                            <TextBox Text="{Binding Intelligence}" Width="40" Margin="39,443,0,0" />
+                            <TextBlock Text="{Binding IntelligenceModifier}" Width="20" Margin="48,480,0,0" />
+                            <TextBox Text="{Binding Wisdom}" Width="40" Margin="39,529,0,0" />
+                            <TextBlock Text="{Binding WisdomModifier}" Width="20" Margin="48,566,0,0" />
+                            <TextBox Text="{Binding Charisma}" Width="40" Margin="39,616,0,0" />
+                            <TextBlock Text="{Binding CharismaModifier}" Width="20" Margin="48,653,0,0" />
+                            <TextBox Text="{Binding ProficiencyBonus}" Width="28" Margin="107,196,0,0" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Background Info">
+                <Grid>
+                    <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource BackgroundInfoBackground}" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Spellcasting">
+                <Grid>
+                    <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource SpellcastingBackground}" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
