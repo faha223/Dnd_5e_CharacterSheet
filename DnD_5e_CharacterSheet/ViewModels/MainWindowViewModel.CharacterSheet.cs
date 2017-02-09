@@ -1,129 +1,122 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using DnD_5e_CharacterSheet.Models;
+using System.Collections.Generic;
 
 namespace DnD_5e_CharacterSheet.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public partial class MainWindowViewModel : ViewModelBase
     {
-        #region Character Sheet
+        private CharacterSheetModel model = new CharacterSheetModel();
 
         #region Header Region
 
-        private string characterName;
         public string CharacterName
         {
             get
             {
-                return characterName;
+                return model.CharacterName;
             }
             set
             {
-                if (characterName != value)
+                if (model.CharacterName != value)
                 {
-                    characterName = value;
+                    model.CharacterName = value;
                     OnPropertyChanged("CharacterName");
                 }
             }
         }
 
-        private string levelAndClass;
-        public string LevelAndClass
+        public string ClassAndLevel
         {
             get
             {
-                return levelAndClass;
+                return model.ClassAndLevel;
             }
             set
             {
-                if (levelAndClass != value)
+                if (model.ClassAndLevel != value)
                 {
-                    levelAndClass = value;
-                    OnPropertyChanged("LevelAndClass");
+                    model.ClassAndLevel = value;
+                    OnPropertyChanged("ClassAndLevel");
                 }
             }
         }
 
-        private string background;
         public string Background
         {
             get
             {
-                return background;
+                return model.Background;
             }
             set
             {
-                if (background != value)
+                if (model.Background != value)
                 {
-                    background = value;
+                    model.Background = value;
                     OnPropertyChanged("Background");
                 }
             }
         }
 
-        private string playerName;
         public string PlayerName
         {
             get
             {
-                return playerName;
+                return model.PlayerName;
             }
             set
             {
-                if (playerName != value)
+                if (model.PlayerName != value)
                 {
-                    playerName = value;
+                    model.PlayerName = value;
                     OnPropertyChanged("PlayerName");
                 }
             }
         }
 
-        private string race;
         public string Race
         {
             get
             {
-                return race;
+                return model.Race;
             }
             set
             {
-                if (race != value)
+                if (model.Race != value)
                 {
-                    race = value;
+                    model.Race = value;
                     OnPropertyChanged("Race");
                 }
             }
         }
 
-        private string alignment;
         public string Alignment
         {
             get
             {
-                return alignment;
+                return model.Alignment;
             }
             set
             {
-                if (alignment != value)
+                if (model.Alignment != value)
                 {
-                    alignment = value;
+                    model.Alignment = value;
                     OnPropertyChanged("Alignment");
                 }
             }
         }
 
-        private int experiencePoints;
         public int ExperiencePoints
         {
             get
             {
-                return experiencePoints;
+                return model.ExperiencePoints;
             }
             set
             {
-                if (experiencePoints != value)
+                if (model.ExperiencePoints != value)
                 {
                     value = validXPValue(value);
-                    experiencePoints = value;
+                    model.ExperiencePoints = value;
                     OnPropertyChanged("ExperiencePoints");
                 }
             }
@@ -133,23 +126,24 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Ability Scores
 
-        private int strength = 1;
         public int Strength
         {
             get
             {
-                return strength;
+                return model.Strength;
             }
             set
             {
-                if (strength != value)
+                if (model.Strength != value)
                 {
                     value = validAbilityScore(value);
-                    strength = value;
+                    model.Strength = value;
                     OnPropertyChanged("Strength");
                     OnPropertyChanged("StrengthModifier");
                     OnPropertyChanged("StrengthSavingThrow");
                     OnPropertyChanged("Athletics");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -161,25 +155,26 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private int dexterity = 1;
         public int Dexterity
         {
             get
             {
-                return dexterity;
+                return model.Dexterity;
             }
             set
             {
-                if (dexterity != value)
+                if (model.Dexterity != value)
                 {
                     value = validAbilityScore(value);
-                    dexterity = value;
+                    model.Dexterity = value;
                     OnPropertyChanged("Dexterity");
                     OnPropertyChanged("DexterityModifier");
                     OnPropertyChanged("DexteritySavingThrow");
                     OnPropertyChanged("Acrobatics");
                     OnPropertyChanged("SleightOfHand");
                     OnPropertyChanged("Stealth");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -191,22 +186,23 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private int constitution = 1;
         public int Constitution
         {
             get
             {
-                return constitution;
+                return model.Constitution;
             }
             set
             {
-                if (constitution != value)
+                if (model.Constitution != value)
                 {
                     value = validAbilityScore(value);
-                    constitution = value;
+                    model.Constitution = value;
                     OnPropertyChanged("Constitution");
                     OnPropertyChanged("ConstitutionModifier");
                     OnPropertyChanged("ConstitutionSavingThrow");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -218,19 +214,18 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private int intelligence = 1;
         public int Intelligence
         {
             get
             {
-                return intelligence;
+                return model.Intelligence;
             }
             set
             {
-                if (intelligence != value)
+                if (model.Intelligence != value)
                 {
                     value = validAbilityScore(value);
-                    intelligence = value;
+                    model.Intelligence = value;
                     OnPropertyChanged("Intelligence");
                     OnPropertyChanged("IntelligenceModifier");
                     OnPropertyChanged("IntelligenceSavingThrow");
@@ -239,6 +234,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     OnPropertyChanged("Investigation");
                     OnPropertyChanged("Nature");
                     OnPropertyChanged("Religion");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -250,19 +247,18 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private int wisdom = 1;
         public int Wisdom
         {
             get
             {
-                return wisdom;
+                return model.Wisdom;
             }
             set
             {
-                if (wisdom != value)
+                if (model.Wisdom != value)
                 {
                     value = validAbilityScore(value);
-                    wisdom = value;
+                    model.Wisdom = value;
                     OnPropertyChanged("Wisdom");
                     OnPropertyChanged("WisdomModifier");
                     OnPropertyChanged("PassiveWisdom");
@@ -272,6 +268,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     OnPropertyChanged("Medicine");
                     OnPropertyChanged("Perception");
                     OnPropertyChanged("Survival");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -283,19 +281,18 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private int charisma = 1;
         public int Charisma
         {
             get
             {
-                return charisma;
+                return model.Charisma;
             }
             set
             {
-                if (charisma != value)
+                if (model.Charisma != value)
                 {
                     value = validAbilityScore(value);
-                    charisma = value;
+                    model.Charisma = value;
                     OnPropertyChanged("Charisma");
                     OnPropertyChanged("CharismaModifier");
                     OnPropertyChanged("CharismaSavingThrow");
@@ -303,6 +300,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     OnPropertyChanged("Intimidation");
                     OnPropertyChanged("Performance");
                     OnPropertyChanged("Persuasion");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -318,87 +317,82 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Current Hit Points
 
-        private int hitPointMaximum;
         public int HitPointMaximum
         {
             get
             {
-                return hitPointMaximum;
+                return model.HitPointMaximum;
             }
             set
             {
-                if (hitPointMaximum != value)
+                if (model.HitPointMaximum != value)
                 {
-                    hitPointMaximum = value;
+                    model.HitPointMaximum = value;
                     OnPropertyChanged("HitPointMaximum");
                 }
             }
         }
 
-        private int currentHitPoints;
         public int CurrentHitPoints
         {
             get
             {
-                return currentHitPoints;
+                return model.CurrentHitPoints;
             }
             set
             {
-                if (currentHitPoints != value)
+                if (model.CurrentHitPoints != value)
                 {
                     value = validCurrentHitPoints(value);
-                    currentHitPoints = value;
+                    model.CurrentHitPoints = value;
                     OnPropertyChanged("CurrentHitPoints");
                 }
             }
         }
 
-        private int temporaryHitPoints;
         public int TemporaryHitPoints
         {
             get
             {
-                return temporaryHitPoints;
+                return model.TemporaryHitPoints;
             }
             set
             {
-                if (temporaryHitPoints != value)
+                if (model.TemporaryHitPoints != value)
                 {
-                    temporaryHitPoints = value;
+                    model.TemporaryHitPoints = value;
                     OnPropertyChanged("TemporaryHitPoints");
                 }
             }
         }
 
-        private int totalHitDice;
         public int TotalHitDice
         {
             get
             {
-                return totalHitDice;
+                return model.TotalHitDice;
             }
             set
             {
-                if (totalHitDice != value)
+                if (model.TotalHitDice != value)
                 {
-                    totalHitDice = value;
+                    model.TotalHitDice = value;
                     OnPropertyChanged("TotalHitDice");
                 }
             }
         }
 
-        private string hitDice;
         public string HitDice
         {
             get
             {
-                return hitDice;
+                return model.HitDice;
             }
             set
             {
-                if (hitDice != value)
+                if (model.HitDice != value)
                 {
-                    hitDice = value;
+                    model.HitDice = value;
                     OnPropertyChanged("HitDice");
                 }
             }
@@ -408,103 +402,97 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Death Saves
 
-        private bool deathSaveSuccess1;
         public bool DeathSaveSuccess1
         {
             get
             {
-                return deathSaveSuccess1;
+                return model.DeathSaveSuccess1;
             }
             set
             {
-                if (deathSaveSuccess1 != value)
+                if (model.DeathSaveSuccess1 != value)
                 {
-                    deathSaveSuccess1 = value;
+                    model.DeathSaveSuccess1 = value;
                     OnPropertyChanged("DeathSaveSuccess1");
                 }
             }
         }
 
-        private bool deathSaveSuccess2;
         public bool DeathSaveSuccess2
         {
             get
             {
-                return deathSaveSuccess2;
+                return model.DeathSaveSuccess2;
             }
             set
             {
-                if (deathSaveSuccess2 != value)
+                if (model.DeathSaveSuccess2 != value)
                 {
-                    deathSaveSuccess2 = value;
+                    model.DeathSaveSuccess2 = value;
                     OnPropertyChanged("DeathSaveSuccess2");
                 }
             }
         }
 
-        private bool deathSaveSuccess3;
         public bool DeathSaveSuccess3
         {
             get
             {
-                return deathSaveSuccess3;
+                return model.DeathSaveSuccess3;
             }
             set
             {
-                if (deathSaveSuccess3 != value)
+                if (model.DeathSaveSuccess3 != value)
                 {
-                    deathSaveSuccess3 = value;
+                    model.DeathSaveSuccess3 = value;
                     OnPropertyChanged("DeathSaveSuccess3");
                 }
             }
         }
 
-        private bool deathSaveFailure1;
         public bool DeathSaveFailure1
         {
             get
             {
-                return deathSaveFailure1;
+                return model.DeathSaveFailure1;
             }
             set
             {
-                if (deathSaveFailure1 != value)
+                if (model.DeathSaveFailure1 != value)
                 {
-                    deathSaveFailure1 = value;
+                    model.DeathSaveFailure1 = value;
                     OnPropertyChanged("DeathSaveFailure1");
                 }
             }
         }
 
-        private bool deathSaveFailure2;
         public bool DeathSaveFailure2
         {
             get
             {
-                return deathSaveFailure2;
+                return model.DeathSaveFailure2;
             }
             set
             {
-                if (deathSaveFailure2 != value)
+                if (model.DeathSaveFailure2 != value)
                 {
-                    deathSaveFailure2 = value;
+                    model.DeathSaveFailure2 = value;
                     OnPropertyChanged("DeathSaveFailure2");
                 }
             }
         }
 
-        private bool deathSaveFailure3;
         public bool DeathSaveFailure3
         {
             get
             {
-                return deathSaveFailure3;
+                return model.DeathSaveFailure3;
             }
             set
             {
-                if (deathSaveFailure3 != value)
+                if (model.DeathSaveFailure3 != value)
                 {
-                    deathSaveFailure3 = value;
+                    model.DeathSaveFailure3 = value;
                     OnPropertyChanged("DeathSaveFailure3");
                 }
             }
@@ -514,18 +502,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Saving Throws
 
-        private bool strengthSavingThrowEnabled;
         public bool StrengthSavingThrowEnabled
         {
             get
             {
-                return strengthSavingThrowEnabled;
+                return model.StrengthSavingThrowEnabled;
             }
             set
             {
-                if (strengthSavingThrowEnabled != value)
+                if (model.StrengthSavingThrowEnabled != value)
                 {
-                    strengthSavingThrowEnabled = value;
+                    model.StrengthSavingThrowEnabled = value;
                     OnPropertyChanged("StrengthSavingThrowEnabled");
                 }
             }
@@ -539,18 +526,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool dexteritySavingThrowEnabled;
         public bool DexteritySavingThrowEnabled
         {
             get
             {
-                return dexteritySavingThrowEnabled;
+                return model.DexteritySavingThrowEnabled;
             }
             set
             {
-                if (dexteritySavingThrowEnabled != value)
+                if (model.DexteritySavingThrowEnabled != value)
                 {
-                    dexteritySavingThrowEnabled = value;
+                    model.DexteritySavingThrowEnabled = value;
                     OnPropertyChanged("DexteritySavingThrowEnabled");
                 }
             }
@@ -564,18 +550,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool constitutionSavingThrowEnabled;
         public bool ConstitutionSavingThrowEnabled
         {
             get
             {
-                return constitutionSavingThrowEnabled;
+                return model.ConstitutionSavingThrowEnabled;
             }
             set
             {
-                if (constitutionSavingThrowEnabled != value)
+                if (model.ConstitutionSavingThrowEnabled != value)
                 {
-                    constitutionSavingThrowEnabled = value;
+                    model.ConstitutionSavingThrowEnabled = value;
                     OnPropertyChanged("ConstitutionSavingThrowEnabled");
                 }
             }
@@ -589,18 +574,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool intelligenceSavingThrowEnabled;
         public bool IntelligenceSavingThrowEnabled
         {
             get
             {
-                return intelligenceSavingThrowEnabled;
+                return model.IntelligenceSavingThrowEnabled;
             }
             set
             {
-                if (intelligenceSavingThrowEnabled != value)
+                if (model.IntelligenceSavingThrowEnabled != value)
                 {
-                    intelligenceSavingThrowEnabled = value;
+                    model.IntelligenceSavingThrowEnabled = value;
                     OnPropertyChanged("IntelligenceSavingThrowEnabled");
                 }
             }
@@ -614,18 +598,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool wisdomSavingThrowEnabled;
         public bool WisdomSavingThrowEnabled
         {
             get
             {
-                return wisdomSavingThrowEnabled;
+                return model.WisdomSavingThrowEnabled;
             }
             set
             {
-                if (wisdomSavingThrowEnabled != value)
+                if (model.WisdomSavingThrowEnabled != value)
                 {
-                    wisdomSavingThrowEnabled = value;
+                    model.WisdomSavingThrowEnabled = value;
                     OnPropertyChanged("WisdomSavingThrowEnabled");
                 }
             }
@@ -639,18 +622,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool charismaSavingThrowEnabled;
         public bool CharismaSavingThrowEnabled
         {
             get
             {
-                return charismaSavingThrowEnabled;
+                return model.CharismaSavingThrowEnabled;
             }
             set
             {
-                if (charismaSavingThrowEnabled != value)
+                if (model.CharismaSavingThrowEnabled != value)
                 {
-                    charismaSavingThrowEnabled = value;
+                    model.CharismaSavingThrowEnabled = value;
                     OnPropertyChanged("CharismaSavingThrowEnabled");
                 }
             }
@@ -668,18 +650,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Skills
 
-        private bool acrobaticsEnabled;
         public bool AcrobaticsEnabled
         {
             get
             {
-                return acrobaticsEnabled;
+                return model.AcrobaticsEnabled;
             }
             set
             {
-                if (acrobaticsEnabled != value)
+                if (model.AcrobaticsEnabled != value)
                 {
-                    acrobaticsEnabled = value;
+                    model.AcrobaticsEnabled = value;
                     OnPropertyChanged("AcrobaticsEnabled");
                 }
             }
@@ -693,18 +674,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool animalHandlingEnabled;
         public bool AnimalHandlingEnabled
         {
             get
             {
-                return animalHandlingEnabled;
+                return model.AnimalHandlingEnabled;
             }
             set
             {
-                if (animalHandlingEnabled != value)
+                if (model.AnimalHandlingEnabled != value)
                 {
-                    animalHandlingEnabled = value;
+                    model.AnimalHandlingEnabled = value;
                     OnPropertyChanged("AnimalHandlingEnabled");
                 }
             }
@@ -718,18 +698,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool arcanaEnabled;
         public bool ArcanaEnabled
         {
             get
             {
-                return arcanaEnabled;
+                return model.ArcanaEnabled;
             }
             set
             {
-                if (arcanaEnabled != value)
+                if (model.ArcanaEnabled != value)
                 {
-                    arcanaEnabled = value;
+                    model.ArcanaEnabled = value;
                     OnPropertyChanged("ArcanaEnabled");
                 }
             }
@@ -743,18 +722,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool athleticsEnabled;
         public bool AthleticsEnabled
         {
             get
             {
-                return athleticsEnabled;
+                return model.AthleticsEnabled;
             }
             set
             {
-                if (athleticsEnabled != value)
+                if (model.AthleticsEnabled != value)
                 {
-                    athleticsEnabled = value;
+                    model.AthleticsEnabled = value;
                     OnPropertyChanged("AthleticsEnabled");
                 }
             }
@@ -768,18 +746,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool deceptionEnabled;
         public bool DeceptionEnabled
         {
             get
             {
-                return deceptionEnabled;
+                return model.DeceptionEnabled;
             }
             set
             {
-                if (deceptionEnabled != value)
+                if (model.DeceptionEnabled != value)
                 {
-                    deceptionEnabled = value;
+                    model.DeceptionEnabled = value;
                     OnPropertyChanged("DeceptionEnabled");
                 }
             }
@@ -793,18 +770,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool historyEnabled;
         public bool HistoryEnabled
         {
             get
             {
-                return historyEnabled;
+                return model.HistoryEnabled;
             }
             set
             {
-                if (historyEnabled != value)
+                if (model.HistoryEnabled != value)
                 {
-                    historyEnabled = value;
+                    model.HistoryEnabled = value;
                     OnPropertyChanged("HistoryEnabled");
                 }
             }
@@ -818,18 +794,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool insightEnabled;
         public bool InsightEnabled
         {
             get
             {
-                return insightEnabled;
+                return model.InsightEnabled;
             }
             set
             {
-                if (insightEnabled != value)
+                if (model.InsightEnabled != value)
                 {
-                    insightEnabled = value;
+                    model.InsightEnabled = value;
                     OnPropertyChanged("InsightEnabled");
                 }
             }
@@ -843,18 +818,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool intimidationEnabled;
         public bool IntimidationEnabled
         {
             get
             {
-                return intimidationEnabled;
+                return model.IntimidationEnabled;
             }
             set
             {
-                if (intimidationEnabled != value)
+                if (model.IntimidationEnabled != value)
                 {
-                    intimidationEnabled = value;
+                    model.IntimidationEnabled = value;
                     OnPropertyChanged("IntimidationEnabled");
                 }
             }
@@ -868,18 +842,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool investigationEnabled;
         public bool InvestigationEnabled
         {
             get
             {
-                return investigationEnabled;
+                return model.InvestigationEnabled;
             }
             set
             {
-                if (investigationEnabled != value)
+                if (model.InvestigationEnabled != value)
                 {
-                    investigationEnabled = value;
+                    model.InvestigationEnabled = value;
                     OnPropertyChanged("InvestigationEnabled");
                 }
             }
@@ -893,18 +866,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool medicineEnabled;
         public bool MedicineEnabled
         {
             get
             {
-                return medicineEnabled;
+                return model.MedicineEnabled;
             }
             set
             {
-                if (medicineEnabled != value)
+                if (model.MedicineEnabled != value)
                 {
-                    medicineEnabled = value;
+                    model.MedicineEnabled = value;
                     OnPropertyChanged("MedicineEnabled");
                 }
             }
@@ -918,18 +890,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool natureEnabled;
         public bool NatureEnabled
         {
             get
             {
-                return natureEnabled;
+                return model.NatureEnabled;
             }
             set
             {
-                if (natureEnabled != value)
+                if (model.NatureEnabled != value)
                 {
-                    natureEnabled = value;
+                    model.NatureEnabled = value;
                     OnPropertyChanged("NatureEnabled");
                 }
             }
@@ -943,18 +914,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool perceptionEnabled;
         public bool PerceptionEnabled
         {
             get
             {
-                return perceptionEnabled;
+                return model.PerceptionEnabled;
             }
             set
             {
-                if (perceptionEnabled != value)
+                if (model.PerceptionEnabled != value)
                 {
-                    perceptionEnabled = value;
+                    model.PerceptionEnabled = value;
                     OnPropertyChanged("PerceptionEnabled");
                 }
             }
@@ -968,18 +938,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool performanceEnabled;
         public bool PerformanceEnabled
         {
             get
             {
-                return performanceEnabled;
+                return model.PerformanceEnabled;
             }
             set
             {
-                if (performanceEnabled != value)
+                if (model.PerformanceEnabled != value)
                 {
-                    performanceEnabled = value;
+                    model.PerformanceEnabled = value;
                     OnPropertyChanged("PerformanceEnabled");
                 }
             }
@@ -993,18 +962,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool persuasionEnabled;
         public bool PersuasionEnabled
         {
             get
             {
-                return persuasionEnabled;
+                return model.PersuasionEnabled;
             }
             set
             {
-                if (persuasionEnabled != value)
+                if (model.PersuasionEnabled != value)
                 {
-                    persuasionEnabled = value;
+                    model.PersuasionEnabled = value;
                     OnPropertyChanged("PersuasionEnabled");
                 }
             }
@@ -1018,18 +986,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool religionEnabled;
         public bool ReligionEnabled
         {
             get
             {
-                return religionEnabled;
+                return model.ReligionEnabled;
             }
             set
             {
-                if (religionEnabled != value)
+                if (model.ReligionEnabled != value)
                 {
-                    religionEnabled = value;
+                    model.ReligionEnabled = value;
                     OnPropertyChanged("ReligionEnabled");
                 }
             }
@@ -1043,18 +1010,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool sleightOfHandEnabled;
         public bool SleightOfHandEnabled
         {
             get
             {
-                return sleightOfHandEnabled;
+                return model.SleightOfHandEnabled;
             }
             set
             {
-                if (sleightOfHandEnabled != value)
+                if (model.SleightOfHandEnabled != value)
                 {
-                    sleightOfHandEnabled = value;
+                    model.SleightOfHandEnabled = value;
                     OnPropertyChanged("SleightOfHandEnabled");
                 }
             }
@@ -1068,18 +1034,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool stealthEnabled;
         public bool StealthEnabled
         {
             get
             {
-                return stealthEnabled;
+                return model.StealthEnabled;
             }
             set
             {
-                if (stealthEnabled != value)
+                if (model.StealthEnabled != value)
                 {
-                    stealthEnabled = value;
+                    model.StealthEnabled = value;
                     OnPropertyChanged("StealthEnabled");
                 }
             }
@@ -1093,18 +1058,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private bool survivalEnabled;
         public bool SurvivalEnabled
         {
             get
             {
-                return survivalEnabled;
+                return model.SurvivalEnabled;
             }
             set
             {
-                if (survivalEnabled != value)
+                if (model.SurvivalEnabled != value)
                 {
-                    survivalEnabled = value;
+                    model.SurvivalEnabled = value;
                     OnPropertyChanged("SurvivalEnabled");
                 }
             }
@@ -1122,120 +1086,113 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Text Blocks
 
-        private string otherProficienciesAndLanguages;
         public string OtherProficienciesAndLanguages
         {
             get
             {
-                return otherProficienciesAndLanguages;
+                return model.OtherProficienciesAndLanguages;
             }
             set
             {
-                if (otherProficienciesAndLanguages != value)
+                if (model.OtherProficienciesAndLanguages != value)
                 {
-                    otherProficienciesAndLanguages = value;
+                    model.OtherProficienciesAndLanguages = value;
                     OnPropertyChanged("OtherProficienciesAndLanguages");
                 }
             }
         }
 
-        private string equipment;
         public string Equipment
         {
             get
             {
-                return equipment;
+                return model.Equipment;
             }
             set
             {
-                if (equipment != value)
+                if (model.Equipment != value)
                 {
-                    equipment = value;
+                    model.Equipment = value;
                     OnPropertyChanged("Equipment");
                 }
             }
         }
 
-        private string personalityTraits;
         public string PersonalityTraits
         {
             get
             {
-                return personalityTraits;
+                return model.PersonalityTraits;
             }
             set
             {
-                if (personalityTraits != value)
+                if (model.PersonalityTraits != value)
                 {
-                    personalityTraits = value;
+                    model.PersonalityTraits = value;
                     OnPropertyChanged("PersonalityTraits");
                 }
             }
         }
 
-        private string ideals;
         public string Ideals
         {
             get
             {
-                return ideals;
+                return model.Ideals;
             }
             set
             {
-                if (ideals != value)
+                if (model.Ideals != value)
                 {
-                    ideals = value;
+                    model.Ideals = value;
                     OnPropertyChanged("Ideals");
                 }
             }
         }
 
-        private string bonds;
         public string Bonds
         {
             get
             {
-                return bonds;
+                return model.Bonds;
             }
             set
             {
-                if (bonds != value)
+                if (model.Bonds != value)
                 {
-                    bonds = value;
+                    model.Bonds = value;
                     OnPropertyChanged("Bonds");
                 }
             }
         }
 
-        private string flaws;
         public string Flaws
         {
             get
             {
-                return flaws;
+                return model.Flaws;
             }
             set
             {
-                if (flaws != value)
+                if (model.Flaws != value)
                 {
-                    flaws = value;
+                    model.Flaws = value;
                     OnPropertyChanged("Flaws");
                 }
             }
         }
 
-        private string featuresAndTraits;
         public string FeaturesAndTraits
         {
             get
             {
-                return featuresAndTraits;
+                return model.FeaturesAndTraits;
             }
             set
             {
-                if (featuresAndTraits != value)
+                if (model.FeaturesAndTraits != value)
                 {
-                    featuresAndTraits = value;
+                    model.FeaturesAndTraits = value;
                     OnPropertyChanged("FeaturesAndTraits");
                 }
             }
@@ -1258,16 +1215,32 @@ namespace DnD_5e_CharacterSheet.ViewModels
             "Tiefling"
         });
 
+        public List<string> Classes { get; set; } = new List<string>(new string[]
+        {
+            "Barbarian",
+            "Bard",
+            "Cleric",
+            "Druid",
+            "Fighter",
+            "Monk",
+            "Paladin",
+            "Ranger",
+            "Rogue",
+            "Sorceror",
+            "Warlock",
+            "Wizard"
+        });
+
         public List<string> Alignments { get; set; } = new List<string>(new string[]
         {
             "Lawful Good",
-            "Good",
+            "Neutral Good",
             "Chaotic Good",
             "Lawful Neutral",
             "True Neutral",
             "Chaotic Neutral",
             "Lawful Evil",
-            "Evil",
+            "Neutral Evil",
             "Chaotic Evil"
         });
 
@@ -1275,106 +1248,101 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Currency
 
-        private int copperPieces;
         public int CopperPieces
         {
             get
             {
-                return copperPieces;
+                return model.CopperPieces;
             }
             set
             {
-                if (copperPieces != value)
+                if (model.CopperPieces != value)
                 {
                     while (value >= DnD_Constants.CopperPiecesPerSilver)
                     {
                         value -= DnD_Constants.CopperPiecesPerSilver;
                         SilverPieces += 1;
                     }
-                    copperPieces = value;
+                    model.CopperPieces = value;
                     OnPropertyChanged("CopperPieces");
                 }
             }
         }
 
-        private int silverPieces;
         public int SilverPieces
         {
             get
             {
-                return silverPieces;
+                return model.SilverPieces;
             }
             set
             {
-                if (silverPieces != value)
+                if (model.SilverPieces != value)
                 {
                     while(value >= DnD_Constants.SilverPiecesPerElectrum)
                     {
                         value -= DnD_Constants.SilverPiecesPerElectrum;
                         ElectrumPieces += 1;
                     }
-                    silverPieces = value;
+                    model.SilverPieces = value;
                     OnPropertyChanged("SilverPieces");
                 }
             }
         }
 
-        private int electrumPieces;
         public int ElectrumPieces
         {
             get
             {
-                return electrumPieces;
+                return model.ElectrumPieces;
             }
             set
             {
-                if (electrumPieces != value)
+                if (model.ElectrumPieces != value)
                 {
                     while(value >= DnD_Constants.ElectrumPiecesPerGold)
                     {
                         value -= DnD_Constants.ElectrumPiecesPerGold;
                         GoldPieces += 1;
                     }
-                    electrumPieces = value;
+                    model.ElectrumPieces = value;
                     OnPropertyChanged("ElectrumPieces");
                 }
             }
         }
 
-        private int goldPieces;
         public int GoldPieces
         {
             get
             {
-                return goldPieces;
+                return model.GoldPieces;
             }
             set
             {
-                if (goldPieces != value)
+                if (model.GoldPieces != value)
                 {
                     while (value >= DnD_Constants.GoldPiecesPerPlatinum)
                     {
                         value -= DnD_Constants.GoldPiecesPerPlatinum;
                         PlatinumPieces += 1;
                     }
-                    goldPieces = value;
+                    model.GoldPieces = value;
                     OnPropertyChanged("GoldPieces");
                 }
             }
         }
 
-        private int platinumPieces;
         public int PlatinumPieces
         {
             get
             {
-                return platinumPieces;
+                return model.PlatinumPieces;
             }
             set
             {
-                if (platinumPieces != value)
+                if (model.PlatinumPieces != value)
                 {
-                    platinumPieces = value;
+                    model.PlatinumPieces = value;
                     OnPropertyChanged("PlatinumPieces");
                 }
             }
@@ -1382,18 +1350,17 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #endregion Currency
 
-        private int proficiencyBonus = 2;
         public int ProficiencyBonus
         {
             get
             {
-                return proficiencyBonus;
+                return model.ProficiencyBonus;
             }
             set
             {
-                if (proficiencyBonus != value)
+                if (model.ProficiencyBonus != value)
                 {
-                    proficiencyBonus = value;
+                    model.ProficiencyBonus = value;
                     OnPropertyChanged("ProficiencyBonus");
                     OnPropertyChanged("StrengthSavingThrow");
                     OnPropertyChanged("DexteritySavingThrow");
@@ -1401,6 +1368,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     OnPropertyChanged("IntelligenceSavingThrow");
                     OnPropertyChanged("WisdomSavingThrow");
                     OnPropertyChanged("CharismaSavingThrow");
+                    OnPropertyChanged("SpellSaveDC");
+                    OnPropertyChanged("SpellAttackBonus");
                 }
             }
         }
@@ -1413,52 +1382,49 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        private int armorClass;
         public int ArmorClass
         {
             get
             {
-                return armorClass;
+                return model.ArmorClass;
             }
             set
             {
-                if (armorClass != value)
+                if (model.ArmorClass != value)
                 {
-                    armorClass = value;
+                    model.ArmorClass = value;
                     OnPropertyChanged("ArmorClass");
                 }
             }
         }
 
-        private int initiative;
         public int Initiative
         {
             get
             {
-                return initiative;
+                return model.Initiative;
             }
             set
             {
-                if (initiative != value)
+                if (model.Initiative != value)
                 {
-                    initiative = value;
+                    model.Initiative = value;
                     OnPropertyChanged("Initiative");
                 }
             }
         }
 
-        private int speed;
         public int Speed
         {
             get
             {
-                return speed;
+                return model.Speed;
             }
             set
             {
-                if (speed != value)
+                if (model.Speed != value)
                 {
-                    speed = value;
+                    model.Speed = value;
                     OnPropertyChanged("Speed");
                 }
             }
@@ -1544,18 +1510,27 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        #endregion Character Sheet
-
-        #region Background Info
-
-
-
-        #endregion Background Info
-
-        #region Spellcasting
-
-
-
-        #endregion Spellcasting
+        private int getAbilityModifier(string ability)
+        {
+            if (ability != null)
+            {
+                switch (ability.ToUpper())
+                {
+                    case "STRENGTH":
+                        return StrengthModifier;
+                    case "DEXTERITY":
+                        return DexterityModifier;
+                    case "CONSTITUTION":
+                        return ConstitutionModifier;
+                    case "INTELLIGENCE":
+                        return IntelligenceModifier;
+                    case "WISDOM":
+                        return WisdomModifier;
+                    case "CHARISMA":
+                        return CharismaModifier;
+                }
+            }
+            return 0;
+        }
     }
 }

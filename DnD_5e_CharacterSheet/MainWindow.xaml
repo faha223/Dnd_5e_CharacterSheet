@@ -9,6 +9,10 @@
         Title="Character Sheet" MinHeight="1000" Height="1000" MinWidth="740" Width="740">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style TargetType="{x:Type Button}" x:Key="ImageButton">
+            <Setter Property="Background" Value="#00ffffff" />
+            <Setter Property="BorderBrush" Value="#00ffffff" />
+        </Style>
     </Window.Resources>
     <Grid>
         <TabControl>
@@ -106,6 +110,8 @@
                     <Grid>
                         <Grid.Resources>
                             <Style TargetType="TextBox">
+                                <Setter Property="Background" Value="#00ffffff" />
+                                <Setter Property="BorderBrush" Value="#00ffffff" />
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
                             </Style>
@@ -125,6 +131,8 @@
                         <Grid>
                             <Grid.Resources>
                                 <Style TargetType="TextBox">
+                                    <Setter Property="Background" Value="#00ffffff" />
+                                    <Setter Property="BorderBrush" Value="#00ffffff" />
                                     <Setter Property="HorizontalAlignment" Value="Left" />
                                     <Setter Property="VerticalAlignment" Value="Top" />
                                     <Setter Property="TextAlignment" Value="Center" />
@@ -225,20 +233,22 @@
                             <Grid>
                                 <Grid.Resources>
                                     <Style TargetType="TextBox">
+                                        <Setter Property="Background" Value="#00ffffff" />
+                                        <Setter Property="BorderBrush" Value="#00ffffff" />
                                         <Setter Property="HorizontalAlignment" Value="Left" />
                                         <Setter Property="VerticalAlignment" Value="Top" />
                                         <Setter Property="AcceptsReturn" Value="True" />
                                         <Setter Property="TextWrapping" Value="Wrap" />
                                         <Setter Property="TextAlignment" Value="Left" />
-                                        <Setter Property="FontSize" Value="9" />
+                                        <Setter Property="FontSize" Value="10" />
                                     </Style>
                                 </Grid.Resources>
                                 <TextBox Text="{Binding OtherProficienciesAndLanguages}" Width="204" Height="160" Margin="29,750,0,0" MaxLines="12" />
-                                <TextBox Text="{Binding Equipment}" Width="146" Height="200" Margin="315,709,0,0" MaxLines="15" />
-                                <TextBox Text="{Binding PersonalityTraits}" Width="184" Height="60" Margin="496,160,0,0" />
-                                <TextBox Text="{Binding Ideals}" Width="184" Height="45" Margin="496,245,0,0" />
-                                <TextBox Text="{Binding Bonds}" Width="184" Height="45" Margin="496,313,0,0" />
-                                <TextBox Text="{Binding Flaws}" Width="184" Height="45" Margin="496,379,0,0" />
+                                <TextBox Text="{Binding Equipment}" Width="146" Height="200" Margin="315,709,0,0" />
+                                <TextBox Text="{Binding PersonalityTraits}" FontSize="11" Width="184" Height="60" Margin="496,160,0,0" />
+                                <TextBox Text="{Binding Ideals}" FontSize="11" Width="184" Height="45" Margin="496,245,0,0" />
+                                <TextBox Text="{Binding Bonds}" FontSize="11" Width="184" Height="45" Margin="496,313,0,0" />
+                                <TextBox Text="{Binding Flaws}" FontSize="11" Width="184" Height="45" Margin="496,379,0,0" />
                                 <TextBox Text="{Binding FeaturesAndTraits}" Width="206" Height="450" Margin="485,458,0,0" />
                             </Grid>
                         </Grid>
@@ -269,6 +279,52 @@
                         <TextBlock Text="ALLIES &amp; ORGANIZATIONS" Margin="428,417,0,0" />
                         <TextBlock Text="ADDITIONAL FEATURES &amp; TRAITS" Margin="417,693,0,0" />
                         <TextBlock Text="TREASURE" Margin="455,905,0,0" />
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Background" Value="#00ffffff" />
+                                <Setter Property="BorderBrush" Value="#00ffffff" />
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                            </Style>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="Height" Value="18" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBox Text="{Binding CharacterName}" FontSize="19" Width="215" Margin="42,68,0,0" />
+                        <TextBox Text="{Binding Age}" Width="130" Margin="315,53,0,0" />
+                        <TextBox Text="{Binding Height}" Width="130" Margin="450,53,0,0" />
+                        <TextBox Text="{Binding Weight}" Width="91" Margin="585,53,0,0" />
+                        <TextBox Text="{Binding Eyes}" Width="130" Margin="315,84,0,0"/>
+                        <TextBox Text="{Binding Skin}" Width="130" Margin="450,84,0,0" />
+                        <TextBox Text="{Binding Hair}" TextAlignment="Center" Width="91" Margin="585,84,0,0" />
+                        <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding LoadPortraitCommand}">
+                            <Image Source="{Binding PortraitSource}" />
+                        </Button>
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Background" Value="#00ffffff" />
+                                    <Setter Property="BorderBrush" Value="#00ffffff" />
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                    <Setter Property="AcceptsReturn" Value="True" />
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="TextAlignment" Value="Left" />
+                                    <Setter Property="FontSize" Value="10" />
+                                </Style>
+                            </Grid.Resources>
+                            <TextBox Text="{Binding CharacterBackstory}" Width="210" Height="454" Margin="25,451,0,0" />
+                            <TextBox Text="{Binding AlliesAndOrganizations1}" Width="213" Height="270" Margin="255,144,0,0" />
+                            <TextBox Text="{Binding AlliesAndOrganizations2}" Width="213" Height="55" Margin="477,359,0,0" />
+                            <TextBox Text="{Binding AdditionalFeaturesAndTraits1}" Width="213" Height="254" Margin="255,439,0,0" />
+                            <TextBox Text="{Binding AdditionalFeaturesAndTraits2}" Width="213" Height="254" Margin="477,439,0,0" />
+                            <TextBox Text="{Binding Treasure1}" Width="213" Height="191" Margin="255,715,0,0" />
+                            <TextBox Text="{Binding Treasure2}" Width="213" Height="191" Margin="477,715,0,0" />
+                        </Grid>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -317,6 +373,164 @@
                         <TextBlock Text="7" Margin="488,376,0,0" />
                         <TextBlock Text="8" Margin="488,581,0,0" />
                         <TextBlock Text="9" Margin="488,751,0,0" />
+                        <TextBlock Text="CANTRIPS" FontSize="10" Margin="110,173,0,0" />
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="TextAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="18" />
+                            </Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Background" Value="#00ffffff" />
+                                <Setter Property="BorderBrush" Value="#00000000" />
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="TextAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="14" />
+                            </Style>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="Height" Value="18" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBox Text="{Binding SpellcastingClass}" TextAlignment="Left" FontSize="19" Width="215" Margin="42,70,0,0" />
+                        <TextBox Text="{Binding SpellcastingAbility}" Width="70" Margin="336,63,0,0" />
+                        <TextBlock Text="{Binding SpellSaveDC}" Width="70" Margin="458,61,0,0" />
+                        <TextBlock Text="{Binding SpellAttackBonus}" Width="70" Margin="584,61,0,0" />
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Background" Value="#00ffffff" />
+                                <Setter Property="BorderBrush" Value="#00000000" />
+                                <Setter Property="FontSize" Value="10" />
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBox Text="{Binding Cantrips[0]}" Width="190" Margin="40,200,0,0" />
+                        <TextBox Text="{Binding Cantrips[1]}" Width="190" Margin="40,217,0,0" />
+                        <TextBox Text="{Binding Cantrips[2]}" Width="190" Margin="40,234,0,0" />
+                        <TextBox Text="{Binding Cantrips[3]}" Width="190" Margin="40,251,0,0" />
+                        <TextBox Text="{Binding Cantrips[4]}" Width="190" Margin="40,268,0,0" />
+                        <TextBox Text="{Binding Cantrips[5]}" Width="190" Margin="40,285,0,0" />
+                        <TextBox Text="{Binding Cantrips[6]}" Width="190" Margin="40,302,0,0" />
+                        <TextBox Text="{Binding Cantrips[7]}" Width="190" Margin="40,319,0,0" />
+                        <TextBox Text="{Binding Level1SlotsTotal}" Width="40" Margin="55,376,0,0" />
+                        <TextBox Text="{Binding Level1SlotsExpended}" Width="80" Margin="130,376,0,0" />
+                        <TextBox Text="{Binding Level1Spells[0]}" Width="197" Margin="38,407,0,0" />
+                        <TextBox Text="{Binding Level1Spells[1]}" Width="197" Margin="38,424,0,0" />
+                        <TextBox Text="{Binding Level1Spells[2]}" Width="197" Margin="38,441,0,0" />
+                        <TextBox Text="{Binding Level1Spells[3]}" Width="197" Margin="38,458,0,0" />
+                        <TextBox Text="{Binding Level1Spells[4]}" Width="197" Margin="38,475,0,0" />
+                        <TextBox Text="{Binding Level1Spells[5]}" Width="197" Margin="38,492,0,0" />
+                        <TextBox Text="{Binding Level1Spells[6]}" Width="197" Margin="38,509,0,0" />
+                        <TextBox Text="{Binding Level1Spells[7]}" Width="197" Margin="38,526,0,0" />
+                        <TextBox Text="{Binding Level1Spells[8]}" Width="197" Margin="38,543,0,0" />
+                        <TextBox Text="{Binding Level1Spells[9]}" Width="197" Margin="38,560,0,0" />
+                        <TextBox Text="{Binding Level1Spells[10]}" Width="197" Margin="38,577,0,0" />
+                        <TextBox Text="{Binding Level1Spells[11]}" Width="197" Margin="38,594,0,0" />
+                        <TextBox Text="{Binding Level1Spells[12]}" Width="197" Margin="38,611,0,0" />
+                        <TextBox Text="{Binding Level2SlotsTotal}" Width="40" Margin="55,653,0,0" />
+                        <TextBox Text="{Binding Level2SlotsExpended}" Width="80" Margin="130,653,0,0" />
+                        <TextBox Text="{Binding Level2Spells[0]}" Width="197" Margin="38,681,0,0" />
+                        <TextBox Text="{Binding Level2Spells[1]}" Width="197" Margin="38,698,0,0" />
+                        <TextBox Text="{Binding Level2Spells[2]}" Width="197" Margin="38,715,0,0" />
+                        <TextBox Text="{Binding Level2Spells[3]}" Width="197" Margin="38,732,0,0" />
+                        <TextBox Text="{Binding Level2Spells[4]}" Width="197" Margin="38,749,0,0" />
+                        <TextBox Text="{Binding Level2Spells[5]}" Width="197" Margin="38,766,0,0" />
+                        <TextBox Text="{Binding Level2Spells[6]}" Width="197" Margin="38,782,0,0" />
+                        <TextBox Text="{Binding Level2Spells[7]}" Width="197" Margin="38,799,0,0" />
+                        <TextBox Text="{Binding Level2Spells[8]}" Width="197" Margin="38,816,0,0" />
+                        <TextBox Text="{Binding Level2Spells[9]}" Width="197" Margin="38,833,0,0" />
+                        <TextBox Text="{Binding Level2Spells[10]}" Width="197" Margin="38,850,0,0" />
+                        <TextBox Text="{Binding Level2Spells[11]}" Width="197" Margin="38,867,0,0" />
+                        <TextBox Text="{Binding Level2Spells[12]}" Width="197" Margin="38,884,0,0" />
+                        <TextBox Text="{Binding Level3SlotsTotal}" Width="40" Margin="285,173,0,0" />
+                        <TextBox Text="{Binding Level3SlotsExpended}" Width="80" Margin="360,173,0,0" />
+                        <TextBox Text="{Binding Level3Spells[0]}" Width="197" Margin="268,201,0,0" />
+                        <TextBox Text="{Binding Level3Spells[1]}" Width="197" Margin="268,218,0,0" />
+                        <TextBox Text="{Binding Level3Spells[2]}" Width="197" Margin="268,235,0,0" />
+                        <TextBox Text="{Binding Level3Spells[3]}" Width="197" Margin="268,252,0,0" />
+                        <TextBox Text="{Binding Level3Spells[4]}" Width="197" Margin="268,269,0,0" />
+                        <TextBox Text="{Binding Level3Spells[5]}" Width="197" Margin="268,286,0,0" />
+                        <TextBox Text="{Binding Level3Spells[6]}" Width="197" Margin="268,303,0,0" />
+                        <TextBox Text="{Binding Level3Spells[7]}" Width="197" Margin="268,320,0,0" />
+                        <TextBox Text="{Binding Level3Spells[8]}" Width="197" Margin="268,337,0,0" />
+                        <TextBox Text="{Binding Level3Spells[9]}" Width="197" Margin="268,354,0,0" />
+                        <TextBox Text="{Binding Level3Spells[10]}" Width="197" Margin="268,371,0,0" />
+                        <TextBox Text="{Binding Level3Spells[11]}" Width="197" Margin="268,388,0,0" />
+                        <TextBox Text="{Binding Level3Spells[12]}" Width="197" Margin="268,405,0,0" />
+                        <TextBox Text="{Binding Level4SlotsTotal}" Width="40" Margin="285,446,0,0" />
+                        <TextBox Text="{Binding Level4SlotsExpended}" Width="80" Margin="360,446,0,0" />
+                        <TextBox Text="{Binding Level4Spells[0]}" Width="197" Margin="268,474,0,0" />
+                        <TextBox Text="{Binding Level4Spells[1]}" Width="197" Margin="268,491,0,0" />
+                        <TextBox Text="{Binding Level4Spells[2]}" Width="197" Margin="268,508,0,0" />
+                        <TextBox Text="{Binding Level4Spells[3]}" Width="197" Margin="268,525,0,0" />
+                        <TextBox Text="{Binding Level4Spells[4]}" Width="197" Margin="268,542,0,0" />
+                        <TextBox Text="{Binding Level4Spells[5]}" Width="197" Margin="268,559,0,0" />
+                        <TextBox Text="{Binding Level4Spells[6]}" Width="197" Margin="268,576,0,0" />
+                        <TextBox Text="{Binding Level4Spells[7]}" Width="197" Margin="268,593,0,0" />
+                        <TextBox Text="{Binding Level4Spells[8]}" Width="197" Margin="268,610,0,0" />
+                        <TextBox Text="{Binding Level4Spells[9]}" Width="197" Margin="268,627,0,0" />
+                        <TextBox Text="{Binding Level4Spells[10]}" Width="197" Margin="268,644,0,0" />
+                        <TextBox Text="{Binding Level4Spells[11]}" Width="197" Margin="268,661,0,0" />
+                        <TextBox Text="{Binding Level4Spells[12]}" Width="197" Margin="268,678,0,0" />
+                        <TextBox Text="{Binding Level5SlotsTotal}" Width="40" Margin="285,720,0,0" />
+                        <TextBox Text="{Binding Level5SlotsExpended}" Width="80" Margin="360,720,0,0" />
+                        <TextBox Text="{Binding Level5Spells[0]}" Width="197" Margin="268,748,0,0" />
+                        <TextBox Text="{Binding Level5Spells[1]}" Width="197" Margin="268,765,0,0" />
+                        <TextBox Text="{Binding Level5Spells[2]}" Width="197" Margin="268,782,0,0" />
+                        <TextBox Text="{Binding Level5Spells[3]}" Width="197" Margin="268,799,0,0" />
+                        <TextBox Text="{Binding Level5Spells[4]}" Width="197" Margin="268,816,0,0" />
+                        <TextBox Text="{Binding Level5Spells[5]}" Width="197" Margin="268,833,0,0" />
+                        <TextBox Text="{Binding Level5Spells[6]}" Width="197" Margin="268,850,0,0" />
+                        <TextBox Text="{Binding Level5Spells[7]}" Width="197" Margin="268,867,0,0" />
+                        <TextBox Text="{Binding Level5Spells[8]}" Width="197" Margin="268,884,0,0" />
+                        <TextBox Text="{Binding Level6SlotsTotal}" Width="40" Margin="511,173,0,0" />
+                        <TextBox Text="{Binding Level6SlotsExpended}" Width="80" Margin="586,173,0,0" />
+                        <TextBox Text="{Binding Level6Spells[0]}" Width="197" Margin="494,201,0,0" />
+                        <TextBox Text="{Binding Level6Spells[1]}" Width="197" Margin="494,218,0,0" />
+                        <TextBox Text="{Binding Level6Spells[2]}" Width="197" Margin="494,235,0,0" />
+                        <TextBox Text="{Binding Level6Spells[3]}" Width="197" Margin="494,252,0,0" />
+                        <TextBox Text="{Binding Level6Spells[4]}" Width="197" Margin="494,269,0,0" />
+                        <TextBox Text="{Binding Level6Spells[5]}" Width="197" Margin="494,286,0,0" />
+                        <TextBox Text="{Binding Level6Spells[6]}" Width="197" Margin="494,303,0,0" />
+                        <TextBox Text="{Binding Level6Spells[7]}" Width="197" Margin="494,320,0,0" />
+                        <TextBox Text="{Binding Level6Spells[8]}" Width="197" Margin="494,337,0,0" />
+                        <TextBox Text="{Binding Level7SlotsTotal}" Width="40" Margin="511,379,0,0" />
+                        <TextBox Text="{Binding Level7SlotsExpended}" Width="80" Margin="586,379,0,0" />
+                        <TextBox Text="{Binding Level7Spells[0]}" Width="197" Margin="494,407,0,0" />
+                        <TextBox Text="{Binding Level7Spells[1]}" Width="197" Margin="494,424,0,0" />
+                        <TextBox Text="{Binding Level7Spells[2]}" Width="197" Margin="494,441,0,0" />
+                        <TextBox Text="{Binding Level7Spells[3]}" Width="197" Margin="494,458,0,0" />
+                        <TextBox Text="{Binding Level7Spells[4]}" Width="197" Margin="494,474,0,0" />
+                        <TextBox Text="{Binding Level7Spells[5]}" Width="197" Margin="494,491,0,0" />
+                        <TextBox Text="{Binding Level7Spells[6]}" Width="197" Margin="494,508,0,0" />
+                        <TextBox Text="{Binding Level7Spells[7]}" Width="197" Margin="494,525,0,0" />
+                        <TextBox Text="{Binding Level7Spells[8]}" Width="197" Margin="494,542,0,0" />
+                        <TextBox Text="{Binding Level8SlotsTotal}" Width="40" Margin="511,584,0,0" />
+                        <TextBox Text="{Binding Level8SlotsExpended}" Width="80" Margin="586,584,0,0" />
+                        <TextBox Text="{Binding Level8Spells[0]}" Width="197" Margin="494,612,0,0" />
+                        <TextBox Text="{Binding Level8Spells[1]}" Width="197" Margin="494,629,0,0" />
+                        <TextBox Text="{Binding Level8Spells[2]}" Width="197" Margin="494,646,0,0" />
+                        <TextBox Text="{Binding Level8Spells[3]}" Width="197" Margin="494,663,0,0" />
+                        <TextBox Text="{Binding Level8Spells[4]}" Width="197" Margin="494,680,0,0" />
+                        <TextBox Text="{Binding Level8Spells[5]}" Width="197" Margin="494,697,0,0" />
+                        <TextBox Text="{Binding Level8Spells[6]}" Width="197" Margin="494,714,0,0" />
+                        <TextBox Text="{Binding Level9SlotsTotal}" Width="40" Margin="511,754,0,0" />
+                        <TextBox Text="{Binding Level9SlotsExpended}" Width="80" Margin="586,754,0,0" />
+                        <TextBox Text="{Binding Level9Spells[0]}" Width="197" Margin="494,782,0,0" />
+                        <TextBox Text="{Binding Level9Spells[1]}" Width="197" Margin="494,799,0,0" />
+                        <TextBox Text="{Binding Level9Spells[2]}" Width="197" Margin="494,816,0,0" />
+                        <TextBox Text="{Binding Level9Spells[3]}" Width="197" Margin="494,833,0,0" />
+                        <TextBox Text="{Binding Level9Spells[4]}" Width="197" Margin="494,850,0,0" />
+                        <TextBox Text="{Binding Level9Spells[5]}" Width="197" Margin="494,867,0,0" />
+                        <TextBox Text="{Binding Level9Spells[6]}" Width="197" Margin="494,884,0,0" />
                     </Grid>
                 </Grid>
             </TabItem>

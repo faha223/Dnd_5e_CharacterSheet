@@ -55,7 +55,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DnD_Constants.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Models\CharacterSheetModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.BackgroundInfo.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.Spellcasting.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.CharacterSheet.cs" />
+    <Compile Include="MVVM\ParameterlessCommandRouter.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,9 +96,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
