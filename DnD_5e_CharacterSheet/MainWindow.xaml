@@ -25,10 +25,10 @@
                         <TextBlock Text="CHARACTER NAME" Margin="75,104,0,0" />
                         <TextBlock Text="CLASS &amp; LEVEL" Margin="316,72,0,0" />
                         <TextBlock Text="BACKGROUND" Margin="454,72,0,0" />
-                        <TextBlock Text="PLAYER NAME" Margin="588,72,0,0" />
+                        <TextBlock Text="PLAYER NAME" Margin="585,72,0,0" />
                         <TextBlock Text="RACE" Margin="316,103,0,0" />
-                        <TextBlock Text="ALIGNMENT" Margin="454,104,0,0" />
-                        <TextBlock Text="EXPERIENCE POINTS" Margin="583,103,0,0" />
+                        <TextBlock Text="ALIGNMENT" Margin="454,103,0,0" />
+                        <TextBlock Text="EXPERIENCE POINTS" Margin="585,103,0,0" />
                         <TextBlock Text="INSPIRIATION" Margin="162,159,0,0" />
                         <TextBlock Text="PROFICIENCY BONUS" Margin="151,205,0,0" />
                         <StackPanel HorizontalAlignment="Left" Margin="276,194,0,0">
@@ -248,11 +248,76 @@
             <TabItem Header="Background Info">
                 <Grid>
                     <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource BackgroundInfoBackground}" />
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="7" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Text="CHARACTER NAME" Margin="75,103,0,0" />
+                        <TextBlock Text="AGE" Margin="316,71,0,0" />
+                        <TextBlock Text="HEIGHT" Margin="454,71,0,0" />
+                        <TextBlock Text="WEIGHT" Margin="585,71,0,0" />
+                        <TextBlock Text="EYES" Margin="316,102,0,0" />
+                        <TextBlock Text="SKIN" Margin="454,102,0,0" />
+                        <TextBlock Text="HAIR" Margin="585,102,0,0" />
+                        <TextBlock Text="CHARACTER APPEARANCE" Margin="87,417,0,0" />
+                        <TextBlock Text="CHARACTER BACKSTORY" Margin="87,905,0,0" />
+                        <TextBlock Text="NAME" Margin="498,164,0,0" FontWeight="Normal" />
+                        <TextBlock Text="SYMBOL" Margin="572,347,0,0" Foreground="White" />
+                        <TextBlock Text="ALLIES &amp; ORGANIZATIONS" Margin="428,417,0,0" />
+                        <TextBlock Text="ADDITIONAL FEATURES &amp; TRAITS" Margin="417,693,0,0" />
+                        <TextBlock Text="TREASURE" Margin="455,905,0,0" />
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Spellcasting">
                 <Grid>
                     <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource SpellcastingBackground}" />
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="7" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Top" />
+                            </Style>
+                        </Grid.Resources>
+                        <StackPanel Margin="75,103,0,0">
+                            <TextBlock Text="SPELLCASTING"  />
+                            <TextBlock Text="CLASS"  />
+                        </StackPanel>
+                        <StackPanel Margin="347,95,0,0" HorizontalAlignment="Left">
+                            <TextBlock Text="SPELLCASTING"  />
+                            <TextBlock Text="ABILITY" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock Text="SPELL SAVE DC" Margin="469,95,0,0" />
+                        <StackPanel Margin="595,95,0,0" HorizontalAlignment="Left">
+                            <TextBlock Text="SPELL ATTACK"  />
+                            <TextBlock Text="BONUS" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="14" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Text="0" Margin="33,170,0,0" />
+                        <TextBlock Text="1" Margin="33,374,0,0" />
+                        <TextBlock Text="2" Margin="33,650,0,0" />
+                        <TextBlock Text="3" Margin="261,170,0,0" />
+                        <TextBlock Text="4" Margin="261,443,0,0" />
+                        <TextBlock Text="5" Margin="261,717,0,0" />
+                        <TextBlock Text="6" Margin="488,170,0,0" />
+                        <TextBlock Text="7" Margin="488,376,0,0" />
+                        <TextBlock Text="8" Margin="488,581,0,0" />
+                        <TextBlock Text="9" Margin="488,751,0,0" />
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>

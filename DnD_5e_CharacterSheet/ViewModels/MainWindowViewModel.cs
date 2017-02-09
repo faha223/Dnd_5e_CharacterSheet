@@ -5,6 +5,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        #region Character Sheet
+
         #region Header Region
 
         private string characterName;
@@ -1541,5 +1543,19 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     return 0;
             }
         }
+
+        #endregion Character Sheet
+
+        #region Background Info
+
+
+
+        #endregion Background Info
+
+        #region Spellcasting
+
+
+
+        #endregion Spellcasting
     }
 }
