@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="D:\Users\fred.hallock\Documents\Visual Studio 2015\Projects\DnD_5e_CharacterSheet\DnD_5e_CharacterSheet\Resources\DnDCharacterSheet.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Resources/DnDCharacterSheet.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
