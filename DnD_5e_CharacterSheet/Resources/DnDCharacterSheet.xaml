@@ -5558,4 +5558,12 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
+    <PathGeometry x:Key="CurvedTextPath">
+        <PathFigure StartPoint="-5, 10" IsClosed="False">
+            <ArcSegment IsLargeArc="True" 
+                            Point="5.5, 10" 
+                            Size="5.25, 6" 
+                            SweepDirection="Clockwise" />
+        </PathFigure>
+    </PathGeometry>
 </ResourceDictionary>

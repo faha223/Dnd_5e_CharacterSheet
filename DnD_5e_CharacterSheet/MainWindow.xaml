@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnD_5e_CharacterSheet"
         xmlns:sys="clr-namespace:System;assembly=System"
+        xmlns:controls="clr-namespace:DnD_5e_CharacterSheet.CustomControls"
         mc:Ignorable="d"
         Title="Character Sheet" MinHeight="1020" Height="1020" MinWidth="740" Width="740">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        
         <Style TargetType="{x:Type Button}" x:Key="ImageButton">
             <Setter Property="Background" Value="#00ffffff" />
             <Setter Property="BorderBrush" Value="#00ffffff" />
@@ -357,6 +359,13 @@
                     <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource SpellcastingBackground}" />
                     <Grid>
                         <Grid.Resources>
+                            <Style TargetType="{x:Type controls:TextOnPathElement}">
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="FontWeight" Value="Normal" />
+                                <Setter Property="FontSize" Value="8" />
+                                <Setter Property="ContentAlignment" Value="Stretch" />
+                                <Setter Property="PathFigure" Value="{Binding Source={StaticResource CurvedTextPath}, Path=Figures[0]}" />
+                            </Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="FontSize" Value="7" />
                                 <Setter Property="FontWeight" Value="Bold" />
@@ -379,6 +388,25 @@
                             <TextBlock Text="SPELL ATTACK"  />
                             <TextBlock Text="BONUS" HorizontalAlignment="Center"/>
                         </StackPanel>
+                        <controls:TextOnPathElement Text="PREPARED" Margin="31,408,0,0" />
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="6" />
+                                </Style>
+                            </Grid.Resources>
+                            <StackPanel Margin="25,344,0,0">
+                                <TextBlock Text="SPELL" />
+                                <TextBlock Text="LEVEL" />
+                            </StackPanel>
+                            <TextBlock Text="SLOTS TOTAL" Margin="51,357,0,0" />
+                            <TextBlock Text="SLOTS EXPENDED" Margin="144,357,0,0" />
+                            <TextBlock Text="SPELLS KNOWN" FontSize="5" Margin="8,530,0,0">
+                                <TextBlock.RenderTransform>
+                                    <RotateTransform Angle="270" />
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                        </Grid>
                     </Grid>
                     <Grid>
                         <Grid.Resources>
@@ -434,6 +462,7 @@
                                 <Setter Property="FontSize" Value="10" />
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="TextAlignment" Value="Center" />
                             </Style>
                         </Grid.Resources>
                         <TextBox Text="{Binding Cantrips[0]}" Width="190" Margin="40,200,0,0" />
