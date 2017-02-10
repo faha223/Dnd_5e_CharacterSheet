@@ -1,7 +1,6 @@
 ﻿using DnD_5e_CharacterSheet.Models;
 using DnD_5e_CharacterSheet.MVVM;
 using Microsoft.Win32;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Input;
@@ -10,7 +9,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
-        private CharacterSheetModel model = new CharacterSheetModel();
+        private CharacterSheetModel model = CharacterSheetModel.New();
 
         #region Header Region
 
@@ -1701,7 +1700,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
             var result = dlg.ShowDialog();
             if(result.HasValue && result.Value)
             {
-                var json  = JsonConvert.SerializeObject(model);
+                var json = model.Serialize();
                 File.WriteAllText(dlg.FileName, json);
             }
         }
@@ -1720,7 +1719,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
             if (result.HasValue && result.Value)
             {
                 var json = File.ReadAllText(dlg.FileName);
-                model = JsonConvert.DeserializeObject<CharacterSheetModel>(json);
+                model = CharacterSheetModel.Deserialize(json);
                 OnPropertyChanged(null);
             }
         }

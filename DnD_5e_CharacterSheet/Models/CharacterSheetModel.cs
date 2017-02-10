@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DnD_5e_CharacterSheet.Models
 {
@@ -150,16 +152,49 @@ namespace DnD_5e_CharacterSheet.Models
 
         public CharacterSheetModel()
         {
-            Cantrips = new List<string>(new string[8]);
-            Level1Spells = new List<string>(new string[13]);
-            Level2Spells = new List<string>(new string[13]);
-            Level3Spells = new List<string>(new string[13]);
-            Level4Spells = new List<string>(new string[13]);
-            Level5Spells = new List<string>(new string[9]);
-            Level6Spells = new List<string>(new string[9]);
-            Level7Spells = new List<string>(new string[7]);
-            Level8Spells = new List<string>(new string[7]);
-            Level9Spells = new List<string>(new string[7]);
+        }
+
+        public static CharacterSheetModel New()
+        {
+            var model = new CharacterSheetModel();
+            model.Cantrips = new List<string>(new string[8]);
+            model.Level1Spells = new List<string>(new string[13]);
+            model.Level2Spells = new List<string>(new string[13]);
+            model.Level3Spells = new List<string>(new string[13]);
+            model.Level4Spells = new List<string>(new string[13]);
+            model.Level5Spells = new List<string>(new string[9]);
+            model.Level6Spells = new List<string>(new string[9]);
+            model.Level7Spells = new List<string>(new string[7]);
+            model.Level8Spells = new List<string>(new string[7]);
+            model.Level9Spells = new List<string>(new string[7]);
+            return model;
+        }
+
+        public static CharacterSheetModel Deserialize(string json)
+        {
+            var model = JsonConvert.DeserializeObject<CharacterSheetModel>(json);
+            model.makeValid();
+            return model;
+        }
+
+        public string Serialize()
+        {
+            makeValid();
+            return JsonConvert.SerializeObject(this);
+        }
+
+        private void makeValid()
+        {
+            Cantrips = Cantrips.Take(8).ToList();
+            Level1Spells = Level1Spells.Take(13).ToList();
+            Level2Spells = Level2Spells.Take(13).ToList();
+            Level3Spells = Level3Spells.Take(13).ToList();
+            Level4Spells = Level4Spells.Take(13).ToList();
+            Level5Spells = Level5Spells.Take(9).ToList();
+            Level6Spells = Level6Spells.Take(9).ToList();
+            Level7Spells = Level7Spells.Take(7).ToList();
+            Level8Spells = Level8Spells.Take(7).ToList();
+            Level9Spells = Level9Spells.Take(7).ToList();
         }
     }
 }

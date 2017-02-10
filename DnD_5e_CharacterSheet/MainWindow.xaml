@@ -321,7 +321,7 @@
                         <TextBox Text="{Binding Weight}" Width="91" Margin="585,53,0,0" />
                         <TextBox Text="{Binding Eyes}" Width="130" Margin="315,84,0,0"/>
                         <TextBox Text="{Binding Skin}" Width="130" Margin="450,84,0,0" />
-                        <TextBox Text="{Binding Hair}" TextAlignment="Center" Width="91" Margin="585,84,0,0" />
+                        <TextBox Text="{Binding Hair}" Width="91" Margin="585,84,0,0" />
                         <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding LoadPortraitCommand}">
                             <Image Source="{Binding PortraitSource}" />
                         </Button>
