@@ -503,6 +503,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.StrengthSavingThrowEnabled = value;
                     OnPropertyChanged("StrengthSavingThrowEnabled");
+                    OnPropertyChanged("StrengthSavingThrow");
                 }
             }
         }
@@ -511,7 +512,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + StrengthModifier;
+                return (StrengthSavingThrowEnabled ? ProficiencyBonus : 0) + StrengthModifier;
             }
         }
 
@@ -527,6 +528,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.DexteritySavingThrowEnabled = value;
                     OnPropertyChanged("DexteritySavingThrowEnabled");
+                    OnPropertyChanged("DexteritySavingThrow");
                 }
             }
         }
@@ -535,7 +537,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + DexterityModifier;
+                return (DexteritySavingThrowEnabled ? ProficiencyBonus : 0) + DexterityModifier;
             }
         }
 
@@ -551,6 +553,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.ConstitutionSavingThrowEnabled = value;
                     OnPropertyChanged("ConstitutionSavingThrowEnabled");
+                    OnPropertyChanged("ConstitutionSavingThrow");
                 }
             }
         }
@@ -559,7 +562,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + ConstitutionModifier;
+                return (ConstitutionSavingThrowEnabled ? ProficiencyBonus : 0) + ConstitutionModifier;
             }
         }
 
@@ -575,6 +578,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.IntelligenceSavingThrowEnabled = value;
                     OnPropertyChanged("IntelligenceSavingThrowEnabled");
+                    OnPropertyChanged("IntelligenceSavingThrow");
                 }
             }
         }
@@ -583,7 +587,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + IntelligenceModifier;
+                return (IntelligenceSavingThrowEnabled ? ProficiencyBonus : 0) + IntelligenceModifier;
             }
         }
 
@@ -599,6 +603,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.WisdomSavingThrowEnabled = value;
                     OnPropertyChanged("WisdomSavingThrowEnabled");
+                    OnPropertyChanged("WisdomSavingThrow");
                 }
             }
         }
@@ -607,7 +612,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + WisdomModifier;
+                return (WisdomSavingThrowEnabled ? ProficiencyBonus : 0) + WisdomModifier;
             }
         }
 
@@ -623,6 +628,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.CharismaSavingThrowEnabled = value;
                     OnPropertyChanged("CharismaSavingThrowEnabled");
+                    OnPropertyChanged("CharismaSavingThrow");
                 }
             }
         }
@@ -631,7 +637,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + CharismaModifier;
+                return (CharismaSavingThrowEnabled ? ProficiencyBonus : 0) + CharismaModifier;
             }
         }
 
