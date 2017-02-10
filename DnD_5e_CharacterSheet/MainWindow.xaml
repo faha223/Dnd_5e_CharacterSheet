@@ -136,35 +136,35 @@
                                     <Setter Property="HorizontalAlignment" Value="Left" />
                                     <Setter Property="VerticalAlignment" Value="Top" />
                                     <Setter Property="TextAlignment" Value="Center" />
-                                    <Setter Property="FontSize" Value="18" />
+                                    <Setter Property="FontSize" Value="12" />
                                 </Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="HorizontalAlignment" Value="Left" />
                                     <Setter Property="VerticalAlignment" Value="Top" />
                                     <Setter Property="TextAlignment" Value="Center" />
-                                    <Setter Property="FontSize" Value="12" />
+                                    <Setter Property="FontSize" Value="18" />
                                 </Style>
                                 <Style TargetType="CheckBox">
                                     <Setter Property="HorizontalAlignment" Value="Left" />
                                     <Setter Property="VerticalAlignment" Value="Top" />
                                 </Style>
                             </Grid.Resources>
-                            <TextBox Text="{Binding Strength}" Width="40" Margin="39,183,0,0" />
-                            <TextBlock Text="{Binding StrengthModifier}" Width="20" Margin="48,220,0,0" />
-                            <TextBox Text="{Binding Dexterity}" Width="40" Margin="39,270,0,0" />
-                            <TextBlock Text="{Binding DexterityModifier}" Width="20" Margin="48,307,0,0" />
-                            <TextBox Text="{Binding Constitution}" Width="40" Margin="39,356,0,0" />
-                            <TextBlock Text="{Binding ConstitutionModifier}" Width="20" Margin="48,393,0,0" />
-                            <TextBox Text="{Binding Intelligence}" Width="40" Margin="39,443,0,0" />
-                            <TextBlock Text="{Binding IntelligenceModifier}" Width="20" Margin="48,480,0,0" />
-                            <TextBox Text="{Binding Wisdom}" Width="40" Margin="39,529,0,0" />
-                            <TextBlock Text="{Binding WisdomModifier}" Width="20" Margin="48,566,0,0" />
-                            <TextBox Text="{Binding Charisma}" Width="40" Margin="39,616,0,0" />
-                            <TextBlock Text="{Binding CharismaModifier}" Width="20" Margin="48,653,0,0" />
-                            <TextBox Text="{Binding ProficiencyBonus}" Width="28" Margin="107,196,0,0" />
-                            <TextBlock Text="{Binding PassiveWisdom}" Width="20" Margin="31,712,0,0" />
+                            <TextBlock Text="{Binding StrengthModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,183,0,0" />
+                            <TextBox Text="{Binding Strength}" Width="20" Margin="48,220,0,0" />
+                            <TextBlock Text="{Binding DexterityModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,270,0,0" />
+                            <TextBox Text="{Binding Dexterity}" Width="20" Margin="48,307,0,0" />
+                            <TextBlock Text="{Binding ConstitutionModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,356,0,0" />
+                            <TextBox Text="{Binding Constitution}" Width="20" Margin="48,393,0,0" />
+                            <TextBlock Text="{Binding IntelligenceModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,443,0,0" />
+                            <TextBox Text="{Binding Intelligence}" Width="20" Margin="48,480,0,0" />
+                            <TextBlock Text="{Binding WisdomModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,529,0,0" />
+                            <TextBox Text="{Binding Wisdom}" Width="20" Margin="48,566,0,0" />
+                            <TextBlock Text="{Binding CharismaModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,616,0,0" />
+                            <TextBox Text="{Binding Charisma}" Width="20" Margin="48,653,0,0" />
+                            <TextBox Text="{Binding ProficiencyBonus, StringFormat='{}{0:+0;-#}'}" Width="28" Margin="107,200,0,0" />
+                            <TextBlock Text="{Binding PassiveWisdom}" Width="20" Margin="31,708,0,0" />
                             <TextBox Text="{Binding ArmorClass}" Width="30" Margin="274,168,0,0" />
-                            <TextBox Text="{Binding Initiative}" Width="30" Margin="341,172,0,0" />
+                            <TextBlock Text="{Binding Initiative, StringFormat='{}{0:+0;-#}'}" Width="30" Margin="341,172,0,0" />
                             <TextBox Text="{Binding Speed}" Width="30" Margin="412,172,0,0" />
                             <TextBox Text="{Binding HitPointMaximum}" Width="109" Margin="341,233,0,0" FontSize="8" />
                             <TextBox Text="{Binding CurrentHitPoints}" Width="100" Margin="308,258,0,0" />
@@ -178,53 +178,53 @@
                             <CheckBox IsChecked="{Binding DeathSaveFailure2}" Margin="421,401,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveFailure3}" Margin="437,401,0,0" />
                             <CheckBox IsChecked="{Binding AcrobaticsEnabled}" Margin="108,382,0,0" />
-                            <TextBlock Text="{Binding Acrobatics}" Visibility="{Binding AcrobaticsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,382,0,0" />
+                            <TextBlock Text="{Binding Acrobatics, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,382,0,0" />
                             <CheckBox IsChecked="{Binding AnimalHandlingEnabled}" Margin="108,398,0,0" />
-                            <TextBlock Text="{Binding AnimalHandling}" Visibility="{Binding AnimalHandlingEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,398,0,0" />
+                            <TextBlock Text="{Binding AnimalHandling, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,398,0,0" />
                             <CheckBox IsChecked="{Binding ArcanaEnabled}" Margin="108,415,0,0" />
-                            <TextBlock Text="{Binding Arcana}" Visibility="{Binding ArcanaEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,415,0,0" />
+                            <TextBlock Text="{Binding Arcana, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,415,0,0" />
                             <CheckBox IsChecked="{Binding AthleticsEnabled}" Margin="108,431,0,0" />
-                            <TextBlock Text="{Binding Athletics}" Visibility="{Binding AthleticsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,431,0,0" />
+                            <TextBlock Text="{Binding Athletics, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,431,0,0" />
                             <CheckBox IsChecked="{Binding DeceptionEnabled}" Margin="108,447,0,0" />
-                            <TextBlock Text="{Binding Deception}" Visibility="{Binding DeceptionEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,447,0,0" />
+                            <TextBlock Text="{Binding Deception, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,447,0,0" />
                             <CheckBox IsChecked="{Binding HistoryEnabled}" Margin="108,464,0,0" />
-                            <TextBlock Text="{Binding History}" Visibility="{Binding HistoryEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,464,0,0" />
+                            <TextBlock Text="{Binding History, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,464,0,0" />
                             <CheckBox IsChecked="{Binding InsightEnabled}" Margin="108,480,0,0" />
-                            <TextBlock Text="{Binding Insight}" Visibility="{Binding InsightEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,480,0,0" />
+                            <TextBlock Text="{Binding Insight, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,480,0,0" />
                             <CheckBox IsChecked="{Binding IntimidationEnabled}" Margin="108,496,0,0" />
-                            <TextBlock Text="{Binding Intimidation}" Visibility="{Binding IntimidationEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,496,0,0" />
+                            <TextBlock Text="{Binding Intimidation, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,496,0,0" />
                             <CheckBox IsChecked="{Binding InvestigationEnabled}" Margin="108,513,0,0" />
-                            <TextBlock Text="{Binding Investigation}" Visibility="{Binding InvestigationEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,513,0,0" />
+                            <TextBlock Text="{Binding Investigation, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,513,0,0" />
                             <CheckBox IsChecked="{Binding MedicineEnabled}" Margin="108,529,0,0" />
-                            <TextBlock Text="{Binding Medicine}" Visibility="{Binding MedicineEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,529,0,0" />
+                            <TextBlock Text="{Binding Medicine, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,529,0,0" />
                             <CheckBox IsChecked="{Binding NatureEnabled}" Margin="108,545,0,0" />
-                            <TextBlock Text="{Binding Nature}" Visibility="{Binding NatureEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,545,0,0" />
+                            <TextBlock Text="{Binding Nature, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,545,0,0" />
                             <CheckBox IsChecked="{Binding PerceptionEnabled}" Margin="108,562,0,0" />
-                            <TextBlock Text="{Binding Perception}" Visibility="{Binding PerceptionEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,562,0,0" />
+                            <TextBlock Text="{Binding Perception, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,562,0,0" />
                             <CheckBox IsChecked="{Binding PerformanceEnabled}" Margin="108,578,0,0" />
-                            <TextBlock Text="{Binding Performance}" Visibility="{Binding PerformanceEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,578,0,0" />
+                            <TextBlock Text="{Binding Performance, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,578,0,0" />
                             <CheckBox IsChecked="{Binding PersuasionEnabled}" Margin="108,594,0,0" />
-                            <TextBlock Text="{Binding Persuasion}" Visibility="{Binding PersuasionEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,594,0,0" />
+                            <TextBlock Text="{Binding Persuasion, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,594,0,0" />
                             <CheckBox IsChecked="{Binding ReligionEnabled}" Margin="108,611,0,0" />
-                            <TextBlock Text="{Binding Religion}" Visibility="{Binding ReligionEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,611,0,0" />
+                            <TextBlock Text="{Binding Religion, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,611,0,0" />
                             <CheckBox IsChecked="{Binding SleightOfHandEnabled}"  Margin="108,627,0,0" />
-                            <TextBlock Text="{Binding SleightOfHand}" Visibility="{Binding SleightOfHandEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,627,0,0" />
+                            <TextBlock Text="{Binding SleightOfHand, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,627,0,0" />
                             <CheckBox IsChecked="{Binding StealthEnabled}" Margin="108,643,0,0" />
-                            <TextBlock Text="{Binding Stealth}" Visibility="{Binding StealthEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,643,0,0" />
+                            <TextBlock Text="{Binding Stealth, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,643,0,0" />
                             <CheckBox IsChecked="{Binding SurvivalEnabled}" Margin="108,660,0,0" />
-                            <TextBlock Text="{Binding Survival}" Visibility="{Binding SurvivalEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,660,0,0" />
+                            <TextBlock Text="{Binding Survival, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,660,0,0" />
                             <CheckBox IsChecked="{Binding StrengthSavingThrowEnabled}" Margin="108,243,0,0" />
-                            <TextBlock Text="{Binding StrengthSavingThrow}" Visibility="{Binding StrengthSavingThrowEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,243,0,0" />
+                            <TextBlock Text="{Binding StrengthSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,243,0,0" />
                             <CheckBox IsChecked="{Binding DexteritySavingThrowEnabled}" Margin="108,259,0,0" />
-                            <TextBlock Text="{Binding DexteritySavingThrow}" Visibility="{Binding DexteritySavingThrowEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,259,0,0" />
+                            <TextBlock Text="{Binding DexteritySavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,259,0,0" />
                             <CheckBox IsChecked="{Binding ConstitutionSavingThrowEnabled}" Margin="108,275,0,0" />
-                            <TextBlock Text="{Binding ConstitutionSavingThrow}" Visibility="{Binding ConstitutionSavingThrowEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,275,0,0" />
+                            <TextBlock Text="{Binding ConstitutionSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,275,0,0" />
                             <CheckBox IsChecked="{Binding IntelligenceSavingThrowEnabled}" Margin="108,292,0,0" />
-                            <TextBlock Text="{Binding IntelligenceSavingThrow}" Visibility="{Binding IntelligenceSavingThrowEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,292,0,0" />
+                            <TextBlock Text="{Binding IntelligenceSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,292,0,0" />
                             <CheckBox IsChecked="{Binding WisdomSavingThrowEnabled}" Margin="108,308,0,0" />
-                            <TextBlock Text="{Binding WisdomSavingThrow}" Visibility="{Binding WisdomSavingThrowEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,308,0,0" />
+                            <TextBlock Text="{Binding WisdomSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,308,0,0" />
                             <CheckBox IsChecked="{Binding CharismaSavingThrowEnabled}" Margin="108,324,0,0" />
-                            <TextBlock Text="{Binding CharismaSavingThrow}" Visibility="{Binding CharismaSavingThrowEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" FontSize="8" Width="18" Margin="125,324,0,0" />
+                            <TextBlock Text="{Binding CharismaSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,324,0,0" />
                             <TextBox Text="{Binding CopperPieces}" Margin="270,721,0,0" FontSize="12" Width="30" />
                             <TextBox Text="{Binding SilverPieces}" Margin="270,752,0,0" FontSize="12" Width="30" />
                             <TextBox Text="{Binding ElectrumPieces}" Margin="270,783,0,0" FontSize="12" Width="30" />

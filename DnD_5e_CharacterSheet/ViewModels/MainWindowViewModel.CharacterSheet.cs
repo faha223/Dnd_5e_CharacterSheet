@@ -302,6 +302,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     OnPropertyChanged("Persuasion");
                     OnPropertyChanged("SpellSaveDC");
                     OnPropertyChanged("SpellAttackBonus");
+                    OnPropertyChanged("Initiative");
                 }
             }
         }
@@ -662,6 +663,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.AcrobaticsEnabled = value;
                     OnPropertyChanged("AcrobaticsEnabled");
+                    OnPropertyChanged("Acrobatics");
                 }
             }
         }
@@ -670,7 +672,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + DexterityModifier;
+                return (AcrobaticsEnabled ? ProficiencyBonus : 0) + DexterityModifier;
             }
         }
 
@@ -686,6 +688,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.AnimalHandlingEnabled = value;
                     OnPropertyChanged("AnimalHandlingEnabled");
+                    OnPropertyChanged("AnimalHandling");
                 }
             }
         }
@@ -694,7 +697,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + WisdomModifier;
+                return (AnimalHandlingEnabled ? ProficiencyBonus : 0) + WisdomModifier;
             }
         }
 
@@ -710,6 +713,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.ArcanaEnabled = value;
                     OnPropertyChanged("ArcanaEnabled");
+                    OnPropertyChanged("Arcana");
                 }
             }
         }
@@ -718,7 +722,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + IntelligenceModifier;
+                return (ArcanaEnabled ? ProficiencyBonus : 0) + IntelligenceModifier;
             }
         }
 
@@ -734,6 +738,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.AthleticsEnabled = value;
                     OnPropertyChanged("AthleticsEnabled");
+                    OnPropertyChanged("Athletics");
                 }
             }
         }
@@ -742,7 +747,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + StrengthModifier;
+                return (AthleticsEnabled ? ProficiencyBonus : 0) + StrengthModifier;
             }
         }
 
@@ -758,6 +763,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.DeceptionEnabled = value;
                     OnPropertyChanged("DeceptionEnabled");
+                    OnPropertyChanged("Deception");
                 }
             }
         }
@@ -766,7 +772,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + CharismaModifier;
+                return (DeceptionEnabled ? ProficiencyBonus : 0) + CharismaModifier;
             }
         }
 
@@ -782,6 +788,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.HistoryEnabled = value;
                     OnPropertyChanged("HistoryEnabled");
+                    OnPropertyChanged("History");
                 }
             }
         }
@@ -790,7 +797,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + IntelligenceModifier;
+                return (HistoryEnabled ? ProficiencyBonus : 0) + IntelligenceModifier;
             }
         }
 
@@ -806,6 +813,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.InsightEnabled = value;
                     OnPropertyChanged("InsightEnabled");
+                    OnPropertyChanged("Insight");
                 }
             }
         }
@@ -814,7 +822,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + WisdomModifier;
+                return (InsightEnabled ? ProficiencyBonus : 0) + WisdomModifier;
             }
         }
 
@@ -830,6 +838,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.IntimidationEnabled = value;
                     OnPropertyChanged("IntimidationEnabled");
+                    OnPropertyChanged("Intimidation");
                 }
             }
         }
@@ -838,7 +847,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + CharismaModifier;
+                return (IntimidationEnabled ? ProficiencyBonus : 0) + CharismaModifier;
             }
         }
 
@@ -854,6 +863,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.InvestigationEnabled = value;
                     OnPropertyChanged("InvestigationEnabled");
+                    OnPropertyChanged("Investigation");
                 }
             }
         }
@@ -862,7 +872,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + IntelligenceModifier;
+                return (InvestigationEnabled ? ProficiencyBonus : 0) + IntelligenceModifier;
             }
         }
 
@@ -878,6 +888,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.MedicineEnabled = value;
                     OnPropertyChanged("MedicineEnabled");
+                    OnPropertyChanged("Medicine");
                 }
             }
         }
@@ -886,7 +897,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + WisdomModifier;
+                return (MedicineEnabled ? ProficiencyBonus : 0) + WisdomModifier;
             }
         }
 
@@ -902,6 +913,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.NatureEnabled = value;
                     OnPropertyChanged("NatureEnabled");
+                    OnPropertyChanged("Nature");
                 }
             }
         }
@@ -910,7 +922,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + IntelligenceModifier;
+                return (NatureEnabled ? ProficiencyBonus : 0) + IntelligenceModifier;
             }
         }
 
@@ -926,6 +938,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.PerceptionEnabled = value;
                     OnPropertyChanged("PerceptionEnabled");
+                    OnPropertyChanged("Perception");
+                    OnPropertyChanged("PassiveWisdom");
                 }
             }
         }
@@ -934,7 +948,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + WisdomModifier;
+                return (PerceptionEnabled ? ProficiencyBonus : 0) + WisdomModifier;
             }
         }
 
@@ -950,6 +964,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.PerformanceEnabled = value;
                     OnPropertyChanged("PerformanceEnabled");
+                    OnPropertyChanged("Performance");
                 }
             }
         }
@@ -958,7 +973,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + CharismaModifier;
+                return (PerformanceEnabled ? ProficiencyBonus : 0) + CharismaModifier;
             }
         }
 
@@ -974,6 +989,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.PersuasionEnabled = value;
                     OnPropertyChanged("PersuasionEnabled");
+                    OnPropertyChanged("Persuasion");
                 }
             }
         }
@@ -982,7 +998,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + CharismaModifier;
+                return (PersuasionEnabled ? ProficiencyBonus : 0) + CharismaModifier;
             }
         }
 
@@ -998,6 +1014,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.ReligionEnabled = value;
                     OnPropertyChanged("ReligionEnabled");
+                    OnPropertyChanged("Religion");
                 }
             }
         }
@@ -1006,7 +1023,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + IntelligenceModifier;
+                return (ReligionEnabled ? ProficiencyBonus : 0) + IntelligenceModifier;
             }
         }
 
@@ -1022,6 +1039,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.SleightOfHandEnabled = value;
                     OnPropertyChanged("SleightOfHandEnabled");
+                    OnPropertyChanged("SleightOfHand");
                 }
             }
         }
@@ -1030,7 +1048,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + DexterityModifier;
+                return (SleightOfHandEnabled ? ProficiencyBonus : 0) + DexterityModifier;
             }
         }
 
@@ -1046,6 +1064,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.StealthEnabled = value;
                     OnPropertyChanged("StealthEnabled");
+                    OnPropertyChanged("Stealth");
                 }
             }
         }
@@ -1054,7 +1073,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + DexterityModifier;
+                return (StealthEnabled ? ProficiencyBonus : 0) + DexterityModifier;
             }
         }
 
@@ -1070,6 +1089,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.SurvivalEnabled = value;
                     OnPropertyChanged("SurvivalEnabled");
+                    OnPropertyChanged("Survival");
                 }
             }
         }
@@ -1078,7 +1098,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return ProficiencyBonus + WisdomModifier;
+                return (SurvivalEnabled ? ProficiencyBonus : 0) + WisdomModifier;
             }
         }
 
@@ -1378,7 +1398,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return 10 + WisdomModifier;
+                return 10 + Perception;
             }
         }
 
@@ -1402,15 +1422,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                return model.Initiative;
-            }
-            set
-            {
-                if (model.Initiative != value)
-                {
-                    model.Initiative = value;
-                    OnPropertyChanged("Initiative");
-                }
+                return DexterityModifier;
             }
         }
 

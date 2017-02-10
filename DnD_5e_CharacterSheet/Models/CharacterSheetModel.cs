@@ -77,7 +77,6 @@ namespace DnD_5e_CharacterSheet.Models
 
         public int ProficiencyBonus = 2;
         public int ArmorClass;
-        public int Initiative;
         public int Speed;
 
         #endregion Character Sheet
