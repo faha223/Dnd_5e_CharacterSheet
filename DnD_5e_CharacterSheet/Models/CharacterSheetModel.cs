@@ -79,6 +79,17 @@ namespace DnD_5e_CharacterSheet.Models
         public int ArmorClass;
         public int Speed;
 
+        public string Weapon1Name;
+        public string Weapon1AtkBonus;
+        public string Weapon1DamageType;
+        public string Weapon2Name;
+        public string Weapon2AtkBonus;
+        public string Weapon2DamageType;
+        public string Weapon3Name;
+        public string Weapon3AtkBonus;
+        public string Weapon3DamageType;
+        public string WeaponNotes;
+
         #endregion Character Sheet
 
         #region Background Info

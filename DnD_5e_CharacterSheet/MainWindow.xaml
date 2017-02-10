@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DnD_5e_CharacterSheet"
         xmlns:sys="clr-namespace:System;assembly=System"
         mc:Ignorable="d"
-        Title="Character Sheet" MinHeight="1000" Height="1000" MinWidth="740" Width="740">
+        Title="Character Sheet" MinHeight="1020" Height="1020" MinWidth="740" Width="740">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Style TargetType="{x:Type Button}" x:Key="ImageButton">
@@ -15,7 +15,19 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu Margin="0,0,0,5">
+            <MenuItem Header="File">
+                <MenuItem Header="Save" Command="{Binding SaveCommand}" />
+                <MenuItem Header="Load" Command="{Binding LoadCommand}" />
+                <Separator />
+                <MenuItem Header="Exit" Click="Exit_Click" />
+            </MenuItem>
+        </Menu>
+        <TabControl Grid.Row="1">
             <TabItem Header="Character Sheet">
                 <Grid>
                     <ContentPresenter Height="941" Width="720" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{StaticResource CharacterSheetBackground}" />
@@ -118,15 +130,15 @@
                             <Style TargetType="ComboBox">
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
-                                <Setter Property="Height" Value="18" />
+                                <Setter Property="Template" Value="{StaticResource ComboBoxControlTemplate}" />
                             </Style>
                         </Grid.Resources>
                         <TextBox Text="{Binding CharacterName}" FontSize="19" Width="215" Margin="42,68,0,0" />
                         <TextBox Text="{Binding ClassAndLevel}" Width="130" Margin="315,55,0,0" />
                         <TextBox Text="{Binding Background}" Width="130" Margin="450,55,0,0" />
                         <TextBox Text="{Binding PlayerName}" Width="91" Margin="585,55,0,0" />
-                        <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="315,86,0,0"/>
-                        <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="450,86,0,0" />
+                        <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="315,84,0,0"/>
+                        <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="450,84,0,0" />
                         <TextBox Text="{Binding ExperiencePoints}" TextAlignment="Center" Width="91" Margin="585,86,0,0" />
                         <Grid>
                             <Grid.Resources>
@@ -169,8 +181,7 @@
                             <TextBox Text="{Binding HitPointMaximum}" Width="109" Margin="341,233,0,0" FontSize="8" />
                             <TextBox Text="{Binding CurrentHitPoints}" Width="100" Margin="308,258,0,0" />
                             <TextBox Text="{Binding TemporaryHitPoints}" Width="100" Margin="308,320,0,0" />
-                            <TextBox Text="{Binding TotalHitDice}" FontSize="8" Width="58" Margin="288,379,0,0" />
-                            <TextBox Text="{Binding HitDice}" Width="50" Margin="282,395,0,0" />
+                            <TextBox Text="{Binding HitDice}" FontSize="8" Width="58" Margin="288,379,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveSuccess1}" Margin="405,382,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveSuccess2}" Margin="421,382,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveSuccess3}" Margin="437,382,0,0" />
@@ -225,11 +236,20 @@
                             <TextBlock Text="{Binding WisdomSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,308,0,0" />
                             <CheckBox IsChecked="{Binding CharismaSavingThrowEnabled}" Margin="108,324,0,0" />
                             <TextBlock Text="{Binding CharismaSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,324,0,0" />
-                            <TextBox Text="{Binding CopperPieces}" Margin="270,721,0,0" FontSize="12" Width="30" />
-                            <TextBox Text="{Binding SilverPieces}" Margin="270,752,0,0" FontSize="12" Width="30" />
-                            <TextBox Text="{Binding ElectrumPieces}" Margin="270,783,0,0" FontSize="12" Width="30" />
-                            <TextBox Text="{Binding GoldPieces}" Margin="270,815,0,0" FontSize="12" Width="30" />
-                            <TextBox Text="{Binding PlatinumPieces}" Margin="270,846,0,0" FontSize="12" Width="30" />
+                            <TextBox Text="{Binding Weapon1Name}" Margin="260,469,0,0" Width="76" />
+                            <TextBox Text="{Binding Weapon1AtkBonus}" Margin="342,469,0,0" Width="37" />
+                            <TextBox Text="{Binding Weapon1DamageType}" Margin="385,469,0,0" Width="75" />
+                            <TextBox Text="{Binding Weapon2Name}" Margin="260,494,0,0" Width="76" />
+                            <TextBox Text="{Binding Weapon2AtkBonus}" Margin="342,494,0,0" Width="37" />
+                            <TextBox Text="{Binding Weapon2DamageType}" Margin="385,494,0,0" Width="75" />
+                            <TextBox Text="{Binding Weapon3Name}" Margin="260,519,0,0" Width="76" />
+                            <TextBox Text="{Binding Weapon3AtkBonus}" Margin="342,519,0,0" Width="37" />
+                            <TextBox Text="{Binding Weapon3DamageType}" Margin="385,519,0,0" Width="75" />
+                            <TextBox Text="{Binding CopperPieces}" Margin="270,721,0,0" Width="30" />
+                            <TextBox Text="{Binding SilverPieces}" Margin="270,752,0,0" Width="30" />
+                            <TextBox Text="{Binding ElectrumPieces}" Margin="270,783,0,0" Width="30" />
+                            <TextBox Text="{Binding GoldPieces}" Margin="270,815,0,0" Width="30" />
+                            <TextBox Text="{Binding PlatinumPieces}" Margin="270,846,0,0" Width="30" />
                             <Grid>
                                 <Grid.Resources>
                                     <Style TargetType="TextBox">
@@ -244,6 +264,7 @@
                                     </Style>
                                 </Grid.Resources>
                                 <TextBox Text="{Binding OtherProficienciesAndLanguages}" Width="204" Height="160" Margin="29,750,0,0" MaxLines="12" />
+                                <TextBox Text="{Binding WeaponNotes}" Width="209" Height="145" Margin="255,537,0,0" MaxLines="12" />
                                 <TextBox Text="{Binding Equipment}" Width="146" Height="200" Margin="315,709,0,0" />
                                 <TextBox Text="{Binding PersonalityTraits}" FontSize="11" Width="184" Height="60" Margin="496,160,0,0" />
                                 <TextBox Text="{Binding Ideals}" FontSize="11" Width="184" Height="45" Margin="496,245,0,0" />

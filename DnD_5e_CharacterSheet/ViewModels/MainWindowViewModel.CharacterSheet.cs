@@ -1,5 +1,10 @@
 ﻿using DnD_5e_CharacterSheet.Models;
+using DnD_5e_CharacterSheet.MVVM;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows.Input;
 
 namespace DnD_5e_CharacterSheet.ViewModels
 {
@@ -363,22 +368,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.TemporaryHitPoints = value;
                     OnPropertyChanged("TemporaryHitPoints");
-                }
-            }
-        }
-
-        public int TotalHitDice
-        {
-            get
-            {
-                return model.TotalHitDice;
-            }
-            set
-            {
-                if (model.TotalHitDice != value)
-                {
-                    model.TotalHitDice = value;
-                    OnPropertyChanged("TotalHitDice");
                 }
             }
         }
@@ -1370,6 +1359,164 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #endregion Currency
 
+        #region Weapons
+
+        public string Weapon1Name
+        {
+            get
+            {
+                return model.Weapon1Name;
+            }
+            set
+            {
+                if (model.Weapon1Name != value)
+                {
+                    model.Weapon1Name = value;
+                    OnPropertyChanged("Weapon1Name");
+                }
+            }
+        }
+        public string Weapon1AtkBonus
+        {
+            get
+            {
+                return model.Weapon1AtkBonus;
+            }
+            set
+            {
+                if (model.Weapon1AtkBonus != value)
+                {
+                    model.Weapon1AtkBonus = value;
+                    OnPropertyChanged("Weapon1AtkBonus");
+                }
+            }
+        }
+        public string Weapon1DamageType
+        {
+            get
+            {
+                return model.Weapon1DamageType;
+            }
+            set
+            {
+                if (model.Weapon1DamageType != value)
+                {
+                    model.Weapon1DamageType = value;
+                    OnPropertyChanged("Weapon1DamageType");
+                }
+            }
+        }
+
+        public string Weapon2Name
+        {
+            get
+            {
+                return model.Weapon2Name;
+            }
+            set
+            {
+                if (model.Weapon2Name != value)
+                {
+                    model.Weapon2Name = value;
+                    OnPropertyChanged("Weapon2Name");
+                }
+            }
+        }
+        public string Weapon2AtkBonus
+        {
+            get
+            {
+                return model.Weapon2AtkBonus;
+            }
+            set
+            {
+                if (model.Weapon2AtkBonus != value)
+                {
+                    model.Weapon2AtkBonus = value;
+                    OnPropertyChanged("Weapon2AtkBonus");
+                }
+            }
+        }
+        public string Weapon2DamageType
+        {
+            get
+            {
+                return model.Weapon2DamageType;
+            }
+            set
+            {
+                if (model.Weapon2DamageType != value)
+                {
+                    model.Weapon2DamageType = value;
+                    OnPropertyChanged("Weapon2DamageType");
+                }
+            }
+        }
+
+        public string Weapon3Name
+        {
+            get
+            {
+                return model.Weapon3Name;
+            }
+            set
+            {
+                if (model.Weapon3Name != value)
+                {
+                    model.Weapon3Name = value;
+                    OnPropertyChanged("Weapon3Name");
+                }
+            }
+        }
+        public string Weapon3AtkBonus
+        {
+            get
+            {
+                return model.Weapon3AtkBonus;
+            }
+            set
+            {
+                if (model.Weapon3AtkBonus != value)
+                {
+                    model.Weapon3AtkBonus = value;
+                    OnPropertyChanged("Weapon3AtkBonus");
+                }
+            }
+        }
+        public string Weapon3DamageType
+        {
+            get
+            {
+                return model.Weapon3DamageType;
+            }
+            set
+            {
+                if (model.Weapon3DamageType != value)
+                {
+                    model.Weapon3DamageType = value;
+                    OnPropertyChanged("Weapon3DamageType");
+                }
+            }
+        }
+
+        public string WeaponNotes
+        {
+            get
+            {
+                return model.WeaponNotes;
+            }
+            set
+            {
+                if (model.WeaponNotes != value)
+                {
+                    model.WeaponNotes = value;
+                    OnPropertyChanged("WeaponNotes");
+                }
+            }
+        }
+
+        #endregion Weapons
+
         public int ProficiencyBonus
         {
             get
@@ -1544,5 +1691,44 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
             return 0;
         }
+
+        #region Save Command
+
+        internal void Save()
+        {
+            var dlg = new SaveFileDialog();
+            dlg.Filter = "CharacterSheet (*.json)|*.json";
+            var result = dlg.ShowDialog();
+            if(result.HasValue && result.Value)
+            {
+                var json  = JsonConvert.SerializeObject(model);
+                File.WriteAllText(dlg.FileName, json);
+            }
+        }
+
+        public ICommand SaveCommand { get { return new ParameterlessCommandRouter(Save, null); } }
+
+        #endregion Save Command
+
+        #region Load Command
+
+        internal void Load()
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "CharacterSheet (*.json)|*.json";
+            var result = dlg.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                var json = File.ReadAllText(dlg.FileName);
+                model = JsonConvert.DeserializeObject<CharacterSheetModel>(json);
+                OnPropertyChanged(null);
+            }
+        }
+
+        public ICommand LoadCommand { get { return new ParameterlessCommandRouter(Load, null); } }
+
+        #endregion Load Command
+
+
     }
 }
