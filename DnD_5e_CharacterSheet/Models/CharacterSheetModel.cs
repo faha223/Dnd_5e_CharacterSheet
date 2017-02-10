@@ -105,6 +105,9 @@ namespace DnD_5e_CharacterSheet.Models
 
         public byte[] CharacterPortrait;
 
+        public string OrganizationName;
+        public byte[] OrganizationSymbol;
+
         public string CharacterBackstory;
         public string AlliesAndOrganizations1;
         public string AlliesAndOrganizations2;

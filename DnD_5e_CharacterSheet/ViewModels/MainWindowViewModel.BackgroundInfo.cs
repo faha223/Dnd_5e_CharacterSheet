@@ -124,17 +124,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             get
             {
-                if (model.CharacterPortrait != null)
-                {
-                    var img = new BitmapImage();
-                    img.BeginInit();
-                    img.StreamSource = new MemoryStream(model.CharacterPortrait);
-                    img.CacheOption = BitmapCacheOption.OnLoad;
-                    img.EndInit();
-                    img.Freeze();
-                    return img;
-                }
-                return null;
+                return GetBitmapImage(CharacterPortrait);
             }
         }
 
@@ -167,6 +157,44 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     model.AlliesAndOrganizations2 = value;
                     OnPropertyChanged("AlliesAndOrganizations2");
                 }
+            }
+        }
+
+        public string OrganizationName
+        {
+            get
+            {
+                return model.OrganizationName;
+            }
+            set
+            {
+                if (model.OrganizationName != value)
+                {
+                    model.OrganizationName = value;
+                    OnPropertyChanged("OrganizationName");
+                }
+            }
+        }
+
+        private byte[] OrganizationSymbol
+        {
+            get
+            {
+                return model.OrganizationSymbol;
+            }
+            set
+            {
+                model.OrganizationSymbol = value;
+                OnPropertyChanged("OrganizationSymbol");
+                OnPropertyChanged("SymbolSource");
+            }
+        }
+
+        public ImageSource SymbolSource
+        {
+            get
+            {
+                return GetBitmapImage(OrganizationSymbol);
             }
         }
 
@@ -266,5 +294,41 @@ namespace DnD_5e_CharacterSheet.ViewModels
         public ICommand LoadPortraitCommand { get { return new ParameterlessCommandRouter(LoadPortrait, null); } }
 
         #endregion Load Portrait Command
+
+        #region Load Symbol Command
+
+        internal void LoadSymbol()
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "All Images (*.bmp, *.png, *.jpg, *.tiff)|*.bmp;*.jpg;*.png;*.tiff";
+            var result = dlg.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                OrganizationSymbol = File.ReadAllBytes(dlg.FileName);
+            }
+        }
+
+        public ICommand LoadSymbolCommand { get { return new ParameterlessCommandRouter(LoadSymbol, null); } }
+
+        #endregion Load Symbol Command
+
+        #region Helpers
+
+        ImageSource GetBitmapImage(byte[] data)
+        {
+            if (data != null)
+            {
+                var img = new BitmapImage();
+                img.BeginInit();
+                img.StreamSource = new MemoryStream(data);
+                img.CacheOption = BitmapCacheOption.OnLoad;
+                img.EndInit();
+                img.Freeze();
+                return img;
+            }
+            return null;
+        }
+
+        #endregion Helpers
     }
 }

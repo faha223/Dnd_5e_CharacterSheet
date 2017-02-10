@@ -10,10 +10,11 @@
         Title="Character Sheet" MinHeight="1020" Height="1020" MinWidth="740" Width="740">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-        
         <Style TargetType="{x:Type Button}" x:Key="ImageButton">
             <Setter Property="Background" Value="#00ffffff" />
             <Setter Property="BorderBrush" Value="#00ffffff" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
         <Style TargetType="{x:Type Image}">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
@@ -327,8 +328,12 @@
                         <TextBox Text="{Binding Eyes}" Width="130" Margin="315,84,0,0"/>
                         <TextBox Text="{Binding Skin}" Width="130" Margin="450,84,0,0" />
                         <TextBox Text="{Binding Hair}" Width="91" Margin="585,84,0,0" />
-                        <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding LoadPortraitCommand}">
+                        <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" Command="{Binding LoadPortraitCommand}">
                             <Image Source="{Binding PortraitSource}" />
+                        </Button>
+                        <TextBox Text="{Binding OrganizationName}" Margin="500,176,0,0" Width="168" TextAlignment="Center" />
+                        <Button Style="{StaticResource ImageButton}" Height="136" Width="168" Margin="500,196,0,0" Command="{Binding LoadSymbolCommand}">
+                            <Image Source="{Binding SymbolSource}" />
                         </Button>
                         <Grid>
                             <Grid.Resources>
