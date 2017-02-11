@@ -62,6 +62,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControls\AbilityScore.xaml.cs">
+      <DependentUpon>AbilityScore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\TextOnPathElement.cs" />
     <Compile Include="DnD_Constants.cs" />
     <Compile Include="Models\CharacterSheetModel.cs" />
@@ -71,6 +74,10 @@
     <Compile Include="ViewModels\MainWindowViewModel.CharacterSheet.cs" />
     <Compile Include="MVVM\ParameterlessCommandRouter.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Page Include="CustomControls\AbilityScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

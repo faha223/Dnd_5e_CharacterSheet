@@ -89,18 +89,12 @@
                                     <Setter Property="VerticalAlignment" Value="Top" />
                                 </Style>
                             </Grid.Resources>
-                            <TextBlock Text="{Binding StrengthModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,183,0,0" />
-                            <TextBox Text="{Binding Strength}" Width="20" Margin="48,220,0,0" />
-                            <TextBlock Text="{Binding DexterityModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,270,0,0" />
-                            <TextBox Text="{Binding Dexterity}" Width="20" Margin="48,307,0,0" />
-                            <TextBlock Text="{Binding ConstitutionModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,356,0,0" />
-                            <TextBox Text="{Binding Constitution}" Width="20" Margin="48,393,0,0" />
-                            <TextBlock Text="{Binding IntelligenceModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,443,0,0" />
-                            <TextBox Text="{Binding Intelligence}" Width="20" Margin="48,480,0,0" />
-                            <TextBlock Text="{Binding WisdomModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,529,0,0" />
-                            <TextBox Text="{Binding Wisdom}" Width="20" Margin="48,566,0,0" />
-                            <TextBlock Text="{Binding CharismaModifier, StringFormat='{}{0:+0;-#}'}" Width="40" Margin="39,616,0,0" />
-                            <TextBox Text="{Binding Charisma}" Width="20" Margin="48,653,0,0" />
+                            <controls:AbilityScore Score="{Binding Strength, Mode=TwoWay}" Ability="STRENGTH" Margin="25,163,0,0" />
+                            <controls:AbilityScore Score="{Binding Dexterity, Mode=TwoWay}" Ability="DEXTERITY" Margin="25,250,0,0" />
+                            <controls:AbilityScore Score="{Binding Constitution, Mode=TwoWay}" Ability="CONSTITUTION" Margin="25,336,0,0" />
+                            <controls:AbilityScore Score="{Binding Intelligence, Mode=TwoWay}" Ability="INTELLIGENCE" Margin="25,423,0,0" />
+                            <controls:AbilityScore Score="{Binding Wisdom, Mode=TwoWay}" Ability="WISDOM" Margin="25,509,0,0" />
+                            <controls:AbilityScore Score="{Binding Charisma, Mode=TwoWay}" Ability="CHARISMA" Margin="25,596,0,0" />
                             <TextBox Text="{Binding ProficiencyBonus, StringFormat='{}{0:+0;-#}'}" Width="28" Margin="107,200,0,0" />
                             <TextBlock Text="{Binding PassiveWisdom}" Width="20" Margin="31,708,0,0" />
                             <TextBox Text="{Binding ArmorClass}" Width="30" Margin="274,168,0,0" />
