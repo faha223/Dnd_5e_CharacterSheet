@@ -65,8 +65,8 @@
                         <TextBox Text="{Binding ClassAndLevel}" Width="130" Margin="315,55,0,0" />
                         <TextBox Text="{Binding Background}" Width="130" Margin="450,55,0,0" />
                         <TextBox Text="{Binding PlayerName}" Width="91" Margin="585,55,0,0" />
-                        <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="315,84,0,0"/>
-                        <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="450,84,0,0" />
+                        <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="312,84,0,0"/>
+                        <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="447,84,0,0" />
                         <TextBox Text="{Binding ExperiencePoints}" TextAlignment="Center" Width="91" Margin="585,86,0,0" />
                         <Grid>
                             <Grid.Resources>
@@ -281,11 +281,11 @@
                             <Style TargetType="ComboBox">
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
-                                <Setter Property="Height" Value="18" />
+                                <Setter Property="Template" Value="{StaticResource ComboBoxControlTemplate}" />
                             </Style>
                         </Grid.Resources>
                         <TextBox Text="{Binding SpellcastingClass}" TextAlignment="Left" FontSize="19" Width="215" Margin="42,70,0,0" />
-                        <TextBox Text="{Binding SpellcastingAbility}" Width="70" Margin="336,63,0,0" />
+                        <ComboBox SelectedItem="{Binding SpellcastingAbility}" ItemsSource="{Binding Abilities}" Width="85" Margin="329,63,0,0" />
                         <TextBlock Text="{Binding SpellSaveDC}" Width="70" Margin="458,61,0,0" />
                         <TextBlock Text="{Binding SpellAttackBonus}" Width="70" Margin="584,61,0,0" />
                     </Grid>

@@ -1,7 +1,6 @@
 ﻿using DnD_5e_CharacterSheet.Models;
 using DnD_5e_CharacterSheet.MVVM;
 using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -13,8 +12,13 @@ namespace DnD_5e_CharacterSheet.ViewModels
     {
         #region App Logic
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(string filename = null)
         {
+            if(filename != null)
+            {
+                if (File.Exists(filename))
+                    model = CharacterSheetModel.Deserialize(File.ReadAllText(filename));
+            }
             PropertyChanged += MainWindowViewModel_PropertyChanged;
         }
 
@@ -1335,12 +1339,12 @@ namespace DnD_5e_CharacterSheet.ViewModels
         {
             "Dwarf",
             "Elf",
+            "Halfling",
             "Human",
             "Dragonborn",
             "Gnome",
             "Half-Elf",
             "Half-Orc",
-            "Halfling",
             "Tiefling"
         });
 
@@ -1371,6 +1375,16 @@ namespace DnD_5e_CharacterSheet.ViewModels
             "Lawful Evil",
             "Neutral Evil",
             "Chaotic Evil"
+        });
+
+        public List<string> Abilities { get; set; } = new List<string>(new string[]
+        {
+            "Strength",
+            "Dexterity",
+            "Constitution",
+            "Intelligence",
+            "Wisdom",
+            "Charisma"
         });
 
         #endregion Tables

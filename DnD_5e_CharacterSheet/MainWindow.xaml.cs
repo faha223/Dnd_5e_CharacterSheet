@@ -14,6 +14,9 @@ namespace DnD_5e_CharacterSheet
         public MainWindow()
         {
             InitializeComponent();
+            var args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+                vm = new MainWindowViewModel(args[1]);
             vm.CloseRequested += VM_CloseRequested;
             Closing += MainWindow_Closing;
             DataContext = vm;
