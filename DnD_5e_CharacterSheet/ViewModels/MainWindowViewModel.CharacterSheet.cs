@@ -1,15 +1,130 @@
 ﻿using DnD_5e_CharacterSheet.Models;
 using DnD_5e_CharacterSheet.MVVM;
 using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DnD_5e_CharacterSheet.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+        #region App Logic
+
+        public MainWindowViewModel()
+        {
+            PropertyChanged += MainWindowViewModel_PropertyChanged;
+        }
+
+        private void MainWindowViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            UnsavedChanges = true;
+        }
+
+        public delegate void ParameterlessEventHandler();
+        public event ParameterlessEventHandler CloseRequested;
+
         private CharacterSheetModel model = CharacterSheetModel.New();
+        private bool UnsavedChanges = false;
+        public string LoadedFile { get; private set; }
+
+        public bool EnsureSavedChanges()
+        {
+            if (UnsavedChanges)
+            {
+                var result = MessageBox.Show("Do you want to save your changes?", "Unsaved Changes", MessageBoxButton.YesNoCancel);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        Save(LoadedFile);
+                        break;
+                    case MessageBoxResult.No:
+                        return true;
+                }
+            }
+            return !UnsavedChanges;
+        }
+
+        #region New Command
+
+        internal void New()
+        {
+            if (EnsureSavedChanges())
+            {
+                model = CharacterSheetModel.New();
+                OnPropertyChanged(null);
+                UnsavedChanges = false;
+            }
+        }
+
+        public ICommand NewCommand { get { return new ParameterlessCommandRouter(New, null); } }
+
+        #endregion New Command
+
+        #region Save Command
+
+        public void Save(string filename)
+        {
+            if (filename == null)
+            {
+                var dlg = new SaveFileDialog();
+                dlg.Filter = "CharacterSheet (*.json)|*.json";
+                var result = dlg.ShowDialog();
+                if (result.HasValue && result.Value)
+                {
+                    filename = dlg.FileName;
+                }
+            }
+            if (filename != null)
+            {
+                var json = model.Serialize();
+                File.WriteAllText(filename, json);
+                UnsavedChanges = false;
+            }
+        }
+
+        public ICommand SaveCommand { get { return new ParameteredCommandRouter<string>(Save, null); } }
+
+        #endregion Save Command
+
+        #region Load Command
+
+        internal void Load()
+        {
+            if (EnsureSavedChanges())
+            {
+                var dlg = new OpenFileDialog();
+                dlg.Filter = "CharacterSheet (*.json)|*.json";
+                var result = dlg.ShowDialog();
+                if (result.HasValue && result.Value)
+                {
+                    var json = File.ReadAllText(dlg.FileName);
+                    model = CharacterSheetModel.Deserialize(json);
+                    LoadedFile = dlg.FileName;
+                    OnPropertyChanged(null);
+                    UnsavedChanges = false;
+                }
+            }
+        }
+
+        public ICommand LoadCommand { get { return new ParameterlessCommandRouter(Load, null); } }
+
+        #endregion Load Command
+
+        #region Close Command
+
+        internal void Close()
+        {
+            CloseRequested?.Invoke();
+        }
+
+        public ICommand CloseCommand { get { return new ParameterlessCommandRouter(Close, null); } }
+
+        #endregion Close Command
+
+        #endregion App Logic
 
         #region Header Region
 
@@ -1522,6 +1637,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #endregion Weapons
 
+        #region Miscellaneous
+
         public int ProficiencyBonus
         {
             get
@@ -1593,6 +1710,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 }
             }
         }
+
+        #endregion Miscellaneous
+
+        #region Helpers
 
         private int validCurrentHitPoints(int value)
         {
@@ -1697,43 +1818,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
             return 0;
         }
 
-        #region Save Command
-
-        internal void Save()
-        {
-            var dlg = new SaveFileDialog();
-            dlg.Filter = "CharacterSheet (*.json)|*.json";
-            var result = dlg.ShowDialog();
-            if(result.HasValue && result.Value)
-            {
-                var json = model.Serialize();
-                File.WriteAllText(dlg.FileName, json);
-            }
-        }
-
-        public ICommand SaveCommand { get { return new ParameterlessCommandRouter(Save, null); } }
-
-        #endregion Save Command
-
-        #region Load Command
-
-        internal void Load()
-        {
-            var dlg = new OpenFileDialog();
-            dlg.Filter = "CharacterSheet (*.json)|*.json";
-            var result = dlg.ShowDialog();
-            if (result.HasValue && result.Value)
-            {
-                var json = File.ReadAllText(dlg.FileName);
-                model = CharacterSheetModel.Deserialize(json);
-                OnPropertyChanged(null);
-            }
-        }
-
-        public ICommand LoadCommand { get { return new ParameterlessCommandRouter(Load, null); } }
-
-        #endregion Load Command
-
-
+        #endregion Helpers
     }
 }

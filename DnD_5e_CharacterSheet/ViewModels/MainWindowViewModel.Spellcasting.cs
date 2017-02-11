@@ -4,6 +4,8 @@ namespace DnD_5e_CharacterSheet.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+        #region Header Block
+
         public string SpellcastingClass
         {
             get
@@ -54,6 +56,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Header Block
+
+        #region Cantrips
+
         public List<string> Cantrips
         {
             get
@@ -69,6 +75,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 }
             }
         }
+
+        #endregion Cantrips
+
+        #region Level 1 Spells
 
         public int Level1SlotsTotal
         {
@@ -118,6 +128,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Level 1 Spells
+
+        #region Level 2 Spells
+
         public int Level2SlotsTotal
         {
             get
@@ -165,6 +179,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 }
             }
         }
+
+        #endregion Level 2 Spells
+
+        #region Level 3 Spells
 
         public int Level3SlotsTotal
         {
@@ -214,6 +232,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Level 3 Spells
+
+        #region Level 4 Spells
+
         public int Level4SlotsTotal
         {
             get
@@ -261,6 +283,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 }
             }
         }
+
+        #endregion Level 4 Spells
+
+        #region Level 5 Spells
 
         public int Level5SlotsTotal
         {
@@ -310,6 +336,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Level 5 Spells
+
+        #region Level 6 Spells
+
         public int Level6SlotsTotal
         {
             get
@@ -357,6 +387,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 }
             }
         }
+
+        #endregion Level 6 Spells
+
+        #region Level 7 Spells
 
         public int Level7SlotsTotal
         {
@@ -406,6 +440,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Level 7 Spells
+
+        #region Level 8 Spells
+
         public int Level8SlotsTotal
         {
             get
@@ -454,6 +492,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Level 8 Spells
+
+        #region Level 9 Spells
+
         public int Level9SlotsTotal
         {
             get
@@ -501,5 +543,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 }
             }
         }
+
+        #endregion Level 9 Spells
     }
 }

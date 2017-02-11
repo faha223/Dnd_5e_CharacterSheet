@@ -1,12 +1,17 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DnD_5e_CharacterSheet.Resources"
-                    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+                    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+                    xmlns:controls="clr-namespace:DnD_5e_CharacterSheet.CustomControls">
+    <PathGeometry x:Key="CurvedTextPath">
+        <PathFigure StartPoint="-5, 10" IsClosed="False">
+            <ArcSegment IsLargeArc="True" 
+                            Point="5.5, 10" 
+                            Size="5.25, 6" 
+                            SweepDirection="Clockwise" />
+        </PathFigure>
+    </PathGeometry>
     <Viewbox x:Key="CharacterSheetBackground" Stretch="Uniform">
         <Canvas Width="210" Height="266.1">
-            <Canvas.RenderTransform>
-                <TranslateTransform X="0" Y="0"/>
-            </Canvas.RenderTransform>
             <Canvas.Resources>
                 <PathGeometry x:Key="clipPath4798" Figures="m 1115.6 7480.05 h 1440 v 154.84 h -1440 z" FillRule="NonZero"/>
             </Canvas.Resources>
@@ -1831,13 +1836,103 @@
                     </Canvas>
                 </Canvas>
             </Canvas>
+            <Grid>
+                <Grid.RenderTransform>
+                    <MatrixTransform Matrix="0.29155 0 0 0.29155 0.06 -4.055" />
+                </Grid.RenderTransform>
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="7" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </Grid.Resources>
+                <TextBlock Text="CHARACTER NAME" Margin="75,104,0,0" />
+                <TextBlock Text="CLASS &amp; LEVEL" Margin="316,72,0,0" />
+                <TextBlock Text="BACKGROUND" Margin="454,72,0,0" />
+                <TextBlock Text="PLAYER NAME" Margin="585,72,0,0" />
+                <TextBlock Text="RACE" Margin="316,103,0,0" />
+                <TextBlock Text="ALIGNMENT" Margin="454,103,0,0" />
+                <TextBlock Text="EXPERIENCE POINTS" Margin="585,103,0,0" />
+                <TextBlock Text="INSPIRIATION" Margin="162,159,0,0" />
+                <TextBlock Text="PROFICIENCY BONUS" Margin="151,205,0,0" />
+                <StackPanel HorizontalAlignment="Left" Margin="276,194,0,0">
+                    <TextBlock Text="ARMOR" TextAlignment="Center" />
+                    <TextBlock Text="CLASS" TextAlignment="Center" />
+                </StackPanel>
+                <TextBlock Text="INITIATIVE" Margin="340,205,0,0" />
+                <TextBlock Text="SPEED" Margin="417,205,0,0" />
+                <TextBlock Text="STRENGTH" Margin="40,167,0,0" />
+                <TextBlock Text="DEXTERITY" Margin="40,254,0,0" />
+                <TextBlock Text="CONSTITUTION" Margin="33,341,0,0" />
+                <TextBlock Text="INTELLIGENCE" Margin="35,428,0,0" />
+                <TextBlock Text="WISDOM" Margin="43,514,0,0" />
+                <TextBlock Text="CHARISMA" Margin="40,600,0,0" />
+                <TextBlock Text="SAVING THROWS" Margin="143,347,0,0" />
+                <TextBlock Text="CURRENT HIT POINTS" Margin="321,292,0,0" />
+                <TextBlock Text="TEMPORARY HIT POINTS" Margin="317,355,0,0" />
+                <TextBlock Text="SKILLS" Margin="158,684,0,0" />
+                <TextBlock Text="ATTACKS &amp; SPELLCASTING" Margin="315,684,0,0" />
+                <TextBlock Text="OTHER PROFICIENCIES &amp; LANGUAGES" Margin="66,912,0,0" />
+                <TextBlock Text="EQUIPMENT" Margin="340,912,0,0" />
+                <TextBlock Text="FEATURES &amp; TRAITS" Margin="555,912,0,0" />
+            </Grid>
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="7" />
+                        <Setter Property="FontWeight" Value="Normal" />
+                    </Style>
+                </Grid.Resources>
+                <TextBlock Text="Strength" Margin="146,245,0,0" />
+                <TextBlock Text="Dexterity" Margin="146,262,0,0" />
+                <TextBlock Text="Constitution" Margin="146,278,0,0" />
+                <TextBlock Text="Intelligence" Margin="146,294,0,0" />
+                <TextBlock Text="Wisdom" Margin="146,310,0,0" />
+                <TextBlock Text="Charisma" Margin="146,327,0,0" />
+                <TextBlock Text="Acrobatics (Dex)" Margin="146,385,0,0" />
+                <TextBlock Text="Animal Handling (Wis)" Margin="146,402,0,0" />
+                <TextBlock Text="Arcana (Int)" Margin="146,418,0,0" />
+                <TextBlock Text="Athletics (Str)" Margin="146,434,0,0" />
+                <TextBlock Text="Deception (Cha)" Margin="146,450,0,0" />
+                <TextBlock Text="History (Int)" Margin="146,467,0,0" />
+                <TextBlock Text="Insight (Wis)" Margin="146,483,0,0" />
+                <TextBlock Text="Intimidation (Cha)" Margin="146,499,0,0" />
+                <TextBlock Text="Investigation (Int)" Margin="146,515,0,0" />
+                <TextBlock Text="Medicine (Wis)" Margin="146,532,0,0" />
+                <TextBlock Text="Nature (Int)" Margin="146,548,0,0" />
+                <TextBlock Text="Perception (Wis)" Margin="146,565,0,0" />
+                <TextBlock Text="Performance (Cha)" Margin="146,581,0,0" />
+                <TextBlock Text="Persuasion (Cha)" Margin="146,597,0,0" />
+                <TextBlock Text="Religion (Int)" Margin="146,613,0,0" />
+                <TextBlock Text="Sleight of Hand (Dex)" Margin="146,630,0,0" />
+                <TextBlock Text="Stealth (Dex)" Margin="146,646,0,0" />
+                <TextBlock Text="Survival (Wis)" Margin="146,662,0,0" />
+                <TextBlock Text="PASSIVE WISDOM (PERCEPTION)" Margin="90,715,0,0" />
+                <TextBlock Text="Hit Point Maximum" Margin="272,236,0,0" />
+                <TextBlock Text="Total" Margin="268,382,0,0" />
+                <TextBlock Text="HIT DICE" Margin="294,424,0,0" />
+                <TextBlock Text="SUCCESSES" Margin="370,385,0,0" />
+                <TextBlock Text="FAILURES" Margin="376,403,0,0" />
+                <TextBlock Text="DEATH SAVES" Margin="388,424,0,0" />
+                <TextBlock Text="NAME" Margin="259,458,0,0" />
+                <TextBlock Text="ATK BONUS" Margin="342,458,0,0" />
+                <TextBlock Text="DAMAGE/TYPE" Margin="385,458,0,0" />
+                <TextBlock Text="PERSONALITY TRAITS" Margin="554,223,0,0" />
+                <TextBlock Text="IDEALS" Margin="575,291,0,0" />
+                <TextBlock Text="BONDS" Margin="575,358,0,0" />
+                <TextBlock Text="FLAWS" Margin="576,424,0,0" />
+                <TextBlock Text="CP" Margin="249,724,0,0" />
+                <TextBlock Text="SP" Margin="249,756,0,0" />
+                <TextBlock Text="EP" Margin="249,787,0,0" />
+                <TextBlock Text="GP" Margin="249,819,0,0" />
+                <TextBlock Text="PP" Margin="249,850,0,0" />
+            </Grid>
+            </Grid>
         </Canvas>
     </Viewbox>
     <Viewbox x:Key="BackgroundInfoBackground" Stretch="Uniform">
         <Canvas Width="210" Height="266.1">
-            <Canvas.RenderTransform>
-                <TranslateTransform X="0" Y="0"/>
-            </Canvas.RenderTransform>
             <Canvas.Resources>
                 <PathGeometry x:Key="clipPath5792" Figures="m 1012.5 7398 h 508.488 v 234 H 1012.5 Z" FillRule="NonZero"/>
             </Canvas.Resources>
@@ -2767,13 +2862,37 @@
                     </Canvas>
                 </Canvas>
             </Canvas>
+            <Grid>
+                <Grid.RenderTransform>
+                    <MatrixTransform Matrix="0.29171 0 0 0.2917 -0.01 -4.087"/>
+                </Grid.RenderTransform>
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="7" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </Grid.Resources>
+                    <TextBlock Text="CHARACTER NAME" Margin="75,103,0,0" />
+                    <TextBlock Text="AGE" Margin="316,71,0,0" />
+                    <TextBlock Text="HEIGHT" Margin="454,71,0,0" />
+                    <TextBlock Text="WEIGHT" Margin="585,71,0,0" />
+                    <TextBlock Text="EYES" Margin="316,102,0,0" />
+                    <TextBlock Text="SKIN" Margin="454,102,0,0" />
+                    <TextBlock Text="HAIR" Margin="585,102,0,0" />
+                    <TextBlock Text="CHARACTER APPEARANCE" Margin="87,417,0,0" />
+                    <TextBlock Text="CHARACTER BACKSTORY" Margin="87,905,0,0" />
+                    <TextBlock Text="NAME" Margin="498,164,0,0" FontWeight="Normal" />
+                    <TextBlock Text="SYMBOL" Margin="572,347,0,0" Foreground="White" />
+                    <TextBlock Text="ALLIES &amp; ORGANIZATIONS" Margin="428,417,0,0" />
+                    <TextBlock Text="ADDITIONAL FEATURES &amp; TRAITS" Margin="417,693,0,0" />
+                    <TextBlock Text="TREASURE" Margin="455,905,0,0" />
+                </Grid>
+            </Grid>
         </Canvas>
     </Viewbox>
     <Viewbox x:Key="SpellcastingBackground" Stretch="Uniform">
         <Canvas Width="210" Height="266.1">
-            <Canvas.RenderTransform>
-                <TranslateTransform X="0" Y="0"/>
-            </Canvas.RenderTransform>
             <Canvas.Resources>
                 <PathGeometry x:Key="clipPath5792" Figures="m 1012.5 7398 h 508.488 v 234 H 1012.5 Z" FillRule="NonZero"/>
                 <PathGeometry x:Key="clipPath7161" Figures="m 1821.6 7477.2 h 508.488 v 234 H 1821.6 Z" FillRule="NonZero"/>
@@ -5377,6 +5496,81 @@
                             </Canvas>
                         </Canvas>
                     </Canvas>
+                    <Grid>
+                        <Grid.RenderTransform>
+                            <MatrixTransform Matrix="0.827 0 0 -0.8265 9.4 784.79706"/>
+                        </Grid.RenderTransform>
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="{x:Type controls:TextOnPathElement}">
+                                    <Setter Property="Foreground" Value="Black" />
+                                    <Setter Property="FontWeight" Value="Normal" />
+                                    <Setter Property="FontSize" Value="8" />
+                                    <Setter Property="ContentAlignment" Value="Stretch" />
+                                    <Setter Property="PathFigure" Value="{Binding Source={StaticResource CurvedTextPath}, Path=Figures[0]}" />
+                                </Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="7" />
+                                    <Setter Property="FontWeight" Value="Bold" />
+                                </Style>
+                                <Style TargetType="StackPanel">
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                </Style>
+                            </Grid.Resources>
+                            <StackPanel Margin="75,103,0,0">
+                                <TextBlock Text="SPELLCASTING"  />
+                                <TextBlock Text="CLASS"  />
+                            </StackPanel>
+                            <StackPanel Margin="347,95,0,0" HorizontalAlignment="Left">
+                                <TextBlock Text="SPELLCASTING"  />
+                                <TextBlock Text="ABILITY" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <TextBlock Text="SPELL SAVE DC" Margin="469,95,0,0" />
+                            <StackPanel Margin="595,95,0,0" HorizontalAlignment="Left">
+                                <TextBlock Text="SPELL ATTACK"  />
+                                <TextBlock Text="BONUS" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <controls:TextOnPathElement Text="PREPARED" Margin="31,408,0,0" />
+                            <Grid>
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="FontSize" Value="6" />
+                                    </Style>
+                                </Grid.Resources>
+                                <StackPanel Margin="25,344,0,0">
+                                    <TextBlock Text="SPELL" />
+                                    <TextBlock Text="LEVEL" />
+                                </StackPanel>
+                                <TextBlock Text="SLOTS TOTAL" Margin="51,357,0,0" />
+                                <TextBlock Text="SLOTS EXPENDED" Margin="144,357,0,0" />
+                                <TextBlock Text="SPELLS KNOWN" FontSize="5" Margin="8,530,0,0">
+                                    <TextBlock.RenderTransform>
+                                        <RotateTransform Angle="270" />
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </Grid>
+                        </Grid>
+                        <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="14" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Text="0" Margin="33,170,0,0" />
+                        <TextBlock Text="1" Margin="33,374,0,0" />
+                        <TextBlock Text="2" Margin="33,650,0,0" />
+                        <TextBlock Text="3" Margin="261,170,0,0" />
+                        <TextBlock Text="4" Margin="261,443,0,0" />
+                        <TextBlock Text="5" Margin="261,717,0,0" />
+                        <TextBlock Text="6" Margin="488,170,0,0" />
+                        <TextBlock Text="7" Margin="488,376,0,0" />
+                        <TextBlock Text="8" Margin="488,581,0,0" />
+                        <TextBlock Text="9" Margin="488,751,0,0" />
+                        <TextBlock Text="CANTRIPS" FontSize="10" Margin="110,173,0,0" />
+                    </Grid>
+                    </Grid>
                 </Canvas>
             </Canvas>
         </Canvas>
@@ -5558,12 +5752,4 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    <PathGeometry x:Key="CurvedTextPath">
-        <PathFigure StartPoint="-5, 10" IsClosed="False">
-            <ArcSegment IsLargeArc="True" 
-                            Point="5.5, 10" 
-                            Size="5.25, 6" 
-                            SweepDirection="Clockwise" />
-        </PathFigure>
-    </PathGeometry>
 </ResourceDictionary>

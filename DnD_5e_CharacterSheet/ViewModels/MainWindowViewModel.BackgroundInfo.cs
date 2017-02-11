@@ -10,6 +10,46 @@ namespace DnD_5e_CharacterSheet.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+        #region App Logic
+
+        #region Load Portrait Command
+
+        internal void LoadPortrait()
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "All Images (*.bmp, *.png, *.jpg, *.tiff)|*.bmp;*.jpg;*.png;*.tiff";
+            var result = dlg.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                CharacterPortrait = File.ReadAllBytes(dlg.FileName);
+            }
+        }
+
+        public ICommand LoadPortraitCommand { get { return new ParameterlessCommandRouter(LoadPortrait, null); } }
+
+        #endregion Load Portrait Command
+
+        #region Load Symbol Command
+
+        internal void LoadSymbol()
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "All Images (*.bmp, *.png, *.jpg, *.tiff)|*.bmp;*.jpg;*.png;*.tiff";
+            var result = dlg.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                OrganizationSymbol = File.ReadAllBytes(dlg.FileName);
+            }
+        }
+
+        public ICommand LoadSymbolCommand { get { return new ParameterlessCommandRouter(LoadSymbol, null); } }
+
+        #endregion Load Symbol Command
+
+        #endregion App Logic
+
+        #region Header Box
+
         public int Age
         {
             get
@@ -106,6 +146,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Header Box
+
+        #region Character Appearance
+
         private byte[] CharacterPortrait
         {
             get
@@ -127,6 +171,30 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 return GetBitmapImage(CharacterPortrait);
             }
         }
+
+        #endregion Character Appearance
+
+        #region Character Backstory
+
+        public string CharacterBackstory
+        {
+            get
+            {
+                return model.CharacterBackstory;
+            }
+            set
+            {
+                if (model.CharacterBackstory != value)
+                {
+                    model.CharacterBackstory = value;
+                    OnPropertyChanged("CharacterBackstory");
+                }
+            }
+        }
+
+        #endregion Character Backstory
+
+        #region Allies and Organizations
 
         public string AlliesAndOrganizations1
         {
@@ -198,21 +266,9 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        public string CharacterBackstory
-        {
-            get
-            {
-                return model.CharacterBackstory;
-            }
-            set
-            {
-                if (model.CharacterBackstory != value)
-                {
-                    model.CharacterBackstory = value;
-                    OnPropertyChanged("CharacterBackstory");
-                }
-            }
-        }
+        #endregion Allies and Organizations
+
+        #region Additional Features & Traits
 
         public string AdditionalFeaturesAndTraits1
         {
@@ -246,6 +302,10 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        #endregion Additional Features & Traits
+
+        #region Treasure
+
         public string Treasure1
         {
             get
@@ -278,39 +338,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
-        #region Load Portrait Command
-
-        internal void LoadPortrait()
-        {
-            var dlg = new OpenFileDialog();
-            dlg.Filter = "All Images (*.bmp, *.png, *.jpg, *.tiff)|*.bmp;*.jpg;*.png;*.tiff";
-            var result = dlg.ShowDialog();
-            if(result.HasValue && result.Value)
-            {
-                CharacterPortrait = File.ReadAllBytes(dlg.FileName);
-            }
-        }
-
-        public ICommand LoadPortraitCommand { get { return new ParameterlessCommandRouter(LoadPortrait, null); } }
-
-        #endregion Load Portrait Command
-
-        #region Load Symbol Command
-
-        internal void LoadSymbol()
-        {
-            var dlg = new OpenFileDialog();
-            dlg.Filter = "All Images (*.bmp, *.png, *.jpg, *.tiff)|*.bmp;*.jpg;*.png;*.tiff";
-            var result = dlg.ShowDialog();
-            if (result.HasValue && result.Value)
-            {
-                OrganizationSymbol = File.ReadAllBytes(dlg.FileName);
-            }
-        }
-
-        public ICommand LoadSymbolCommand { get { return new ParameterlessCommandRouter(LoadSymbol, null); } }
-
-        #endregion Load Symbol Command
+        #endregion Treasure
 
         #region Helpers
 
