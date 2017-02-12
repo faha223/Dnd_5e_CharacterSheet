@@ -6,7 +6,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DnD_5e_CharacterSheet.CustomControls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
              mc:Ignorable="d" 
              Height="81" Width="68" HorizontalAlignment="Left" VerticalAlignment="Top" SnapsToDevicePixels="False">
     <Grid>

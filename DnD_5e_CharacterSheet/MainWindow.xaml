@@ -118,37 +118,39 @@
                             <CheckBox IsChecked="{Binding DeathSaveFailure2}" Margin="421,401,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveFailure3}" Margin="437,401,0,0" />
 
-                            <StackPanel Margin="112,383,0,0">
-                                <controls:ThrowModifier Label="Acrobatics (Dex)" IsChecked="{Binding AcrobaticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Acrobatics, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Animal Handling (Wis)" IsChecked="{Binding AnimalHandlingEnabled, Mode=TwoWay}" ModifierValue="{Binding AnimalHandling, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Arcana (Int)" IsChecked="{Binding ArcanaEnabled, Mode=TwoWay}" ModifierValue="{Binding Arcana, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Athletics (Str)" IsChecked="{Binding AthleticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Athletics, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Deception (Cha)" IsChecked="{Binding DeceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Deception, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="History (Int)" IsChecked="{Binding HistoryEnabled, Mode=TwoWay}" ModifierValue="{Binding History, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Insight (Wis)" IsChecked="{Binding InsightEnabled, Mode=TwoWay}" ModifierValue="{Binding Insight, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Intimidation (Cha)" IsChecked="{Binding IntimidationEnabled, Mode=TwoWay}" ModifierValue="{Binding Intimidation, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Investigation (Int)" IsChecked="{Binding InvestigationEnabled, Mode=TwoWay}" ModifierValue="{Binding Investigation, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Medicine (Wis)" IsChecked="{Binding MedicineEnabled, Mode=TwoWay}" ModifierValue="{Binding Medicine, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Nature (Int)" IsChecked="{Binding NatureEnabled, Mode=TwoWay}" ModifierValue="{Binding Nature, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Perception (Wis)" IsChecked="{Binding PerceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Perception, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Performance (Cha)" IsChecked="{Binding PerformanceEnabled, Mode=TwoWay}" ModifierValue="{Binding Performance, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Persuasion (Cha)" IsChecked="{Binding PersuasionEnabled, Mode=TwoWay}" ModifierValue="{Binding Persuasion, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Religion (Int)" IsChecked="{Binding ReligionEnabled, Mode=TwoWay}" ModifierValue="{Binding Religion, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Sleight of Hand (Dex)" IsChecked="{Binding SleightOfHandEnabled, Mode=TwoWay}" ModifierValue="{Binding SleightOfHand, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Stealth (Dex)" IsChecked="{Binding StealthEnabled, Mode=TwoWay}" ModifierValue="{Binding Stealth, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Survival (Wis)" IsChecked="{Binding SurvivalEnabled, Mode=TwoWay}" ModifierValue="{Binding Survival, Mode=OneWay}" />
-                                
-                            </StackPanel>
+                            <GroupBox Style="{StaticResource OrnateBox1}" Margin="100,236,0,0" Header="SAVING THROWS" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <StackPanel Margin="2,0,42,8">
+                                    <controls:ThrowModifier Label="Strength" IsChecked="{Binding StrengthSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding StrengthSavingThrow, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Dexterity" IsChecked="{Binding DexteritySavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding DexteritySavingThrow, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Constitution" IsChecked="{Binding ConstitutionSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding ConstitutionSavingThrow, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Intelligence" IsChecked="{Binding IntelligenceSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding IntelligenceSavingThrow, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Wisdom" IsChecked="{Binding WisdomSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding WisdomSavingThrow, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Charisma" IsChecked="{Binding CharismaSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding CharismaSavingThrow, Mode=OneWay}" />
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="SKILLS" Style="{StaticResource OrnateBox1}" Margin="100,370,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <StackPanel Margin="2,0,6,18">
+                                    <controls:ThrowModifier Label="Acrobatics (Dex)" IsChecked="{Binding AcrobaticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Acrobatics, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Animal Handling (Wis)" IsChecked="{Binding AnimalHandlingEnabled, Mode=TwoWay}" ModifierValue="{Binding AnimalHandling, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Arcana (Int)" IsChecked="{Binding ArcanaEnabled, Mode=TwoWay}" ModifierValue="{Binding Arcana, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Athletics (Str)" IsChecked="{Binding AthleticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Athletics, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Deception (Cha)" IsChecked="{Binding DeceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Deception, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="History (Int)" IsChecked="{Binding HistoryEnabled, Mode=TwoWay}" ModifierValue="{Binding History, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Insight (Wis)" IsChecked="{Binding InsightEnabled, Mode=TwoWay}" ModifierValue="{Binding Insight, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Intimidation (Cha)" IsChecked="{Binding IntimidationEnabled, Mode=TwoWay}" ModifierValue="{Binding Intimidation, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Investigation (Int)" IsChecked="{Binding InvestigationEnabled, Mode=TwoWay}" ModifierValue="{Binding Investigation, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Medicine (Wis)" IsChecked="{Binding MedicineEnabled, Mode=TwoWay}" ModifierValue="{Binding Medicine, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Nature (Int)" IsChecked="{Binding NatureEnabled, Mode=TwoWay}" ModifierValue="{Binding Nature, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Perception (Wis)" IsChecked="{Binding PerceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Perception, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Performance (Cha)" IsChecked="{Binding PerformanceEnabled, Mode=TwoWay}" ModifierValue="{Binding Performance, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Persuasion (Cha)" IsChecked="{Binding PersuasionEnabled, Mode=TwoWay}" ModifierValue="{Binding Persuasion, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Religion (Int)" IsChecked="{Binding ReligionEnabled, Mode=TwoWay}" ModifierValue="{Binding Religion, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Sleight of Hand (Dex)" IsChecked="{Binding SleightOfHandEnabled, Mode=TwoWay}" ModifierValue="{Binding SleightOfHand, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Stealth (Dex)" IsChecked="{Binding StealthEnabled, Mode=TwoWay}" ModifierValue="{Binding Stealth, Mode=OneWay}" />
+                                    <controls:ThrowModifier Label="Survival (Wis)" IsChecked="{Binding SurvivalEnabled, Mode=TwoWay}" ModifierValue="{Binding Survival, Mode=OneWay}" />
+                                </StackPanel>
+                            </GroupBox>
 
-                            <StackPanel Margin="112,243,0,0">
-                                <controls:ThrowModifier Label="Strength" IsChecked="{Binding StrengthSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding StrengthSavingThrow, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Dexterity" IsChecked="{Binding DexteritySavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding DexteritySavingThrow, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Constitution" IsChecked="{Binding ConstitutionSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding ConstitutionSavingThrow, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Intelligence" IsChecked="{Binding IntelligenceSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding IntelligenceSavingThrow, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Wisdom" IsChecked="{Binding WisdomSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding WisdomSavingThrow, Mode=OneWay}" />
-                                <controls:ThrowModifier Label="Charisma" IsChecked="{Binding CharismaSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding CharismaSavingThrow, Mode=OneWay}" />
-                            </StackPanel>
-                            
                             <TextBox Text="{Binding Weapon1Name, UpdateSourceTrigger=PropertyChanged}" Margin="260,469,0,0" Width="76" />
                             <TextBox Text="{Binding Weapon1AtkBonus, UpdateSourceTrigger=PropertyChanged}" Margin="342,469,0,0" Width="37" />
                             <TextBox Text="{Binding Weapon1DamageType, UpdateSourceTrigger=PropertyChanged}" Margin="385,469,0,0" Width="75" />

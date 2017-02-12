@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DnD_5e_CharacterSheet.CustomControls
 {
@@ -38,7 +26,7 @@ namespace DnD_5e_CharacterSheet.CustomControls
 
         // Using a DependencyProperty as the backing store for ModifierValue.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ModifierValueProperty =
-            DependencyProperty.Register("ModifierValue", typeof(int), typeof(ThrowModifier), new PropertyMetadata(0));
+            DependencyProperty.Register("ModifierValue", typeof(int), typeof(ThrowModifier), new PropertyMetadata(-5));
 
         public string Label
         {
