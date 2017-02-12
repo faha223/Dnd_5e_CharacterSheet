@@ -44,6 +44,8 @@
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,6 +68,9 @@
       <DependentUpon>AbilityScore.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\TextOnPathElement.cs" />
+    <Compile Include="CustomControls\ThrowModifier.xaml.cs">
+      <DependentUpon>ThrowModifier.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DnD_Constants.cs" />
     <Compile Include="Models\CharacterSheetModel.cs" />
     <Compile Include="MVVM\ParameteredCommandRouter.cs" />
@@ -75,6 +80,10 @@
     <Compile Include="MVVM\ParameterlessCommandRouter.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="CustomControls\AbilityScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ThrowModifier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

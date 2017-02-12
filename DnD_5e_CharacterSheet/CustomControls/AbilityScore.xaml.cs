@@ -41,7 +41,7 @@ namespace DnD_5e_CharacterSheet.CustomControls
 
         // Using a DependencyProperty as the backing store for Score.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ScoreProperty =
-            DependencyProperty.Register("Score", typeof(int), typeof(AbilityScore), new PropertyMetadata(1, ScoreChanged));
+            DependencyProperty.Register("Score", typeof(int), typeof(AbilityScore), new FrameworkPropertyMetadata(1, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, ScoreChanged));
 
         private static void ScoreChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
