@@ -89,17 +89,24 @@
                                     <Setter Property="VerticalAlignment" Value="Top" />
                                 </Style>
                             </Grid.Resources>
-                            <controls:AbilityScore Score="{Binding Strength}" Ability="STRENGTH" Margin="25,163,0,0" />
-                            <controls:AbilityScore Score="{Binding Dexterity}" Ability="DEXTERITY" Margin="25,250,0,0" />
-                            <controls:AbilityScore Score="{Binding Constitution}" Ability="CONSTITUTION" Margin="25,336,0,0" />
-                            <controls:AbilityScore Score="{Binding Intelligence}" Ability="INTELLIGENCE" Margin="25,423,0,0" />
-                            <controls:AbilityScore Score="{Binding Wisdom}" Ability="WISDOM" Margin="25,509,0,0" />
-                            <controls:AbilityScore Score="{Binding Charisma}" Ability="CHARISMA" Margin="25,596,0,0" />
+                            <StackPanel Margin="25,164,0,0">
+                                <StackPanel.Resources>
+                                    <Style TargetType="{x:Type controls:AbilityScore}">
+                                        <Setter Property="Margin" Value="0,0,0,5" />
+                                    </Style>
+                                </StackPanel.Resources>
+                                <controls:AbilityScore Score="{Binding Strength}" Ability="STRENGTH" />
+                                <controls:AbilityScore Score="{Binding Dexterity}" Ability="DEXTERITY" SnapsToDevicePixels="True" />
+                                <controls:AbilityScore Score="{Binding Constitution}" Ability="CONSTITUTION" />
+                                <controls:AbilityScore Score="{Binding Intelligence}" Ability="INTELLIGENCE" />
+                                <controls:AbilityScore Score="{Binding Wisdom}" Ability="WISDOM" />
+                                <controls:AbilityScore Score="{Binding Charisma}" Ability="CHARISMA" />
+                            </StackPanel>
                             <TextBox Text="{Binding ProficiencyBonus, UpdateSourceTrigger=PropertyChanged, StringFormat='{}{0:+0;-#}'}" Width="28" Margin="107,200,0,0" />
                             <TextBlock Text="{Binding PassiveWisdom}" Width="20" Margin="31,708,0,0" />
-                            <TextBox Text="{Binding ArmorClass, UpdateSourceTrigger=PropertyChanged}" Width="30" Margin="274,168,0,0" />
+                            <TextBox Text="{Binding ArmorClass, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Width="30" Margin="274,168,0,0" />
                             <TextBlock Text="{Binding Initiative, StringFormat='{}{0:+0;-#}'}" Width="30" Margin="341,172,0,0" />
-                            <TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" Width="30" Margin="412,172,0,0" />
+                            <TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Width="30" Margin="412,172,0,0" />
                             <TextBox Text="{Binding HitPointMaximum, UpdateSourceTrigger=PropertyChanged}" Width="109" Margin="341,233,0,0" FontSize="8" />
                             <TextBox Text="{Binding CurrentHitPoints, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="308,258,0,0" />
                             <TextBox Text="{Binding TemporaryHitPoints, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="308,320,0,0" />
@@ -176,7 +183,7 @@
                                 <TextBox Text="{Binding Ideals, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="45" Margin="496,245,0,0" />
                                 <TextBox Text="{Binding Bonds, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="45" Margin="496,313,0,0" />
                                 <TextBox Text="{Binding Flaws, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="45" Margin="496,379,0,0" />
-                                <TextBox Text="{Binding FeaturesAndTraits, UpdateSourceTrigger=PropertyChanged}" Width="206" Height="450" Margin="485,458,0,0" />
+                                <TextBox Text="{Binding FeaturesAndTraits, UpdateSourceTrigger=PropertyChanged}" Width="206" Height="450" Margin="485,457,0,0" />
                             </Grid>
                         </Grid>
                     </Grid>
