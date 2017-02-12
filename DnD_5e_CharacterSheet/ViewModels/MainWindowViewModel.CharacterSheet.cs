@@ -1,6 +1,7 @@
 ﻿using DnD_5e_CharacterSheet.Models;
 using DnD_5e_CharacterSheet.MVVM;
 using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -17,7 +18,18 @@ namespace DnD_5e_CharacterSheet.ViewModels
             if(filename != null)
             {
                 if (File.Exists(filename))
-                    model = CharacterSheetModel.Deserialize(File.ReadAllText(filename));
+                {
+                    try
+                    {
+                        model = CharacterSheetModel.Deserialize(File.ReadAllText(filename));
+                        LoadedFile = filename;
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show($"An Exception was thrown when trying to deserialize {filename}{Environment.NewLine}{ex.Message}");
+                        model = CharacterSheetModel.New();
+                    }
+                }
             }
             PropertyChanged += MainWindowViewModel_PropertyChanged;
         }

@@ -61,13 +61,13 @@
                                 <Setter Property="Template" Value="{StaticResource ComboBoxControlTemplate}" />
                             </Style>
                         </Grid.Resources>
-                        <TextBox Text="{Binding CharacterName}" FontSize="19" Width="215" Margin="42,68,0,0" />
-                        <TextBox Text="{Binding ClassAndLevel}" Width="130" Margin="315,55,0,0" />
-                        <TextBox Text="{Binding Background}" Width="130" Margin="450,55,0,0" />
-                        <TextBox Text="{Binding PlayerName}" Width="91" Margin="585,55,0,0" />
+                        <TextBox Text="{Binding CharacterName, UpdateSourceTrigger=PropertyChanged}" FontSize="19" Width="215" Margin="42,68,0,0" />
+                        <TextBox Text="{Binding ClassAndLevel, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,55,0,0" />
+                        <TextBox Text="{Binding Background, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,55,0,0" />
+                        <TextBox Text="{Binding PlayerName, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,55,0,0" />
                         <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="312,84,0,0"/>
                         <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="447,84,0,0" />
-                        <TextBox Text="{Binding ExperiencePoints}" TextAlignment="Center" Width="91" Margin="585,86,0,0" />
+                        <TextBox Text="{Binding ExperiencePoints, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="91" Margin="585,86,0,0" />
                         <Grid>
                             <Grid.Resources>
                                 <Style TargetType="TextBox">
@@ -95,15 +95,15 @@
                             <controls:AbilityScore Score="{Binding Intelligence, Mode=TwoWay}" Ability="INTELLIGENCE" Margin="25,423,0,0" />
                             <controls:AbilityScore Score="{Binding Wisdom, Mode=TwoWay}" Ability="WISDOM" Margin="25,509,0,0" />
                             <controls:AbilityScore Score="{Binding Charisma, Mode=TwoWay}" Ability="CHARISMA" Margin="25,596,0,0" />
-                            <TextBox Text="{Binding ProficiencyBonus, StringFormat='{}{0:+0;-#}'}" Width="28" Margin="107,200,0,0" />
+                            <TextBox Text="{Binding ProficiencyBonus, UpdateSourceTrigger=PropertyChanged, StringFormat='{}{0:+0;-#}'}" Width="28" Margin="107,200,0,0" />
                             <TextBlock Text="{Binding PassiveWisdom}" Width="20" Margin="31,708,0,0" />
-                            <TextBox Text="{Binding ArmorClass}" Width="30" Margin="274,168,0,0" />
+                            <TextBox Text="{Binding ArmorClass, UpdateSourceTrigger=PropertyChanged}" Width="30" Margin="274,168,0,0" />
                             <TextBlock Text="{Binding Initiative, StringFormat='{}{0:+0;-#}'}" Width="30" Margin="341,172,0,0" />
-                            <TextBox Text="{Binding Speed}" Width="30" Margin="412,172,0,0" />
-                            <TextBox Text="{Binding HitPointMaximum}" Width="109" Margin="341,233,0,0" FontSize="8" />
-                            <TextBox Text="{Binding CurrentHitPoints}" Width="100" Margin="308,258,0,0" />
-                            <TextBox Text="{Binding TemporaryHitPoints}" Width="100" Margin="308,320,0,0" />
-                            <TextBox Text="{Binding HitDice}" FontSize="8" Width="58" Margin="288,379,0,0" />
+                            <TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" Width="30" Margin="412,172,0,0" />
+                            <TextBox Text="{Binding HitPointMaximum, UpdateSourceTrigger=PropertyChanged}" Width="109" Margin="341,233,0,0" FontSize="8" />
+                            <TextBox Text="{Binding CurrentHitPoints, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="308,258,0,0" />
+                            <TextBox Text="{Binding TemporaryHitPoints, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="308,320,0,0" />
+                            <TextBox Text="{Binding HitDice, UpdateSourceTrigger=PropertyChanged}" FontSize="8" Width="58" Margin="288,379,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveSuccess1}" Margin="405,382,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveSuccess2}" Margin="421,382,0,0" />
                             <CheckBox IsChecked="{Binding DeathSaveSuccess3}" Margin="437,382,0,0" />
@@ -158,20 +158,20 @@
                             <TextBlock Text="{Binding WisdomSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,308,0,0" />
                             <CheckBox IsChecked="{Binding CharismaSavingThrowEnabled}" Margin="108,324,0,0" />
                             <TextBlock Text="{Binding CharismaSavingThrow, StringFormat='{}{0:+0;-#}'}" FontSize="8" Width="18" Margin="125,324,0,0" />
-                            <TextBox Text="{Binding Weapon1Name}" Margin="260,469,0,0" Width="76" />
-                            <TextBox Text="{Binding Weapon1AtkBonus}" Margin="342,469,0,0" Width="37" />
-                            <TextBox Text="{Binding Weapon1DamageType}" Margin="385,469,0,0" Width="75" />
-                            <TextBox Text="{Binding Weapon2Name}" Margin="260,494,0,0" Width="76" />
-                            <TextBox Text="{Binding Weapon2AtkBonus}" Margin="342,494,0,0" Width="37" />
-                            <TextBox Text="{Binding Weapon2DamageType}" Margin="385,494,0,0" Width="75" />
-                            <TextBox Text="{Binding Weapon3Name}" Margin="260,519,0,0" Width="76" />
-                            <TextBox Text="{Binding Weapon3AtkBonus}" Margin="342,519,0,0" Width="37" />
-                            <TextBox Text="{Binding Weapon3DamageType}" Margin="385,519,0,0" Width="75" />
-                            <TextBox Text="{Binding CopperPieces}" Margin="270,721,0,0" Width="30" />
-                            <TextBox Text="{Binding SilverPieces}" Margin="270,752,0,0" Width="30" />
-                            <TextBox Text="{Binding ElectrumPieces}" Margin="270,783,0,0" Width="30" />
-                            <TextBox Text="{Binding GoldPieces}" Margin="270,815,0,0" Width="30" />
-                            <TextBox Text="{Binding PlatinumPieces}" Margin="270,846,0,0" Width="30" />
+                            <TextBox Text="{Binding Weapon1Name, UpdateSourceTrigger=PropertyChanged}" Margin="260,469,0,0" Width="76" />
+                            <TextBox Text="{Binding Weapon1AtkBonus, UpdateSourceTrigger=PropertyChanged}" Margin="342,469,0,0" Width="37" />
+                            <TextBox Text="{Binding Weapon1DamageType, UpdateSourceTrigger=PropertyChanged}" Margin="385,469,0,0" Width="75" />
+                            <TextBox Text="{Binding Weapon2Name, UpdateSourceTrigger=PropertyChanged}" Margin="260,494,0,0" Width="76" />
+                            <TextBox Text="{Binding Weapon2AtkBonus, UpdateSourceTrigger=PropertyChanged}" Margin="342,494,0,0" Width="37" />
+                            <TextBox Text="{Binding Weapon2DamageType, UpdateSourceTrigger=PropertyChanged}" Margin="385,494,0,0" Width="75" />
+                            <TextBox Text="{Binding Weapon3Name, UpdateSourceTrigger=PropertyChanged}" Margin="260,519,0,0" Width="76" />
+                            <TextBox Text="{Binding Weapon3AtkBonus, UpdateSourceTrigger=PropertyChanged}" Margin="342,519,0,0" Width="37" />
+                            <TextBox Text="{Binding Weapon3DamageType, UpdateSourceTrigger=PropertyChanged}" Margin="385,519,0,0" Width="75" />
+                            <TextBox Text="{Binding CopperPieces, UpdateSourceTrigger=PropertyChanged}" Margin="270,721,0,0" Width="30" />
+                            <TextBox Text="{Binding SilverPieces, UpdateSourceTrigger=PropertyChanged}" Margin="270,752,0,0" Width="30" />
+                            <TextBox Text="{Binding ElectrumPieces, UpdateSourceTrigger=PropertyChanged}" Margin="270,783,0,0" Width="30" />
+                            <TextBox Text="{Binding GoldPieces, UpdateSourceTrigger=PropertyChanged}" Margin="270,815,0,0" Width="30" />
+                            <TextBox Text="{Binding PlatinumPieces, UpdateSourceTrigger=PropertyChanged}" Margin="270,846,0,0" Width="30" />
                             <Grid>
                                 <Grid.Resources>
                                     <Style TargetType="TextBox">
@@ -185,14 +185,14 @@
                                         <Setter Property="FontSize" Value="10" />
                                     </Style>
                                 </Grid.Resources>
-                                <TextBox Text="{Binding OtherProficienciesAndLanguages}" Width="204" Height="160" Margin="29,750,0,0" MaxLines="12" />
-                                <TextBox Text="{Binding WeaponNotes}" Width="209" Height="145" Margin="255,537,0,0" MaxLines="12" />
-                                <TextBox Text="{Binding Equipment}" Width="146" Height="200" Margin="315,709,0,0" />
-                                <TextBox Text="{Binding PersonalityTraits}" FontSize="11" Width="184" Height="60" Margin="496,160,0,0" />
-                                <TextBox Text="{Binding Ideals}" FontSize="11" Width="184" Height="45" Margin="496,245,0,0" />
-                                <TextBox Text="{Binding Bonds}" FontSize="11" Width="184" Height="45" Margin="496,313,0,0" />
-                                <TextBox Text="{Binding Flaws}" FontSize="11" Width="184" Height="45" Margin="496,379,0,0" />
-                                <TextBox Text="{Binding FeaturesAndTraits}" Width="206" Height="450" Margin="485,458,0,0" />
+                                <TextBox Text="{Binding OtherProficienciesAndLanguages, UpdateSourceTrigger=PropertyChanged}" Width="204" Height="160" Margin="29,750,0,0" MaxLines="12" />
+                                <TextBox Text="{Binding WeaponNotes, UpdateSourceTrigger=PropertyChanged}" Width="209" Height="145" Margin="255,537,0,0" MaxLines="12" />
+                                <TextBox Text="{Binding Equipment, UpdateSourceTrigger=PropertyChanged}" Width="146" Height="200" Margin="315,709,0,0" />
+                                <TextBox Text="{Binding PersonalityTraits, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="60" Margin="496,160,0,0" />
+                                <TextBox Text="{Binding Ideals, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="45" Margin="496,245,0,0" />
+                                <TextBox Text="{Binding Bonds, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="45" Margin="496,313,0,0" />
+                                <TextBox Text="{Binding Flaws, UpdateSourceTrigger=PropertyChanged}" FontSize="11" Width="184" Height="45" Margin="496,379,0,0" />
+                                <TextBox Text="{Binding FeaturesAndTraits, UpdateSourceTrigger=PropertyChanged}" Width="206" Height="450" Margin="485,458,0,0" />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -215,17 +215,17 @@
                                 <Setter Property="Height" Value="18" />
                             </Style>
                         </Grid.Resources>
-                        <TextBox Text="{Binding CharacterName}" FontSize="19" Width="215" Margin="42,68,0,0" />
-                        <TextBox Text="{Binding Age}" Width="130" Margin="315,53,0,0" />
-                        <TextBox Text="{Binding Height}" Width="130" Margin="450,53,0,0" />
-                        <TextBox Text="{Binding Weight}" Width="91" Margin="585,53,0,0" />
-                        <TextBox Text="{Binding Eyes}" Width="130" Margin="315,84,0,0"/>
-                        <TextBox Text="{Binding Skin}" Width="130" Margin="450,84,0,0" />
-                        <TextBox Text="{Binding Hair}" Width="91" Margin="585,84,0,0" />
+                        <TextBox Text="{Binding CharacterName, UpdateSourceTrigger=PropertyChanged}" FontSize="19" Width="215" Margin="42,68,0,0" />
+                        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,53,0,0" />
+                        <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,53,0,0" />
+                        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,53,0,0" />
+                        <TextBox Text="{Binding Eyes, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,84,0,0"/>
+                        <TextBox Text="{Binding Skin, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,84,0,0" />
+                        <TextBox Text="{Binding Hair, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,84,0,0" />
                         <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" Command="{Binding LoadPortraitCommand}">
                             <Image Source="{Binding PortraitSource}" />
                         </Button>
-                        <TextBox Text="{Binding OrganizationName}" Margin="500,176,0,0" Width="168" TextAlignment="Center" />
+                        <TextBox Text="{Binding OrganizationName, UpdateSourceTrigger=PropertyChanged}" Margin="500,176,0,0" Width="168" TextAlignment="Center" />
                         <Button Style="{StaticResource ImageButton}" Height="136" Width="168" Margin="500,196,0,0" Command="{Binding LoadSymbolCommand}">
                             <Image Source="{Binding SymbolSource}" />
                         </Button>
@@ -242,13 +242,13 @@
                                     <Setter Property="FontSize" Value="10" />
                                 </Style>
                             </Grid.Resources>
-                            <TextBox Text="{Binding CharacterBackstory}" Width="210" Height="454" Margin="25,451,0,0" />
-                            <TextBox Text="{Binding AlliesAndOrganizations1}" Width="213" Height="270" Margin="255,144,0,0" />
-                            <TextBox Text="{Binding AlliesAndOrganizations2}" Width="213" Height="55" Margin="477,359,0,0" />
-                            <TextBox Text="{Binding AdditionalFeaturesAndTraits1}" Width="213" Height="254" Margin="255,439,0,0" />
-                            <TextBox Text="{Binding AdditionalFeaturesAndTraits2}" Width="213" Height="254" Margin="477,439,0,0" />
-                            <TextBox Text="{Binding Treasure1}" Width="213" Height="191" Margin="255,715,0,0" />
-                            <TextBox Text="{Binding Treasure2}" Width="213" Height="191" Margin="477,715,0,0" />
+                            <TextBox Text="{Binding CharacterBackstory, UpdateSourceTrigger=PropertyChanged}" Width="210" Height="454" Margin="25,451,0,0" />
+                            <TextBox Text="{Binding AlliesAndOrganizations1, UpdateSourceTrigger=PropertyChanged}" Width="213" Height="270" Margin="255,144,0,0" />
+                            <TextBox Text="{Binding AlliesAndOrganizations2, UpdateSourceTrigger=PropertyChanged}" Width="213" Height="55" Margin="477,359,0,0" />
+                            <TextBox Text="{Binding AdditionalFeaturesAndTraits1, UpdateSourceTrigger=PropertyChanged}" Width="213" Height="254" Margin="255,439,0,0" />
+                            <TextBox Text="{Binding AdditionalFeaturesAndTraits2, UpdateSourceTrigger=PropertyChanged}" Width="213" Height="254" Margin="477,439,0,0" />
+                            <TextBox Text="{Binding Treasure1, UpdateSourceTrigger=PropertyChanged}" Width="213" Height="191" Margin="255,715,0,0" />
+                            <TextBox Text="{Binding Treasure2, UpdateSourceTrigger=PropertyChanged}" Width="213" Height="191" Margin="477,715,0,0" />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -278,10 +278,10 @@
                                 <Setter Property="Template" Value="{StaticResource ComboBoxControlTemplate}" />
                             </Style>
                         </Grid.Resources>
-                        <TextBox Text="{Binding SpellcastingClass}" TextAlignment="Left" FontSize="19" Width="215" Margin="42,70,0,0" />
+                        <TextBox Text="{Binding SpellcastingClass, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Left" FontSize="19" Width="215" Margin="42,70,0,0" />
                         <ComboBox SelectedItem="{Binding SpellcastingAbility}" ItemsSource="{Binding Abilities}" Width="85" Margin="329,63,0,0" />
-                        <TextBlock Text="{Binding SpellSaveDC}" Width="70" Margin="458,61,0,0" />
-                        <TextBlock Text="{Binding SpellAttackBonus}" Width="70" Margin="584,61,0,0" />
+                        <TextBlock Text="{Binding SpellSaveDC, UpdateSourceTrigger=PropertyChanged}" Width="70" Margin="458,61,0,0" />
+                        <TextBlock Text="{Binding SpellAttackBonus, UpdateSourceTrigger=PropertyChanged}" Width="70" Margin="584,61,0,0" />
                     </Grid>
                     <Grid>
                         <Grid.Resources>
@@ -294,125 +294,125 @@
                                 <Setter Property="TextAlignment" Value="Center" />
                             </Style>
                         </Grid.Resources>
-                        <TextBox Text="{Binding Cantrips[0]}" Width="190" Margin="40,200,0,0" />
-                        <TextBox Text="{Binding Cantrips[1]}" Width="190" Margin="40,217,0,0" />
-                        <TextBox Text="{Binding Cantrips[2]}" Width="190" Margin="40,234,0,0" />
-                        <TextBox Text="{Binding Cantrips[3]}" Width="190" Margin="40,251,0,0" />
-                        <TextBox Text="{Binding Cantrips[4]}" Width="190" Margin="40,268,0,0" />
-                        <TextBox Text="{Binding Cantrips[5]}" Width="190" Margin="40,285,0,0" />
-                        <TextBox Text="{Binding Cantrips[6]}" Width="190" Margin="40,302,0,0" />
-                        <TextBox Text="{Binding Cantrips[7]}" Width="190" Margin="40,319,0,0" />
-                        <TextBox Text="{Binding Level1SlotsTotal}" Width="40" Margin="55,376,0,0" />
-                        <TextBox Text="{Binding Level1SlotsExpended}" Width="80" Margin="130,376,0,0" />
-                        <TextBox Text="{Binding Level1Spells[0]}" Width="197" Margin="38,407,0,0" />
-                        <TextBox Text="{Binding Level1Spells[1]}" Width="197" Margin="38,424,0,0" />
-                        <TextBox Text="{Binding Level1Spells[2]}" Width="197" Margin="38,441,0,0" />
-                        <TextBox Text="{Binding Level1Spells[3]}" Width="197" Margin="38,458,0,0" />
-                        <TextBox Text="{Binding Level1Spells[4]}" Width="197" Margin="38,475,0,0" />
-                        <TextBox Text="{Binding Level1Spells[5]}" Width="197" Margin="38,492,0,0" />
-                        <TextBox Text="{Binding Level1Spells[6]}" Width="197" Margin="38,509,0,0" />
-                        <TextBox Text="{Binding Level1Spells[7]}" Width="197" Margin="38,526,0,0" />
-                        <TextBox Text="{Binding Level1Spells[8]}" Width="197" Margin="38,543,0,0" />
-                        <TextBox Text="{Binding Level1Spells[9]}" Width="197" Margin="38,560,0,0" />
-                        <TextBox Text="{Binding Level1Spells[10]}" Width="197" Margin="38,577,0,0" />
-                        <TextBox Text="{Binding Level1Spells[11]}" Width="197" Margin="38,594,0,0" />
-                        <TextBox Text="{Binding Level1Spells[12]}" Width="197" Margin="38,611,0,0" />
-                        <TextBox Text="{Binding Level2SlotsTotal}" Width="40" Margin="55,653,0,0" />
-                        <TextBox Text="{Binding Level2SlotsExpended}" Width="80" Margin="130,653,0,0" />
-                        <TextBox Text="{Binding Level2Spells[0]}" Width="197" Margin="38,681,0,0" />
-                        <TextBox Text="{Binding Level2Spells[1]}" Width="197" Margin="38,698,0,0" />
-                        <TextBox Text="{Binding Level2Spells[2]}" Width="197" Margin="38,715,0,0" />
-                        <TextBox Text="{Binding Level2Spells[3]}" Width="197" Margin="38,732,0,0" />
-                        <TextBox Text="{Binding Level2Spells[4]}" Width="197" Margin="38,749,0,0" />
-                        <TextBox Text="{Binding Level2Spells[5]}" Width="197" Margin="38,766,0,0" />
-                        <TextBox Text="{Binding Level2Spells[6]}" Width="197" Margin="38,782,0,0" />
-                        <TextBox Text="{Binding Level2Spells[7]}" Width="197" Margin="38,799,0,0" />
-                        <TextBox Text="{Binding Level2Spells[8]}" Width="197" Margin="38,816,0,0" />
-                        <TextBox Text="{Binding Level2Spells[9]}" Width="197" Margin="38,833,0,0" />
-                        <TextBox Text="{Binding Level2Spells[10]}" Width="197" Margin="38,850,0,0" />
-                        <TextBox Text="{Binding Level2Spells[11]}" Width="197" Margin="38,867,0,0" />
-                        <TextBox Text="{Binding Level2Spells[12]}" Width="197" Margin="38,884,0,0" />
-                        <TextBox Text="{Binding Level3SlotsTotal}" Width="40" Margin="285,173,0,0" />
-                        <TextBox Text="{Binding Level3SlotsExpended}" Width="80" Margin="360,173,0,0" />
-                        <TextBox Text="{Binding Level3Spells[0]}" Width="197" Margin="268,201,0,0" />
-                        <TextBox Text="{Binding Level3Spells[1]}" Width="197" Margin="268,218,0,0" />
-                        <TextBox Text="{Binding Level3Spells[2]}" Width="197" Margin="268,235,0,0" />
-                        <TextBox Text="{Binding Level3Spells[3]}" Width="197" Margin="268,252,0,0" />
-                        <TextBox Text="{Binding Level3Spells[4]}" Width="197" Margin="268,269,0,0" />
-                        <TextBox Text="{Binding Level3Spells[5]}" Width="197" Margin="268,286,0,0" />
-                        <TextBox Text="{Binding Level3Spells[6]}" Width="197" Margin="268,303,0,0" />
-                        <TextBox Text="{Binding Level3Spells[7]}" Width="197" Margin="268,320,0,0" />
-                        <TextBox Text="{Binding Level3Spells[8]}" Width="197" Margin="268,337,0,0" />
-                        <TextBox Text="{Binding Level3Spells[9]}" Width="197" Margin="268,354,0,0" />
-                        <TextBox Text="{Binding Level3Spells[10]}" Width="197" Margin="268,371,0,0" />
-                        <TextBox Text="{Binding Level3Spells[11]}" Width="197" Margin="268,388,0,0" />
-                        <TextBox Text="{Binding Level3Spells[12]}" Width="197" Margin="268,405,0,0" />
-                        <TextBox Text="{Binding Level4SlotsTotal}" Width="40" Margin="285,446,0,0" />
-                        <TextBox Text="{Binding Level4SlotsExpended}" Width="80" Margin="360,446,0,0" />
-                        <TextBox Text="{Binding Level4Spells[0]}" Width="197" Margin="268,474,0,0" />
-                        <TextBox Text="{Binding Level4Spells[1]}" Width="197" Margin="268,491,0,0" />
-                        <TextBox Text="{Binding Level4Spells[2]}" Width="197" Margin="268,508,0,0" />
-                        <TextBox Text="{Binding Level4Spells[3]}" Width="197" Margin="268,525,0,0" />
-                        <TextBox Text="{Binding Level4Spells[4]}" Width="197" Margin="268,542,0,0" />
-                        <TextBox Text="{Binding Level4Spells[5]}" Width="197" Margin="268,559,0,0" />
-                        <TextBox Text="{Binding Level4Spells[6]}" Width="197" Margin="268,576,0,0" />
-                        <TextBox Text="{Binding Level4Spells[7]}" Width="197" Margin="268,593,0,0" />
-                        <TextBox Text="{Binding Level4Spells[8]}" Width="197" Margin="268,610,0,0" />
-                        <TextBox Text="{Binding Level4Spells[9]}" Width="197" Margin="268,627,0,0" />
-                        <TextBox Text="{Binding Level4Spells[10]}" Width="197" Margin="268,644,0,0" />
-                        <TextBox Text="{Binding Level4Spells[11]}" Width="197" Margin="268,661,0,0" />
-                        <TextBox Text="{Binding Level4Spells[12]}" Width="197" Margin="268,678,0,0" />
-                        <TextBox Text="{Binding Level5SlotsTotal}" Width="40" Margin="285,720,0,0" />
-                        <TextBox Text="{Binding Level5SlotsExpended}" Width="80" Margin="360,720,0,0" />
-                        <TextBox Text="{Binding Level5Spells[0]}" Width="197" Margin="268,748,0,0" />
-                        <TextBox Text="{Binding Level5Spells[1]}" Width="197" Margin="268,765,0,0" />
-                        <TextBox Text="{Binding Level5Spells[2]}" Width="197" Margin="268,782,0,0" />
-                        <TextBox Text="{Binding Level5Spells[3]}" Width="197" Margin="268,799,0,0" />
-                        <TextBox Text="{Binding Level5Spells[4]}" Width="197" Margin="268,816,0,0" />
-                        <TextBox Text="{Binding Level5Spells[5]}" Width="197" Margin="268,833,0,0" />
-                        <TextBox Text="{Binding Level5Spells[6]}" Width="197" Margin="268,850,0,0" />
-                        <TextBox Text="{Binding Level5Spells[7]}" Width="197" Margin="268,867,0,0" />
-                        <TextBox Text="{Binding Level5Spells[8]}" Width="197" Margin="268,884,0,0" />
-                        <TextBox Text="{Binding Level6SlotsTotal}" Width="40" Margin="511,173,0,0" />
-                        <TextBox Text="{Binding Level6SlotsExpended}" Width="80" Margin="586,173,0,0" />
-                        <TextBox Text="{Binding Level6Spells[0]}" Width="197" Margin="494,201,0,0" />
-                        <TextBox Text="{Binding Level6Spells[1]}" Width="197" Margin="494,218,0,0" />
-                        <TextBox Text="{Binding Level6Spells[2]}" Width="197" Margin="494,235,0,0" />
-                        <TextBox Text="{Binding Level6Spells[3]}" Width="197" Margin="494,252,0,0" />
-                        <TextBox Text="{Binding Level6Spells[4]}" Width="197" Margin="494,269,0,0" />
-                        <TextBox Text="{Binding Level6Spells[5]}" Width="197" Margin="494,286,0,0" />
-                        <TextBox Text="{Binding Level6Spells[6]}" Width="197" Margin="494,303,0,0" />
-                        <TextBox Text="{Binding Level6Spells[7]}" Width="197" Margin="494,320,0,0" />
-                        <TextBox Text="{Binding Level6Spells[8]}" Width="197" Margin="494,337,0,0" />
-                        <TextBox Text="{Binding Level7SlotsTotal}" Width="40" Margin="511,379,0,0" />
-                        <TextBox Text="{Binding Level7SlotsExpended}" Width="80" Margin="586,379,0,0" />
-                        <TextBox Text="{Binding Level7Spells[0]}" Width="197" Margin="494,407,0,0" />
-                        <TextBox Text="{Binding Level7Spells[1]}" Width="197" Margin="494,424,0,0" />
-                        <TextBox Text="{Binding Level7Spells[2]}" Width="197" Margin="494,441,0,0" />
-                        <TextBox Text="{Binding Level7Spells[3]}" Width="197" Margin="494,458,0,0" />
-                        <TextBox Text="{Binding Level7Spells[4]}" Width="197" Margin="494,474,0,0" />
-                        <TextBox Text="{Binding Level7Spells[5]}" Width="197" Margin="494,491,0,0" />
-                        <TextBox Text="{Binding Level7Spells[6]}" Width="197" Margin="494,508,0,0" />
-                        <TextBox Text="{Binding Level7Spells[7]}" Width="197" Margin="494,525,0,0" />
-                        <TextBox Text="{Binding Level7Spells[8]}" Width="197" Margin="494,542,0,0" />
-                        <TextBox Text="{Binding Level8SlotsTotal}" Width="40" Margin="511,584,0,0" />
-                        <TextBox Text="{Binding Level8SlotsExpended}" Width="80" Margin="586,584,0,0" />
-                        <TextBox Text="{Binding Level8Spells[0]}" Width="197" Margin="494,612,0,0" />
-                        <TextBox Text="{Binding Level8Spells[1]}" Width="197" Margin="494,629,0,0" />
-                        <TextBox Text="{Binding Level8Spells[2]}" Width="197" Margin="494,646,0,0" />
-                        <TextBox Text="{Binding Level8Spells[3]}" Width="197" Margin="494,663,0,0" />
-                        <TextBox Text="{Binding Level8Spells[4]}" Width="197" Margin="494,680,0,0" />
-                        <TextBox Text="{Binding Level8Spells[5]}" Width="197" Margin="494,697,0,0" />
-                        <TextBox Text="{Binding Level8Spells[6]}" Width="197" Margin="494,714,0,0" />
-                        <TextBox Text="{Binding Level9SlotsTotal}" Width="40" Margin="511,754,0,0" />
-                        <TextBox Text="{Binding Level9SlotsExpended}" Width="80" Margin="586,754,0,0" />
-                        <TextBox Text="{Binding Level9Spells[0]}" Width="197" Margin="494,782,0,0" />
-                        <TextBox Text="{Binding Level9Spells[1]}" Width="197" Margin="494,799,0,0" />
-                        <TextBox Text="{Binding Level9Spells[2]}" Width="197" Margin="494,816,0,0" />
-                        <TextBox Text="{Binding Level9Spells[3]}" Width="197" Margin="494,833,0,0" />
-                        <TextBox Text="{Binding Level9Spells[4]}" Width="197" Margin="494,850,0,0" />
-                        <TextBox Text="{Binding Level9Spells[5]}" Width="197" Margin="494,867,0,0" />
-                        <TextBox Text="{Binding Level9Spells[6]}" Width="197" Margin="494,884,0,0" />
+                        <TextBox Text="{Binding Cantrips[0], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,200,0,0" />
+                        <TextBox Text="{Binding Cantrips[1], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,217,0,0" />
+                        <TextBox Text="{Binding Cantrips[2], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,234,0,0" />
+                        <TextBox Text="{Binding Cantrips[3], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,251,0,0" />
+                        <TextBox Text="{Binding Cantrips[4], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,268,0,0" />
+                        <TextBox Text="{Binding Cantrips[5], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,285,0,0" />
+                        <TextBox Text="{Binding Cantrips[6], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,302,0,0" />
+                        <TextBox Text="{Binding Cantrips[7], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,319,0,0" />
+                        <TextBox Text="{Binding Level1SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="55,376,0,0" />
+                        <TextBox Text="{Binding Level1SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="130,376,0,0" />
+                        <TextBox Text="{Binding Level1Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,407,0,0" />
+                        <TextBox Text="{Binding Level1Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,424,0,0" />
+                        <TextBox Text="{Binding Level1Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,441,0,0" />
+                        <TextBox Text="{Binding Level1Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,458,0,0" />
+                        <TextBox Text="{Binding Level1Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,475,0,0" />
+                        <TextBox Text="{Binding Level1Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,492,0,0" />
+                        <TextBox Text="{Binding Level1Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,509,0,0" />
+                        <TextBox Text="{Binding Level1Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,526,0,0" />
+                        <TextBox Text="{Binding Level1Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,543,0,0" />
+                        <TextBox Text="{Binding Level1Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,560,0,0" />
+                        <TextBox Text="{Binding Level1Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,577,0,0" />
+                        <TextBox Text="{Binding Level1Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,594,0,0" />
+                        <TextBox Text="{Binding Level1Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,611,0,0" />
+                        <TextBox Text="{Binding Level2SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="55,653,0,0" />
+                        <TextBox Text="{Binding Level2SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="130,653,0,0" />
+                        <TextBox Text="{Binding Level2Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,681,0,0" />
+                        <TextBox Text="{Binding Level2Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,698,0,0" />
+                        <TextBox Text="{Binding Level2Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,715,0,0" />
+                        <TextBox Text="{Binding Level2Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,732,0,0" />
+                        <TextBox Text="{Binding Level2Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,749,0,0" />
+                        <TextBox Text="{Binding Level2Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,766,0,0" />
+                        <TextBox Text="{Binding Level2Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,782,0,0" />
+                        <TextBox Text="{Binding Level2Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,799,0,0" />
+                        <TextBox Text="{Binding Level2Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,816,0,0" />
+                        <TextBox Text="{Binding Level2Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,833,0,0" />
+                        <TextBox Text="{Binding Level2Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,850,0,0" />
+                        <TextBox Text="{Binding Level2Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,867,0,0" />
+                        <TextBox Text="{Binding Level2Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,884,0,0" />
+                        <TextBox Text="{Binding Level3SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="285,173,0,0" />
+                        <TextBox Text="{Binding Level3SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="360,173,0,0" />
+                        <TextBox Text="{Binding Level3Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,201,0,0" />
+                        <TextBox Text="{Binding Level3Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,218,0,0" />
+                        <TextBox Text="{Binding Level3Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,235,0,0" />
+                        <TextBox Text="{Binding Level3Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,252,0,0" />
+                        <TextBox Text="{Binding Level3Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,269,0,0" />
+                        <TextBox Text="{Binding Level3Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,286,0,0" />
+                        <TextBox Text="{Binding Level3Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,303,0,0" />
+                        <TextBox Text="{Binding Level3Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,320,0,0" />
+                        <TextBox Text="{Binding Level3Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,337,0,0" />
+                        <TextBox Text="{Binding Level3Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,354,0,0" />
+                        <TextBox Text="{Binding Level3Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,371,0,0" />
+                        <TextBox Text="{Binding Level3Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,388,0,0" />
+                        <TextBox Text="{Binding Level3Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,405,0,0" />
+                        <TextBox Text="{Binding Level4SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="285,446,0,0" />
+                        <TextBox Text="{Binding Level4SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="360,446,0,0" />
+                        <TextBox Text="{Binding Level4Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,474,0,0" />
+                        <TextBox Text="{Binding Level4Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,491,0,0" />
+                        <TextBox Text="{Binding Level4Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,508,0,0" />
+                        <TextBox Text="{Binding Level4Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,525,0,0" />
+                        <TextBox Text="{Binding Level4Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,542,0,0" />
+                        <TextBox Text="{Binding Level4Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,559,0,0" />
+                        <TextBox Text="{Binding Level4Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,576,0,0" />
+                        <TextBox Text="{Binding Level4Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,593,0,0" />
+                        <TextBox Text="{Binding Level4Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,610,0,0" />
+                        <TextBox Text="{Binding Level4Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,627,0,0" />
+                        <TextBox Text="{Binding Level4Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,644,0,0" />
+                        <TextBox Text="{Binding Level4Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,661,0,0" />
+                        <TextBox Text="{Binding Level4Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,678,0,0" />
+                        <TextBox Text="{Binding Level5SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="285,720,0,0" />
+                        <TextBox Text="{Binding Level5SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="360,720,0,0" />
+                        <TextBox Text="{Binding Level5Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,748,0,0" />
+                        <TextBox Text="{Binding Level5Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,765,0,0" />
+                        <TextBox Text="{Binding Level5Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,782,0,0" />
+                        <TextBox Text="{Binding Level5Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,799,0,0" />
+                        <TextBox Text="{Binding Level5Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,816,0,0" />
+                        <TextBox Text="{Binding Level5Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,833,0,0" />
+                        <TextBox Text="{Binding Level5Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,850,0,0" />
+                        <TextBox Text="{Binding Level5Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,867,0,0" />
+                        <TextBox Text="{Binding Level5Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,884,0,0" />
+                        <TextBox Text="{Binding Level6SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,173,0,0" />
+                        <TextBox Text="{Binding Level6SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,173,0,0" />
+                        <TextBox Text="{Binding Level6Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,201,0,0" />
+                        <TextBox Text="{Binding Level6Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,218,0,0" />
+                        <TextBox Text="{Binding Level6Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,235,0,0" />
+                        <TextBox Text="{Binding Level6Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,252,0,0" />
+                        <TextBox Text="{Binding Level6Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,269,0,0" />
+                        <TextBox Text="{Binding Level6Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,286,0,0" />
+                        <TextBox Text="{Binding Level6Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,303,0,0" />
+                        <TextBox Text="{Binding Level6Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,320,0,0" />
+                        <TextBox Text="{Binding Level6Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,337,0,0" />
+                        <TextBox Text="{Binding Level7SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,379,0,0" />
+                        <TextBox Text="{Binding Level7SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,379,0,0" />
+                        <TextBox Text="{Binding Level7Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,407,0,0" />
+                        <TextBox Text="{Binding Level7Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,424,0,0" />
+                        <TextBox Text="{Binding Level7Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,441,0,0" />
+                        <TextBox Text="{Binding Level7Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,458,0,0" />
+                        <TextBox Text="{Binding Level7Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,474,0,0" />
+                        <TextBox Text="{Binding Level7Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,491,0,0" />
+                        <TextBox Text="{Binding Level7Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,508,0,0" />
+                        <TextBox Text="{Binding Level7Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,525,0,0" />
+                        <TextBox Text="{Binding Level7Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,542,0,0" />
+                        <TextBox Text="{Binding Level8SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,584,0,0" />
+                        <TextBox Text="{Binding Level8SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,584,0,0" />
+                        <TextBox Text="{Binding Level8Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,612,0,0" />
+                        <TextBox Text="{Binding Level8Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,629,0,0" />
+                        <TextBox Text="{Binding Level8Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,646,0,0" />
+                        <TextBox Text="{Binding Level8Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,663,0,0" />
+                        <TextBox Text="{Binding Level8Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,680,0,0" />
+                        <TextBox Text="{Binding Level8Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,697,0,0" />
+                        <TextBox Text="{Binding Level8Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,714,0,0" />
+                        <TextBox Text="{Binding Level9SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,754,0,0" />
+                        <TextBox Text="{Binding Level9SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,754,0,0" />
+                        <TextBox Text="{Binding Level9Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,782,0,0" />
+                        <TextBox Text="{Binding Level9Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,799,0,0" />
+                        <TextBox Text="{Binding Level9Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,816,0,0" />
+                        <TextBox Text="{Binding Level9Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,833,0,0" />
+                        <TextBox Text="{Binding Level9Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,850,0,0" />
+                        <TextBox Text="{Binding Level9Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,867,0,0" />
+                        <TextBox Text="{Binding Level9Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,884,0,0" />
                     </Grid>
                 </Grid>
             </TabItem>

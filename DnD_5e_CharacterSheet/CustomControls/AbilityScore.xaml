@@ -52,7 +52,7 @@
                 </Path>
             </Canvas>
         </Canvas>
-        <TextBox Text="{Binding Score, ElementName=UserControl}" Width="27" Margin="0,57,0,0" />
+        <TextBox Text="{Binding Score, ElementName=UserControl, UpdateSourceTrigger=PropertyChanged}" Width="27" Margin="0,57,0,0" />
         <TextBlock Text="{Binding Modifier, ElementName=UserControl, StringFormat='{}{0:+0;-#}'}" FontSize="20" Width="44" Margin="0,18,0,0" />
         <TextBlock Text="{Binding Ability, ElementName=UserControl}" FontWeight="Bold" FontSize="7" HorizontalAlignment="Center" Margin="0,3,0,0" />
     </Grid>
