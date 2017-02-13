@@ -105,51 +105,118 @@
                             <TextBox Text="{Binding ProficiencyBonus, UpdateSourceTrigger=PropertyChanged, StringFormat='{}{0:+0;-#}'}" Width="28" Margin="107,200,0,0" />
                             <TextBlock Text="{Binding PassiveWisdom}" Width="20" Margin="31,708,0,0" />
                             <TextBox Text="{Binding ArmorClass, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Width="30" Margin="274,168,0,0" />
-                            <TextBlock Text="{Binding Initiative, StringFormat='{}{0:+0;-#}'}" Width="30" Margin="341,172,0,0" />
-                            <TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Width="30" Margin="412,172,0,0" />
+
+                            <GroupBox Header="INITIATIVE" Margin="325,158,0,0" Style="{StaticResource OrnateBox2}" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding Initiative, StringFormat='{}{0:+0;-#}'}" Width="33" Margin="0,3"/>
+                            </GroupBox>
+                            <GroupBox Header="SPEED" Margin="396,158,0,0" Style="{StaticResource OrnateBox2}" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <TextBox Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" Width="33" FontSize="18" Margin="0,2"/>
+                            </GroupBox>
+                            
                             <TextBox Text="{Binding HitPointMaximum, UpdateSourceTrigger=PropertyChanged}" Width="109" Margin="341,233,0,0" FontSize="8" />
                             <TextBox Text="{Binding CurrentHitPoints, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="308,258,0,0" />
                             <TextBox Text="{Binding TemporaryHitPoints, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="308,320,0,0" />
-                            <TextBox Text="{Binding HitDice, UpdateSourceTrigger=PropertyChanged}" FontSize="8" Width="58" Margin="288,379,0,0" />
-                            <CheckBox IsChecked="{Binding DeathSaveSuccess1}" Margin="405,382,0,0" />
-                            <CheckBox IsChecked="{Binding DeathSaveSuccess2}" Margin="421,382,0,0" />
-                            <CheckBox IsChecked="{Binding DeathSaveSuccess3}" Margin="437,382,0,0" />
-                            <CheckBox IsChecked="{Binding DeathSaveFailure1}" Margin="405,401,0,0" />
-                            <CheckBox IsChecked="{Binding DeathSaveFailure2}" Margin="421,401,0,0" />
-                            <CheckBox IsChecked="{Binding DeathSaveFailure3}" Margin="437,401,0,0" />
 
-                            <GroupBox Style="{StaticResource OrnateBox1}" Margin="100,236,0,0" Header="SAVING THROWS" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                <StackPanel Margin="2,0,42,8">
-                                    <controls:ThrowModifier Label="Strength" IsChecked="{Binding StrengthSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding StrengthSavingThrow, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Dexterity" IsChecked="{Binding DexteritySavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding DexteritySavingThrow, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Constitution" IsChecked="{Binding ConstitutionSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding ConstitutionSavingThrow, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Intelligence" IsChecked="{Binding IntelligenceSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding IntelligenceSavingThrow, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Wisdom" IsChecked="{Binding WisdomSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding WisdomSavingThrow, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Charisma" IsChecked="{Binding CharismaSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding CharismaSavingThrow, Mode=OneWay}" />
-                                </StackPanel>
-                            </GroupBox>
-                            <GroupBox Header="SKILLS" Style="{StaticResource OrnateBox1}" Margin="100,370,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                <StackPanel Margin="2,0,6,18">
-                                    <controls:ThrowModifier Label="Acrobatics (Dex)" IsChecked="{Binding AcrobaticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Acrobatics, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Animal Handling (Wis)" IsChecked="{Binding AnimalHandlingEnabled, Mode=TwoWay}" ModifierValue="{Binding AnimalHandling, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Arcana (Int)" IsChecked="{Binding ArcanaEnabled, Mode=TwoWay}" ModifierValue="{Binding Arcana, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Athletics (Str)" IsChecked="{Binding AthleticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Athletics, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Deception (Cha)" IsChecked="{Binding DeceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Deception, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="History (Int)" IsChecked="{Binding HistoryEnabled, Mode=TwoWay}" ModifierValue="{Binding History, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Insight (Wis)" IsChecked="{Binding InsightEnabled, Mode=TwoWay}" ModifierValue="{Binding Insight, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Intimidation (Cha)" IsChecked="{Binding IntimidationEnabled, Mode=TwoWay}" ModifierValue="{Binding Intimidation, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Investigation (Int)" IsChecked="{Binding InvestigationEnabled, Mode=TwoWay}" ModifierValue="{Binding Investigation, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Medicine (Wis)" IsChecked="{Binding MedicineEnabled, Mode=TwoWay}" ModifierValue="{Binding Medicine, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Nature (Int)" IsChecked="{Binding NatureEnabled, Mode=TwoWay}" ModifierValue="{Binding Nature, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Perception (Wis)" IsChecked="{Binding PerceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Perception, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Performance (Cha)" IsChecked="{Binding PerformanceEnabled, Mode=TwoWay}" ModifierValue="{Binding Performance, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Persuasion (Cha)" IsChecked="{Binding PersuasionEnabled, Mode=TwoWay}" ModifierValue="{Binding Persuasion, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Religion (Int)" IsChecked="{Binding ReligionEnabled, Mode=TwoWay}" ModifierValue="{Binding Religion, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Sleight of Hand (Dex)" IsChecked="{Binding SleightOfHandEnabled, Mode=TwoWay}" ModifierValue="{Binding SleightOfHand, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Stealth (Dex)" IsChecked="{Binding StealthEnabled, Mode=TwoWay}" ModifierValue="{Binding Stealth, Mode=OneWay}" />
-                                    <controls:ThrowModifier Label="Survival (Wis)" IsChecked="{Binding SurvivalEnabled, Mode=TwoWay}" ModifierValue="{Binding Survival, Mode=OneWay}" />
-                                </StackPanel>
-                            </GroupBox>
+                            <Grid Margin="260,375,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Grid.Resources>
+                                    <Style TargetType="GroupBox" BasedOn="{StaticResource OrnateBox2}">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="VerticalAlignment" Value="Top" />
+                                    </Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="FontSize" Value="7" />
+                                    </Style>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="FontSize" Value="7" />
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                        <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <GroupBox>
+                                    <GroupBox.Header>
+                                        <TextBlock Text="HIT DICE" Margin="0,0,0,-2"/>
+                                    </GroupBox.Header>
+                                    <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="-7,-9,-7,29">
+                                        <TextBlock Text="Total " />
+                                        <TextBox Text="{Binding HitDice, UpdateSourceTrigger=PropertyChanged}" Width="62"/>
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Grid.Column="2" >
+                                    <GroupBox.Header>
+                                        <TextBlock Text="DEATH SAVES" Margin="0,0,0,-2"/>
+                                    </GroupBox.Header>
+                                    <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="-8,-5,0,0">
+                                        <Grid.Resources>
+                                            <Style TargetType="{x:Type controls:TripleCheckBox}">
+                                                <Setter Property="Margin" Value="3,0,-6,7" />
+                                            </Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="TextAlignment" Value="Right" />
+                                                <Setter Property="FontSize" Value="7" />
+                                            </Style>
+                                        </Grid.Resources>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="SUCCESSES" Grid.Row="0" />
+                                        <TextBlock Text="FAILURES" Grid.Row="1" />
+                                        <controls:TripleCheckBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" IsChecked1="{Binding DeathSaveSuccess1}" IsChecked2="{Binding DeathSaveSuccess2}" IsChecked3="{Binding DeathSaveSuccess3}"/>
+                                        <controls:TripleCheckBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" IsChecked1="{Binding DeathSaveFailure1}" IsChecked2="{Binding DeathSaveFailure2}" IsChecked3="{Binding DeathSaveFailure3}" Margin="3,0,-6,6"/>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+
+                            <StackPanel Margin="100,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <StackPanel.Resources>
+                                    <Style TargetType="GroupBox" BasedOn="{StaticResource OrnateBox1}">
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Setter Property="VerticalAlignment" Value="Top" />
+                                        <Setter Property="Margin" Value="0,0,0,8" />
+                                    </Style>
+                                </StackPanel.Resources>
+                                <GroupBox Header="SAVING THROWS">
+                                    <StackPanel Margin="2,0,42,8">
+                                        <controls:ThrowModifier Label="Strength" IsChecked="{Binding StrengthSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding StrengthSavingThrow, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Dexterity" IsChecked="{Binding DexteritySavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding DexteritySavingThrow, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Constitution" IsChecked="{Binding ConstitutionSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding ConstitutionSavingThrow, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Intelligence" IsChecked="{Binding IntelligenceSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding IntelligenceSavingThrow, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Wisdom" IsChecked="{Binding WisdomSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding WisdomSavingThrow, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Charisma" IsChecked="{Binding CharismaSavingThrowEnabled, Mode=TwoWay}" ModifierValue="{Binding CharismaSavingThrow, Mode=OneWay}" />
+                                    </StackPanel>
+                                </GroupBox>
+                                <GroupBox Header="SKILLS">
+                                    <StackPanel Margin="2,0,6,18">
+                                        <controls:ThrowModifier Label="Acrobatics (Dex)" IsChecked="{Binding AcrobaticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Acrobatics, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Animal Handling (Wis)" IsChecked="{Binding AnimalHandlingEnabled, Mode=TwoWay}" ModifierValue="{Binding AnimalHandling, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Arcana (Int)" IsChecked="{Binding ArcanaEnabled, Mode=TwoWay}" ModifierValue="{Binding Arcana, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Athletics (Str)" IsChecked="{Binding AthleticsEnabled, Mode=TwoWay}" ModifierValue="{Binding Athletics, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Deception (Cha)" IsChecked="{Binding DeceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Deception, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="History (Int)" IsChecked="{Binding HistoryEnabled, Mode=TwoWay}" ModifierValue="{Binding History, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Insight (Wis)" IsChecked="{Binding InsightEnabled, Mode=TwoWay}" ModifierValue="{Binding Insight, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Intimidation (Cha)" IsChecked="{Binding IntimidationEnabled, Mode=TwoWay}" ModifierValue="{Binding Intimidation, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Investigation (Int)" IsChecked="{Binding InvestigationEnabled, Mode=TwoWay}" ModifierValue="{Binding Investigation, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Medicine (Wis)" IsChecked="{Binding MedicineEnabled, Mode=TwoWay}" ModifierValue="{Binding Medicine, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Nature (Int)" IsChecked="{Binding NatureEnabled, Mode=TwoWay}" ModifierValue="{Binding Nature, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Perception (Wis)" IsChecked="{Binding PerceptionEnabled, Mode=TwoWay}" ModifierValue="{Binding Perception, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Performance (Cha)" IsChecked="{Binding PerformanceEnabled, Mode=TwoWay}" ModifierValue="{Binding Performance, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Persuasion (Cha)" IsChecked="{Binding PersuasionEnabled, Mode=TwoWay}" ModifierValue="{Binding Persuasion, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Religion (Int)" IsChecked="{Binding ReligionEnabled, Mode=TwoWay}" ModifierValue="{Binding Religion, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Sleight of Hand (Dex)" IsChecked="{Binding SleightOfHandEnabled, Mode=TwoWay}" ModifierValue="{Binding SleightOfHand, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Stealth (Dex)" IsChecked="{Binding StealthEnabled, Mode=TwoWay}" ModifierValue="{Binding Stealth, Mode=OneWay}" />
+                                        <controls:ThrowModifier Label="Survival (Wis)" IsChecked="{Binding SurvivalEnabled, Mode=TwoWay}" ModifierValue="{Binding Survival, Mode=OneWay}" />
+                                    </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
 
                             <TextBox Text="{Binding Weapon1Name, UpdateSourceTrigger=PropertyChanged}" Margin="260,469,0,0" Width="76" />
                             <TextBox Text="{Binding Weapon1AtkBonus, UpdateSourceTrigger=PropertyChanged}" Margin="342,469,0,0" Width="37" />

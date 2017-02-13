@@ -71,6 +71,9 @@
     <Compile Include="CustomControls\ThrowModifier.xaml.cs">
       <DependentUpon>ThrowModifier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\TripleCheckBox.xaml.cs">
+      <DependentUpon>TripleCheckBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DnD_Constants.cs" />
     <Compile Include="Models\CharacterSheetModel.cs" />
     <Compile Include="MVVM\ParameteredCommandRouter.cs" />
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\ThrowModifier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\TripleCheckBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
