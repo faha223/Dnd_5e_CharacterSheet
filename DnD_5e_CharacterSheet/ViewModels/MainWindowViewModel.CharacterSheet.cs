@@ -1413,11 +1413,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
             {
                 if (model.CopperPieces != value)
                 {
-                    while (value >= DnD_Constants.CopperPiecesPerSilver)
-                    {
-                        value -= DnD_Constants.CopperPiecesPerSilver;
-                        SilverPieces += 1;
-                    }
                     model.CopperPieces = value;
                     OnPropertyChanged("CopperPieces");
                 }
@@ -1434,11 +1429,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
             {
                 if (model.SilverPieces != value)
                 {
-                    while(value >= DnD_Constants.SilverPiecesPerElectrum)
-                    {
-                        value -= DnD_Constants.SilverPiecesPerElectrum;
-                        ElectrumPieces += 1;
-                    }
                     model.SilverPieces = value;
                     OnPropertyChanged("SilverPieces");
                 }
@@ -1455,11 +1445,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
             {
                 if (model.ElectrumPieces != value)
                 {
-                    while(value >= DnD_Constants.ElectrumPiecesPerGold)
-                    {
-                        value -= DnD_Constants.ElectrumPiecesPerGold;
-                        GoldPieces += 1;
-                    }
                     model.ElectrumPieces = value;
                     OnPropertyChanged("ElectrumPieces");
                 }
@@ -1476,11 +1461,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
             {
                 if (model.GoldPieces != value)
                 {
-                    while (value >= DnD_Constants.GoldPiecesPerPlatinum)
-                    {
-                        value -= DnD_Constants.GoldPiecesPerPlatinum;
-                        PlatinumPieces += 1;
-                    }
                     model.GoldPieces = value;
                     OnPropertyChanged("GoldPieces");
                 }
