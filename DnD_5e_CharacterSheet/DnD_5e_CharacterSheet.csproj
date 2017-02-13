@@ -67,6 +67,21 @@
     <Compile Include="CustomControls\AbilityScore.xaml.cs">
       <DependentUpon>AbilityScore.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\CopperPieces.xaml.cs">
+      <DependentUpon>CopperPieces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ElectrumPieces.xaml.cs">
+      <DependentUpon>ElectrumPieces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\GoldPieces.xaml.cs">
+      <DependentUpon>GoldPieces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PlatinumPieces.xaml.cs">
+      <DependentUpon>PlatinumPieces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SilverPieces.xaml.cs">
+      <DependentUpon>SilverPieces.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\TextOnPathElement.cs" />
     <Compile Include="CustomControls\ThrowModifier.xaml.cs">
       <DependentUpon>ThrowModifier.xaml</DependentUpon>
@@ -83,6 +98,26 @@
     <Compile Include="MVVM\ParameterlessCommandRouter.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="CustomControls\AbilityScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\CopperPieces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ElectrumPieces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\GoldPieces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\PlatinumPieces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\SilverPieces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
