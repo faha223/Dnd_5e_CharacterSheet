@@ -70,6 +70,9 @@
     <Compile Include="CustomControls\CopperPieces.xaml.cs">
       <DependentUpon>CopperPieces.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\EditableCheckBox.xaml.cs">
+      <DependentUpon>EditableCheckBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ElectrumPieces.xaml.cs">
       <DependentUpon>ElectrumPieces.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\CopperPieces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\EditableCheckBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

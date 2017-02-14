@@ -370,8 +370,8 @@
                         <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" Command="{Binding LoadPortraitCommand}">
                             <Image Source="{Binding PortraitSource}" />
                         </Button>
-                        <TextBox Text="{Binding OrganizationName, UpdateSourceTrigger=PropertyChanged}" Margin="500,176,0,0" Width="168" TextAlignment="Center" />
-                        <Button Style="{StaticResource ImageButton}" Height="136" Width="168" Margin="500,196,0,0" Command="{Binding LoadSymbolCommand}">
+                        <TextBox Text="{Binding OrganizationName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource AngledCornerTextBox}" Margin="499,175,0,0" Width="170" FontSize="14" TextAlignment="Center" />
+                        <Button Style="{StaticResource ImageButton}" Height="136" Width="170" Margin="499,198,0,0" Command="{Binding LoadSymbolCommand}">
                             <Image Source="{Binding SymbolSource}" />
                         </Button>
                         <Grid>
@@ -404,14 +404,54 @@
                                     <Setter Property="TextAlignment" Value="Left" />
                                     <Setter Property="FontSize" Value="10" />
                                 </Style>
+                                <Style TargetType="GroupBox" BasedOn="{StaticResource OrnateBox2}">
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                </Style>
+                                <Style TargetType="Separator">
+                                    <Setter Property="Margin" Value="2,0,2,2" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Separator">
+                                                <Grid Margin="{TemplateBinding Margin}">
+                                                    <Grid Margin="{TemplateBinding Padding}">
+                                                        <Rectangle Width="0" Stroke="Gray" VerticalAlignment="Stretch" StrokeThickness="0.25" />
+                                                    </Grid>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
                             </Grid.Resources>
-                            <TextBox Text="{Binding CharacterBackstory, UpdateSourceTrigger=PropertyChanged}" Width="210" Height="454" Margin="25,451,0,0" />
+                            <GroupBox Header="CHARACTER BACKSTORY" Margin="21,449,0,0">
+                                <TextBox Text="{Binding CharacterBackstory, UpdateSourceTrigger=PropertyChanged}" Width="210" Height="454" Margin="-11,-13,-11,-2" />
+                            </GroupBox>
                             <TextBox Text="{Binding AlliesAndOrganizations1, UpdateSourceTrigger=PropertyChanged}" Width="216" Height="270" Margin="253,144,0,0" />
                             <TextBox Text="{Binding AlliesAndOrganizations2, UpdateSourceTrigger=PropertyChanged}" Width="216" Height="55" Margin="477,359,0,0" />
-                            <TextBox Text="{Binding AdditionalFeaturesAndTraits1, UpdateSourceTrigger=PropertyChanged}" Width="216" Height="254" Margin="253,439,0,0" />
-                            <TextBox Text="{Binding AdditionalFeaturesAndTraits2, UpdateSourceTrigger=PropertyChanged}" Width="216" Height="254" Margin="477,439,0,0" />
-                            <TextBox Text="{Binding Treasure1, UpdateSourceTrigger=PropertyChanged}" Width="216" Height="191" Margin="253,715,0,0" />
-                            <TextBox Text="{Binding Treasure2, UpdateSourceTrigger=PropertyChanged}" Width="216" Height="191" Margin="477,715,0,0" />
+                            <GroupBox Header="ADDITIONAL FEATURES &amp; TRAITS" Margin="250,438,0,0">
+                                <Grid Margin="-11,-11,-11,-4" Width="438">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Text="{Binding AdditionalFeaturesAndTraits1, UpdateSourceTrigger=PropertyChanged}" Height="254" HorizontalAlignment="Stretch" />
+                                    <Separator Grid.Column="1" />
+                                    <TextBox Text="{Binding AdditionalFeaturesAndTraits2, UpdateSourceTrigger=PropertyChanged}" Height="254" HorizontalAlignment="Stretch" Grid.Column="2" />
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="TREASURE" Margin="250,713,0,0">
+                                <Grid Margin="-11,-11,-11,-4" Width="438">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Text="{Binding Treasure1, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="191" />
+                                    <Separator Grid.Column="1" />
+                                    <TextBox Text="{Binding Treasure2, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="191" Grid.Column="2" />
+                                </Grid>
+                            </GroupBox>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -456,126 +496,162 @@
                                 <Setter Property="VerticalAlignment" Value="Top" />
                                 <Setter Property="TextAlignment" Value="Center" />
                             </Style>
+                            <Style TargetType="{x:Type controls:EditableCheckBox}">
+                                <Setter Property="Width" Value="208" />
+                            </Style>
                         </Grid.Resources>
-                        <TextBox Text="{Binding Cantrips[0], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,200,0,0" />
-                        <TextBox Text="{Binding Cantrips[1], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,217,0,0" />
-                        <TextBox Text="{Binding Cantrips[2], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,234,0,0" />
-                        <TextBox Text="{Binding Cantrips[3], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,251,0,0" />
-                        <TextBox Text="{Binding Cantrips[4], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,268,0,0" />
-                        <TextBox Text="{Binding Cantrips[5], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,285,0,0" />
-                        <TextBox Text="{Binding Cantrips[6], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,302,0,0" />
-                        <TextBox Text="{Binding Cantrips[7], UpdateSourceTrigger=PropertyChanged}" Width="190" Margin="40,319,0,0" />
+                        <StackPanel Margin="27,201,0,0">
+                            <StackPanel.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Background" Value="#00ffffff" />
+                                    <Setter Property="BorderBrush" Value="Black" />
+                                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                    <Setter Property="FontSize" Value="10" />
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Top" />
+                                    <Setter Property="TextAlignment" Value="Center" />
+                                    <Setter Property="Width" Value="208" />
+                                    <Setter Property="Margin" Value="0,0,0,3" />
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBox Text="{Binding Cantrips[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Text="{Binding Cantrips[7], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level1SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="55,376,0,0" />
                         <TextBox Text="{Binding Level1SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="130,376,0,0" />
-                        <TextBox Text="{Binding Level1Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,407,0,0" />
-                        <TextBox Text="{Binding Level1Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,424,0,0" />
-                        <TextBox Text="{Binding Level1Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,441,0,0" />
-                        <TextBox Text="{Binding Level1Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,458,0,0" />
-                        <TextBox Text="{Binding Level1Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,475,0,0" />
-                        <TextBox Text="{Binding Level1Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,492,0,0" />
-                        <TextBox Text="{Binding Level1Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,509,0,0" />
-                        <TextBox Text="{Binding Level1Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,526,0,0" />
-                        <TextBox Text="{Binding Level1Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,543,0,0" />
-                        <TextBox Text="{Binding Level1Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,560,0,0" />
-                        <TextBox Text="{Binding Level1Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,577,0,0" />
-                        <TextBox Text="{Binding Level1Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,594,0,0" />
-                        <TextBox Text="{Binding Level1Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,611,0,0" />
+                        <StackPanel Margin="27,408,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[9], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[9], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[10], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[10], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[11], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[11], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level1Spells[12], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level1SpellExpended[12], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level2SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="55,653,0,0" />
                         <TextBox Text="{Binding Level2SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="130,653,0,0" />
-                        <TextBox Text="{Binding Level2Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,681,0,0" />
-                        <TextBox Text="{Binding Level2Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,698,0,0" />
-                        <TextBox Text="{Binding Level2Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,715,0,0" />
-                        <TextBox Text="{Binding Level2Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,732,0,0" />
-                        <TextBox Text="{Binding Level2Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,749,0,0" />
-                        <TextBox Text="{Binding Level2Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,766,0,0" />
-                        <TextBox Text="{Binding Level2Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,782,0,0" />
-                        <TextBox Text="{Binding Level2Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,799,0,0" />
-                        <TextBox Text="{Binding Level2Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,816,0,0" />
-                        <TextBox Text="{Binding Level2Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,833,0,0" />
-                        <TextBox Text="{Binding Level2Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,850,0,0" />
-                        <TextBox Text="{Binding Level2Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,867,0,0" />
-                        <TextBox Text="{Binding Level2Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="38,884,0,0" />
+                        <StackPanel Margin="27,681,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[9], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[9], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[10], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[10], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[11], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[11], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level2Spells[12], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level2SpellExpended[12], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level3SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="285,173,0,0" />
                         <TextBox Text="{Binding Level3SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="360,173,0,0" />
-                        <TextBox Text="{Binding Level3Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,201,0,0" />
-                        <TextBox Text="{Binding Level3Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,218,0,0" />
-                        <TextBox Text="{Binding Level3Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,235,0,0" />
-                        <TextBox Text="{Binding Level3Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,252,0,0" />
-                        <TextBox Text="{Binding Level3Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,269,0,0" />
-                        <TextBox Text="{Binding Level3Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,286,0,0" />
-                        <TextBox Text="{Binding Level3Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,303,0,0" />
-                        <TextBox Text="{Binding Level3Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,320,0,0" />
-                        <TextBox Text="{Binding Level3Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,337,0,0" />
-                        <TextBox Text="{Binding Level3Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,354,0,0" />
-                        <TextBox Text="{Binding Level3Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,371,0,0" />
-                        <TextBox Text="{Binding Level3Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,388,0,0" />
-                        <TextBox Text="{Binding Level3Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,405,0,0" />
+                        <StackPanel Margin="256,202,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[9], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[9], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[10], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[10], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[11], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[11], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level3Spells[12], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level3SpellExpended[12], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level4SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="285,446,0,0" />
                         <TextBox Text="{Binding Level4SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="360,446,0,0" />
-                        <TextBox Text="{Binding Level4Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,474,0,0" />
-                        <TextBox Text="{Binding Level4Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,491,0,0" />
-                        <TextBox Text="{Binding Level4Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,508,0,0" />
-                        <TextBox Text="{Binding Level4Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,525,0,0" />
-                        <TextBox Text="{Binding Level4Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,542,0,0" />
-                        <TextBox Text="{Binding Level4Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,559,0,0" />
-                        <TextBox Text="{Binding Level4Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,576,0,0" />
-                        <TextBox Text="{Binding Level4Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,593,0,0" />
-                        <TextBox Text="{Binding Level4Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,610,0,0" />
-                        <TextBox Text="{Binding Level4Spells[9], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,627,0,0" />
-                        <TextBox Text="{Binding Level4Spells[10], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,644,0,0" />
-                        <TextBox Text="{Binding Level4Spells[11], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,661,0,0" />
-                        <TextBox Text="{Binding Level4Spells[12], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,678,0,0" />
+                        <StackPanel Margin="256,475,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[9], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[9], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[10], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[10], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[11], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[11], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level4Spells[12], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level4SpellExpended[12], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level5SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="285,720,0,0" />
                         <TextBox Text="{Binding Level5SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="360,720,0,0" />
-                        <TextBox Text="{Binding Level5Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,748,0,0" />
-                        <TextBox Text="{Binding Level5Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,765,0,0" />
-                        <TextBox Text="{Binding Level5Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,782,0,0" />
-                        <TextBox Text="{Binding Level5Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,799,0,0" />
-                        <TextBox Text="{Binding Level5Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,816,0,0" />
-                        <TextBox Text="{Binding Level5Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,833,0,0" />
-                        <TextBox Text="{Binding Level5Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,850,0,0" />
-                        <TextBox Text="{Binding Level5Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,867,0,0" />
-                        <TextBox Text="{Binding Level5Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="268,884,0,0" />
+                        <StackPanel Margin="256,749,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level5Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level5SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level6SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,173,0,0" />
                         <TextBox Text="{Binding Level6SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,173,0,0" />
-                        <TextBox Text="{Binding Level6Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,201,0,0" />
-                        <TextBox Text="{Binding Level6Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,218,0,0" />
-                        <TextBox Text="{Binding Level6Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,235,0,0" />
-                        <TextBox Text="{Binding Level6Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,252,0,0" />
-                        <TextBox Text="{Binding Level6Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,269,0,0" />
-                        <TextBox Text="{Binding Level6Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,286,0,0" />
-                        <TextBox Text="{Binding Level6Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,303,0,0" />
-                        <TextBox Text="{Binding Level6Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,320,0,0" />
-                        <TextBox Text="{Binding Level6Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,337,0,0" />
+                        <StackPanel Margin="482,202,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level6Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level6SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level7SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,379,0,0" />
                         <TextBox Text="{Binding Level7SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,379,0,0" />
-                        <TextBox Text="{Binding Level7Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,407,0,0" />
-                        <TextBox Text="{Binding Level7Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,424,0,0" />
-                        <TextBox Text="{Binding Level7Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,441,0,0" />
-                        <TextBox Text="{Binding Level7Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,458,0,0" />
-                        <TextBox Text="{Binding Level7Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,474,0,0" />
-                        <TextBox Text="{Binding Level7Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,491,0,0" />
-                        <TextBox Text="{Binding Level7Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,508,0,0" />
-                        <TextBox Text="{Binding Level7Spells[7], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,525,0,0" />
-                        <TextBox Text="{Binding Level7Spells[8], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,542,0,0" />
+                        <StackPanel Margin="482,407,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[7], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[7], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level7Spells[8], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level7SpellExpended[8], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level8SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,584,0,0" />
                         <TextBox Text="{Binding Level8SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,584,0,0" />
-                        <TextBox Text="{Binding Level8Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,612,0,0" />
-                        <TextBox Text="{Binding Level8Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,629,0,0" />
-                        <TextBox Text="{Binding Level8Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,646,0,0" />
-                        <TextBox Text="{Binding Level8Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,663,0,0" />
-                        <TextBox Text="{Binding Level8Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,680,0,0" />
-                        <TextBox Text="{Binding Level8Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,697,0,0" />
-                        <TextBox Text="{Binding Level8Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,714,0,0" />
+                        <StackPanel Margin="482,613,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level8Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level8SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                         <TextBox Text="{Binding Level9SlotsTotal, UpdateSourceTrigger=PropertyChanged}" Width="40" Margin="511,754,0,0" />
                         <TextBox Text="{Binding Level9SlotsExpended, UpdateSourceTrigger=PropertyChanged}" Width="80" Margin="586,754,0,0" />
-                        <TextBox Text="{Binding Level9Spells[0], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,782,0,0" />
-                        <TextBox Text="{Binding Level9Spells[1], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,799,0,0" />
-                        <TextBox Text="{Binding Level9Spells[2], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,816,0,0" />
-                        <TextBox Text="{Binding Level9Spells[3], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,833,0,0" />
-                        <TextBox Text="{Binding Level9Spells[4], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,850,0,0" />
-                        <TextBox Text="{Binding Level9Spells[5], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,867,0,0" />
-                        <TextBox Text="{Binding Level9Spells[6], UpdateSourceTrigger=PropertyChanged}" Width="197" Margin="494,884,0,0" />
+                        <StackPanel Margin="482,783,0,0">
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[0], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[0], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[1], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[1], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[2], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[2], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[3], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[3], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[4], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[4], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[5], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[5], UpdateSourceTrigger=PropertyChanged}" />
+                            <controls:EditableCheckBox Text="{Binding Level9Spells[6], UpdateSourceTrigger=PropertyChanged}" IsChecked="{Binding Level9SpellExpended[6], UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
                     </Grid>
                 </Grid>
             </TabItem>

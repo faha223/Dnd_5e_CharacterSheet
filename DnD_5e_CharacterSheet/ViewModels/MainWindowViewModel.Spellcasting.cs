@@ -128,6 +128,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        public List<bool> Level1SpellExpended
+        {
+            get
+            {
+                return model.Level1SpellExpended;
+            }
+            set
+            {
+                if (model.Level1SpellExpended != value)
+                {
+                    model.Level1SpellExpended = value;
+                    OnPropertyChanged("Level1SpellExpended");
+                }
+            }
+        }
+
         #endregion Level 1 Spells
 
         #region Level 2 Spells
@@ -176,6 +192,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.Level2Spells = value;
                     OnPropertyChanged("Level2Spells");
+                }
+            }
+        }
+
+        public List<bool> Level2SpellExpended
+        {
+            get
+            {
+                return model.Level2SpellExpended;
+            }
+            set
+            {
+                if (model.Level2SpellExpended != value)
+                {
+                    model.Level2SpellExpended = value;
+                    OnPropertyChanged("Level2SpellExpended");
                 }
             }
         }
@@ -232,6 +264,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        public List<bool> Level3SpellExpended
+        {
+            get
+            {
+                return model.Level3SpellExpended;
+            }
+            set
+            {
+                if (model.Level3SpellExpended != value)
+                {
+                    model.Level3SpellExpended = value;
+                    OnPropertyChanged("Level3SpellExpended");
+                }
+            }
+        }
+
         #endregion Level 3 Spells
 
         #region Level 4 Spells
@@ -280,6 +328,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.Level4Spells = value;
                     OnPropertyChanged("Level4Spells");
+                }
+            }
+        }
+
+        public List<bool> Level4SpellExpended
+        {
+            get
+            {
+                return model.Level4SpellExpended;
+            }
+            set
+            {
+                if (model.Level4SpellExpended != value)
+                {
+                    model.Level4SpellExpended = value;
+                    OnPropertyChanged("Level4SpellExpended");
                 }
             }
         }
@@ -336,6 +400,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        public List<bool> Level5SpellExpended
+        {
+            get
+            {
+                return model.Level5SpellExpended;
+            }
+            set
+            {
+                if (model.Level5SpellExpended != value)
+                {
+                    model.Level5SpellExpended = value;
+                    OnPropertyChanged("Level5SpellExpended");
+                }
+            }
+        }
+
         #endregion Level 5 Spells
 
         #region Level 6 Spells
@@ -384,6 +464,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.Level6Spells = value;
                     OnPropertyChanged("Level6Spells");
+                }
+            }
+        }
+
+        public List<bool> Level6SpellExpended
+        {
+            get
+            {
+                return model.Level6SpellExpended;
+            }
+            set
+            {
+                if (model.Level6SpellExpended != value)
+                {
+                    model.Level6SpellExpended = value;
+                    OnPropertyChanged("Level6SpellExpended");
                 }
             }
         }
@@ -440,6 +536,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        public List<bool> Level7SpellExpended
+        {
+            get
+            {
+                return model.Level7SpellExpended;
+            }
+            set
+            {
+                if (model.Level7SpellExpended != value)
+                {
+                    model.Level7SpellExpended = value;
+                    OnPropertyChanged("Level7SpellExpended");
+                }
+            }
+        }
+
         #endregion Level 7 Spells
 
         #region Level 8 Spells
@@ -492,6 +604,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
             }
         }
 
+        public List<bool> Level8SpellExpended
+        {
+            get
+            {
+                return model.Level8SpellExpended;
+            }
+            set
+            {
+                if (model.Level8SpellExpended != value)
+                {
+                    model.Level8SpellExpended = value;
+                    OnPropertyChanged("Level8SpellExpended");
+                }
+            }
+        }
+
         #endregion Level 8 Spells
 
         #region Level 9 Spells
@@ -540,6 +668,22 @@ namespace DnD_5e_CharacterSheet.ViewModels
                 {
                     model.Level9Spells = value;
                     OnPropertyChanged("Level9Spells");
+                }
+            }
+        }
+
+        public List<bool> Level9SpellExpended
+        {
+            get
+            {
+                return model.Level9SpellExpended;
+            }
+            set
+            {
+                if (model.Level9SpellExpended != value)
+                {
+                    model.Level9SpellExpended = value;
+                    OnPropertyChanged("Level9SpellExpended");
                 }
             }
         }

@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -126,30 +125,39 @@ namespace DnD_5e_CharacterSheet.Models
         public int Level1SlotsTotal;
         public int Level1SlotsExpended;
         public List<string> Level1Spells;
+        public List<bool> Level1SpellExpended;
         public int Level2SlotsTotal;
         public int Level2SlotsExpended;
         public List<string> Level2Spells;
+        public List<bool> Level2SpellExpended;
         public int Level3SlotsTotal;
         public int Level3SlotsExpended;
         public List<string> Level3Spells;
+        public List<bool> Level3SpellExpended;
         public int Level4SlotsTotal;
         public int Level4SlotsExpended;
         public List<string> Level4Spells;
+        public List<bool> Level4SpellExpended;
         public int Level5SlotsTotal;
         public int Level5SlotsExpended;
         public List<string> Level5Spells;
+        public List<bool> Level5SpellExpended;
         public int Level6SlotsTotal;
         public int Level6SlotsExpended;
         public List<string> Level6Spells;
+        public List<bool> Level6SpellExpended;
         public int Level7SlotsTotal;
         public int Level7SlotsExpended;
         public List<string> Level7Spells;
+        public List<bool> Level7SpellExpended;
         public int Level8SlotsTotal;
         public int Level8SlotsExpended;
         public List<string> Level8Spells;
+        public List<bool> Level8SpellExpended;
         public int Level9SlotsTotal;
         public int Level9SlotsExpended;
         public List<string> Level9Spells;
+        public List<bool> Level9SpellExpended;
 
         #endregion Spellcasting
 
@@ -162,14 +170,23 @@ namespace DnD_5e_CharacterSheet.Models
             var model = new CharacterSheetModel();
             model.Cantrips = new List<string>(new string[8]);
             model.Level1Spells = new List<string>(new string[13]);
+            model.Level1SpellExpended = new List<bool>(new bool[13]);
             model.Level2Spells = new List<string>(new string[13]);
+            model.Level2SpellExpended = new List<bool>(new bool[13]);
             model.Level3Spells = new List<string>(new string[13]);
+            model.Level3SpellExpended = new List<bool>(new bool[13]);
             model.Level4Spells = new List<string>(new string[13]);
+            model.Level4SpellExpended = new List<bool>(new bool[13]);
             model.Level5Spells = new List<string>(new string[9]);
+            model.Level5SpellExpended = new List<bool>(new bool[9]);
             model.Level6Spells = new List<string>(new string[9]);
-            model.Level7Spells = new List<string>(new string[7]);
+            model.Level6SpellExpended = new List<bool>(new bool[9]);
+            model.Level7Spells = new List<string>(new string[9]);
+            model.Level7SpellExpended = new List<bool>(new bool[9]);
             model.Level8Spells = new List<string>(new string[7]);
+            model.Level8SpellExpended = new List<bool>(new bool[7]);
             model.Level9Spells = new List<string>(new string[7]);
+            model.Level9SpellExpended = new List<bool>(new bool[7]);
             return model;
         }
 
@@ -188,16 +205,41 @@ namespace DnD_5e_CharacterSheet.Models
 
         private void makeValid()
         {
-            Cantrips = Cantrips.Take(8).ToList();
-            Level1Spells = Level1Spells.Take(13).ToList();
-            Level2Spells = Level2Spells.Take(13).ToList();
-            Level3Spells = Level3Spells.Take(13).ToList();
-            Level4Spells = Level4Spells.Take(13).ToList();
-            Level5Spells = Level5Spells.Take(9).ToList();
-            Level6Spells = Level6Spells.Take(9).ToList();
-            Level7Spells = Level7Spells.Take(7).ToList();
-            Level8Spells = Level8Spells.Take(7).ToList();
-            Level9Spells = Level9Spells.Take(7).ToList();
+            Cantrips = makeValid(Cantrips, 8);
+
+            Level1Spells = makeValid(Level1Spells, 13);
+            Level2Spells = makeValid(Level2Spells, 13);
+            Level3Spells = makeValid(Level3Spells, 13);
+            Level4Spells = makeValid(Level4Spells, 13);
+            Level5Spells = makeValid(Level5Spells, 9);
+            Level6Spells = makeValid(Level6Spells, 9);
+            Level7Spells = makeValid(Level7Spells, 9);
+            Level8Spells = makeValid(Level8Spells, 7);
+            Level9Spells = makeValid(Level9Spells, 7);
+
+            Level1SpellExpended = makeValid(Level1SpellExpended, 13);
+            Level2SpellExpended = makeValid(Level2SpellExpended, 13);
+            Level3SpellExpended = makeValid(Level3SpellExpended, 13);
+            Level4SpellExpended = makeValid(Level4SpellExpended, 13);
+            Level5SpellExpended = makeValid(Level5SpellExpended, 9);
+            Level6SpellExpended = makeValid(Level6SpellExpended, 9);
+            Level7SpellExpended = makeValid(Level7SpellExpended, 9);
+            Level8SpellExpended = makeValid(Level8SpellExpended, 7);
+            Level9SpellExpended = makeValid(Level9SpellExpended, 7);
+        }
+
+        private static List<T> makeValid<T>(List<T> list, int desiredLength)
+        {
+            if(list == null)
+                return new List<T>(new T[desiredLength]);
+            if (list.Count == desiredLength)
+                return list;
+            if(list.Count < desiredLength)
+            {
+                list.AddRange(new T[desiredLength - list.Count]);
+                return list;
+            }
+            return list.Take(desiredLength).ToList();
         }
     }
 }
