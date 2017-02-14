@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="DnD_5e_CharacterSheet.CustomControls.CantripsLabel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DnD_5e_CharacterSheet.CustomControls"
+             mc:Ignorable="d" VerticalAlignment="Top" HorizontalAlignment="Left">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="8" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="TextAlignment" Value="Center" />
+            </Style>
+        </Grid.Resources>
+        <Canvas Width="209" Height="45">
+            <Canvas.RenderTransform>
+                <MatrixTransform Matrix="1.2 0 0 -1.2 -37.23 785" />
+            </Canvas.RenderTransform>
+            <Canvas>
+                <Canvas.RenderTransform>
+                    <ScaleTransform ScaleX="0.1" ScaleY="0.1" />
+                </Canvas.RenderTransform>
+                <Path Fill="#FFFFFFFF">
+                    <Path.Data>
+                        <PathGeometry Figures="m 1996.73 6225.53 48.3 58.3 v 144.82 l -48.3 58.3 H 414.836 v -261.42" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+                <Path Fill="#FFFFFFFF">
+                    <Path.Data>
+                        <PathGeometry Figures="m 340.254 6236.48 v 239.54 l 27 25.4 102.16 -88.61 v -113.14 l -102.16 -88.61" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+                <Path Fill="#FFDEDDDE">
+                    <Path.Data>
+                        <PathGeometry Figures="m 367.668 6481.21 86.75 -75.25 v -99.45 l -86.75 -75.24 -12.41 11.68 v 226.58 z m -0.82 40.42 -41.59 -39.13 v -252.51 l 41.59 -39.15 117.57 101.98 v 126.83" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+                <Path Fill="#FF231F20">
+                    <Path.Data>
+                        <PathGeometry Figures="m 366.844 6521.63 117.57 -101.98 v -126.83 l -117.57 -101.98 -41.59 39.15 v 252.51 z m -0.41 20.21 -9.86 -9.28 -41.601 -39.13 -4.719 -4.45 v -6.48 -252.51 -6.48 l 4.719 -4.45 41.59 -39.14 9.871 -9.29 10.23 8.88 117.578 101.98 5.172 4.49 v 6.84 126.83 6.84 l -5.172 4.49 -117.578 101.98" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+                <Path Fill="#FF231F20">
+                    <Path.Data>
+                        <PathGeometry Figures="m 2051.9 6280.98 v 150.52 l -62.32 62.32 H 398.914 l 15.848 -13.75 h 69.453 l 70.34 -85.72 c -2.391 -7.92 -4.063 -16.76 -4.84 -26.57 -5.422 -1.17 -9.582 -5.76 -9.582 -11.54 0 -5.77 4.16 -10.37 9.59 -11.52 0.769 -9.79 2.441 -18.62 4.832 -26.53 l -70.391 -85.78 h -69.402 l -15.86 -13.75 H 935.883 1989.58 Z m -1526.275 -48.57 16.238 20.44 H 1961.1 c -21.97 -11.55 -43.88 -17.45 -60.58 -20.44 z m 59.02 151.25 v -54.87 l -18.821 -23.68 c -5.14 10.77 -8.902 23.9 -10.133 39.83 4.872 1.54 8.481 5.93 8.481 11.3 0 5.38 -3.617 9.78 -8.488 11.31 1.23 15.93 4.988 29.05 10.129 39.81 z m -38.043 69.99 h 55.601 c -9.379 -5.11 -22.07 -14.04 -32.75 -28.77 z m 22.871 -166.05 c 10.672 -14.74 23.359 -23.66 32.742 -28.76 h -55.59 z m -12.641 23.92 c 1.52 -4.05 3.199 -7.83 5.043 -11.38 l -53.82 -67.73 h -16.141 z m -48.797 168.55 53.817 -67.73 c -1.821 -3.54 -3.489 -7.31 -5.008 -11.33 l -64.879 79.06 z m 1386.535 0 c 16.78 -2.55 40.56 -8.15 64.6 -20.43 H 541.832 l -16.23 20.43 z m 143.58 -88.26 c -26.86 52.66 -72.72 77.01 -109.65 88.26 h 55.38 l 54.27 -54.28 z m 0 -53.57 c -15.35 -38.73 -40.73 -63.72 -67.19 -79.79 v 0.39 H 616.793 c -2.91 0.86 -26.418 8.58 -43.602 33.44 l 25.204 31.71 v 64.47 l -25.223 31.74 c 17.18 24.86 40.703 32.59 43.601 33.45 H 1969.95 c 26.82 -16.06 52.65 -41.2 68.2 -80.41 z m 0 -51.56 -54.27 -54.27 h -52.24 c 36.34 11.65 80.4 36.07 106.51 87.22" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Canvas>
+        <TextBlock Text="CANTRIPS" Margin="90,0,0,0" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="DnD_5e_CharacterSheet.CustomControls.SpellLevelLabel"
+             x:Name="UserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DnD_5e_CharacterSheet.CustomControls"
+             mc:Ignorable="d" VerticalAlignment="Top" HorizontalAlignment="Left">
+    <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="TextAlignment" Value="Center" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="TextAlignment" Value="Center" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0,0,0,0" />
+            </Style>
+        </Grid.Resources>
+        <Canvas Width="209" Height="45">
+            <Canvas.RenderTransform>
+                <MatrixTransform Matrix="1.2 0 0 -1.2 -37.23 583.75" />
+            </Canvas.RenderTransform>
+            <Canvas>
+                <Canvas.RenderTransform>
+                    <ScaleTransform ScaleX="0.1" ScaleY="0.1" />
+                </Canvas.RenderTransform>
+                <Path Fill="Black">
+                    <Path.Data>
+                        <PathGeometry Figures="m 2051.9 4603.66 v 150.52 l -62.31 62.32 H 402.176 l 15.859 -13.75 h 487.367 l 70.344 -85.72 c -2.391 -7.92 -4.062 -16.76 -4.844 -26.57 -5.418 -1.17 -9.578 -5.76 -9.578 -11.54 0 -5.77 4.16 -10.37 9.59 -11.52 0.77 -9.79 2.441 -18.62 4.832 -26.53 l -70.391 -85.78 H 418.023 l -15.847 -13.75 H 935.895 1989.59 Z m -1105.087 -48.57 16.242 20.44 h 998.055 c -21.98 -11.55 -43.89 -17.45 -60.59 -20.44 z m 59.027 151.25 v -54.87 l -18.824 -23.68 c -5.141 10.77 -8.903 23.9 -10.133 39.83 4.871 1.54 8.48 5.93 8.48 11.3 0 5.38 -3.621 9.78 -8.488 11.31 1.23 15.93 4.988 29.05 10.129 39.81 z m -38.047 69.99 h 55.607 c -9.38 -5.11 -22.08 -14.04 -32.755 -28.77 z m 22.871 -166.05 c 10.676 -14.74 23.356 -23.66 32.736 -28.76 h -55.587 z m -12.641 23.92 c 1.52 -4.05 3.2 -7.83 5.04 -11.38 l -53.821 -67.73 h -16.137 z m 5.02 100.82 c -1.82 -3.54 -3.488 -7.31 -5.008 -11.33 l -64.883 79.06 h 16.082 z m 911.527 67.73 c 16.79 -2.55 40.56 -8.15 64.61 -20.43 H 963.023 l -16.23 20.43 z m 143.58 -88.26 c -26.86 52.66 -72.72 77.01 -109.65 88.26 h 55.38 l 54.27 -54.28 z m 0 -53.57 c -15.35 -38.73 -40.72 -63.72 -67.19 -79.79 v 0.39 h -932.98 c -2.91 0.86 -26.42 8.58 -43.597 33.44 l 25.207 31.71 v 64.47 l -25.227 31.74 c 17.177 24.86 40.707 32.59 43.597 33.45 h 931.99 c 26.82 -16.06 52.66 -41.2 68.2 -80.41 z m 0 -51.56 -54.27 -54.27 h -52.24 c 36.34 11.65 80.4 36.07 106.51 87.22" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+                <Path Fill="#FFDEDDDE">
+                    <Path.Data>
+                        <PathGeometry Figures="m 367.668 4803.89 86.75 -75.25 v -99.44 l -86.75 -75.24 -12.41 11.68 v 226.57 z m -0.82 40.43 -41.59 -39.13 v -252.51 l 41.59 -39.15 117.57 101.98 v 126.83" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+                <Path Fill="Black">
+                    <Path.Data>
+                        <PathGeometry Figures="m 366.848 4844.32 117.57 -101.98 v -126.83 l -117.57 -101.98 -41.59 39.15 v 252.51 z m -0.41 20.21 -9.864 -9.28 -41.597 -39.13 -4.719 -4.45 v -6.48 -252.51 -6.48 l 4.719 -4.45 41.589 -39.14 9.872 -9.31 10.23 8.9 117.578 101.98 5.172 4.49 v 6.84 126.83 6.84 l -5.172 4.49 -117.578 101.97" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Canvas>
+        <TextBlock Text="{Binding SpellLevel, ElementName=UserControl}" Margin="3,0,0,0" Width="15" />
+        <TextBox Text="{Binding SpellSlots, ElementName=UserControl}" Margin="25,0,0,0" Width="50" />
+        <TextBox Text="{Binding SpellSlotsExpended, ElementName=UserControl}" Margin="90,0,0,0" Width="110" />
+        <Grid Visibility="{Binding ShowLabels, ElementName=UserControl, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Gray" />
+                    <Setter Property="FontSize" Value="6" />
+                    <Setter Property="FontWeight" Value="Normal" />
+                </Style>
+            </Grid.Resources>
+            <StackPanel Margin="-1,-17,0,0">
+                <TextBlock Text="SPELL" />
+                <TextBlock Text="LEVEL" />
+            </StackPanel>
+            <TextBlock Text="SLOTS TOTAL" Margin="25,-4,0,0"/>
+            <TextBlock Text="SLOTS EXPENDED" Margin="118,-4,0,0" />
+        </Grid>
+    </Grid>
+</UserControl>

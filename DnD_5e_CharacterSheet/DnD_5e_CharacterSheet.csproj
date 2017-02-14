@@ -67,6 +67,9 @@
     <Compile Include="CustomControls\AbilityScore.xaml.cs">
       <DependentUpon>AbilityScore.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\CantripsLabel.xaml.cs">
+      <DependentUpon>CantripsLabel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CopperPieces.xaml.cs">
       <DependentUpon>CopperPieces.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,9 @@
     <Compile Include="CustomControls\SilverPieces.xaml.cs">
       <DependentUpon>SilverPieces.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\SpellLevelLabel.xaml.cs">
+      <DependentUpon>SpellLevelLabel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\TextOnPathElement.cs" />
     <Compile Include="CustomControls\ThrowModifier.xaml.cs">
       <DependentUpon>ThrowModifier.xaml</DependentUpon>
@@ -101,6 +107,10 @@
     <Compile Include="MVVM\ParameterlessCommandRouter.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="CustomControls\AbilityScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\CantripsLabel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\SilverPieces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\SpellLevelLabel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

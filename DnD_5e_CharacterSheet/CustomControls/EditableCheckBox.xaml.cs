@@ -40,6 +40,16 @@ namespace DnD_5e_CharacterSheet.CustomControls
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(EditableCheckBox), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
+        public bool ShowLabels
+        {
+            get { return (bool)GetValue(ShowLabelsProperty); }
+            set { SetValue(ShowLabelsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ShowLabels.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ShowLabelsProperty =
+            DependencyProperty.Register("ShowLabels", typeof(bool), typeof(EditableCheckBox), new PropertyMetadata(false));
+
         public EditableCheckBox()
         {
             InitializeComponent();

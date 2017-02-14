@@ -9,6 +9,7 @@
              d:DesignWidth="300" VerticalAlignment="Top" HorizontalAlignment="Left">
     <Grid Margin="0,0,0,3">
         <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <Style TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Stretch" />
                 <Setter Property="VerticalAlignment" Value="Bottom" />
@@ -51,12 +52,26 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style TargetType="{x:Type local:TextOnPathElement}">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontWeight" Value="Normal" />
+                <Setter Property="FontSize" Value="8" />
+                <Setter Property="ContentAlignment" Value="Stretch" />
+                <Setter Property="PathFigure" Value="{Binding Source={StaticResource CurvedTextPath}, Path=Figures[0]}" />
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <TranslateTransform X="3.75" Y="0.9" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <CheckBox IsChecked="{Binding IsChecked, ElementName=UserControl}" />
+        <TextBlock Text="SPELL NAME" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,1" FontSize="7" Foreground="LightGray" Visibility="{Binding ShowLabels, ElementName=UserControl, Converter={StaticResource BooleanToVisibilityConverter}}" />
         <TextBox Grid.Column="1" Text="{Binding Text, ElementName=UserControl}" />
+        <local:TextOnPathElement Text="PREPARED" Visibility="{Binding ShowLabels, ElementName=UserControl, Converter={StaticResource BooleanToVisibilityConverter}}" />
     </Grid>
 </UserControl>
