@@ -50,9 +50,6 @@
                 </Path>
             </Canvas>
         </Canvas>
-        <TextBlock Text="{Binding SpellLevel, ElementName=UserControl}" Margin="3,0,0,0" Width="15" />
-        <TextBox Text="{Binding SpellSlots, ElementName=UserControl}" Margin="25,0,0,0" Width="50" />
-        <TextBox Text="{Binding SpellSlotsExpended, ElementName=UserControl}" Margin="90,0,0,0" Width="110" />
         <Grid Visibility="{Binding ShowLabels, ElementName=UserControl, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Grid.Resources>
                 <Style TargetType="TextBlock">
@@ -68,5 +65,8 @@
             <TextBlock Text="SLOTS TOTAL" Margin="25,-4,0,0"/>
             <TextBlock Text="SLOTS EXPENDED" Margin="118,-4,0,0" />
         </Grid>
+        <TextBlock Text="{Binding SpellLevel, ElementName=UserControl}" Margin="3,0,0,0" Width="15" />
+        <TextBox Text="{Binding SpellSlots, ElementName=UserControl}" Margin="25,0,0,0" Width="50" />
+        <TextBox Text="{Binding SpellSlotsExpended, ElementName=UserControl}" Margin="90,0,0,0" Width="110" />
     </Grid>
 </UserControl>
