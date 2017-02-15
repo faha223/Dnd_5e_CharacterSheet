@@ -1608,4 +1608,93 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="{x:Type TabItem}">
+        <Setter Property="Margin" Value="0,0,5,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid Margin="{TemplateBinding Margin}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Canvas Grid.Row="0" Grid.Column="0" Height="15" Width="15">
+                            <Canvas.Clip>
+                                <RectangleGeometry Rect="0,0,15,15" />
+                            </Canvas.Clip>
+                            <Canvas Height="20" Width="20">
+                                <Canvas.RenderTransform>
+                                    <MatrixTransform Matrix="1.25 0 0 -1.25 -346.95 820.7"/>
+                                </Canvas.RenderTransform>
+                                <ContentPresenter Content="{StaticResource OrnateBox2Background}" />
+                                <ContentPresenter Content="{StaticResource OrnateBox2Path}" />
+                            </Canvas>
+                        </Canvas>
+                        <Canvas Grid.Row="0" Grid.Column="2" Height="15" Width="15">
+                            <Canvas.Clip>
+                                <RectangleGeometry Rect="0,0,15,15" />
+                            </Canvas.Clip>
+                            <Canvas Height="20" Width="20">
+                                <Canvas.RenderTransform>
+                                    <MatrixTransform Matrix="1.25 0 0 -1.25 -397.4 820.7"/>
+                                </Canvas.RenderTransform>
+                                <ContentPresenter Content="{StaticResource OrnateBox2Background}" />
+                                <ContentPresenter Content="{StaticResource OrnateBox2Path}" />
+                            </Canvas>
+                        </Canvas>
+                        <Rectangle Grid.Row="0" Grid.Column="1" Fill="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,1,0,-1" />
+                        <Rectangle Grid.Row="1" Grid.Column="1" Fill="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                        <Rectangle Grid.Column="1" Fill="Black" Height="1" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                            <Rectangle.RenderTransform>
+                                <MatrixTransform Matrix="1 0 0 1.72 0 0.09" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle Grid.Row="1" Grid.Column="0" Fill="Black" Width="1" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+                            <Rectangle.RenderTransform>
+                                <MatrixTransform Matrix="1.72 0 0 1 0.07 0" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle Grid.Row="1" Grid.Column="2" Fill="Black" Width="1" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                            <Rectangle.RenderTransform>
+                                <MatrixTransform Matrix="1.72 0 0 1 -0.8 0" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle Grid.Row="1" Grid.Column="2" Fill="Black" Width="1" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                            <Rectangle.RenderTransform>
+                                <MatrixTransform Matrix="0.93 0 0 1 -3.98 0" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle Grid.Row="1" Grid.Column="0" Fill="Black" Width="1" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                            <Rectangle.RenderTransform>
+                                <MatrixTransform Matrix="0.93 0 0 1 -9.96 0" />
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Border x:Name="Border" Grid.Row="1" Grid.Column="1" BorderThickness="0" Margin="-10,-12,-10,0">
+                            <ContentPresenter x:Name="Presenter" Margin="{TemplateBinding Padding}" Content="{TemplateBinding Header}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" >
+                                <Setter.Value>
+                                    <RadialGradientBrush Center="0.5,1" GradientOrigin="0.5,1">
+                                        <GradientStop Offset="0" Color="#32000000" />
+                                        <GradientStop Offset="1.15" Color="#00000000" />
+                                    </RadialGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
