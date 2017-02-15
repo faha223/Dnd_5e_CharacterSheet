@@ -252,35 +252,7 @@
 
                             <Grid>
                                 <Grid.Resources>
-                                    <Style TargetType="TextBox">
-                                        <Setter Property="Padding" Value="5,5,5,0" />
-                                        <Setter Property="TextBlock.LineHeight" Value="12" />
-                                        <Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
-                                        <Setter Property="Background">
-                                            <Setter.Value>
-                                                <DrawingBrush TileMode="Tile" Viewbox="0,0.5,1,1" Stretch="None" Viewport="0,0,12,12" ViewportUnits="Absolute">
-                                                    <DrawingBrush.Drawing>
-                                                        <GeometryDrawing>
-                                                            <GeometryDrawing.Pen>
-                                                                <Pen Brush="Gray" Thickness="0.25"/>
-                                                            </GeometryDrawing.Pen>
-                                                            <GeometryDrawing.Geometry>
-                                                                <LineGeometry StartPoint="0,0" EndPoint="12,0"/>
-                                                            </GeometryDrawing.Geometry>
-                                                        </GeometryDrawing>
-                                                    </DrawingBrush.Drawing>
-                                                </DrawingBrush>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="BorderBrush" Value="#00ffffff" />
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="VerticalAlignment" Value="Top" />
-                                        <Setter Property="AcceptsReturn" Value="True" />
-                                        <Setter Property="TextWrapping" Value="Wrap" />
-                                        <Setter Property="TextAlignment" Value="Left" />
-                                        <Setter Property="FontSize" Value="10" />
-                                        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
-                                    </Style>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource RuledTextBox_Base}" />
                                     <Style TargetType="GroupBox" BasedOn="{StaticResource OrnateBox2}" >
                                         <Setter Property="VerticalAlignment" Value="Top" />
                                         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -288,7 +260,7 @@
                                 </Grid.Resources>
                                 <GroupBox Header="EQUIPMENT" Margin="251,706,0,0" Opacity="1">
                                     <Grid Margin="-11,-11,-12,-2">
-                                        <TextBox Text="{Binding Equipment, UpdateSourceTrigger=PropertyChanged}" Width="211" Height="200"  Padding="61,5,5,0" />
+                                        <TextBox Text="{Binding Equipment, UpdateSourceTrigger=PropertyChanged}" Width="211" Height="200"  Padding="61,0,5,0" />
                                         <StackPanel Margin="-9,5,0,0">
                                             <controls:CopperPieces Value="{Binding CopperPieces, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,2" />
                                             <controls:SilverPieces Value="{Binding SilverPieces, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,2" />
@@ -304,35 +276,7 @@
                             </Grid>
                             <Grid>
                                 <Grid.Resources>
-                                    <Style TargetType="TextBox">
-                                        <Setter Property="Padding" Value="5,6,5,0" />
-                                        <Setter Property="TextBlock.LineHeight" Value="13" />
-                                        <Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
-                                        <Setter Property="Background">
-                                            <Setter.Value>
-                                                <DrawingBrush TileMode="Tile" Viewbox="0,0.5,1,1" Stretch="None" Viewport="0,0,13,13" ViewportUnits="Absolute">
-                                                    <DrawingBrush.Drawing>
-                                                        <GeometryDrawing>
-                                                            <GeometryDrawing.Pen>
-                                                                <Pen Brush="Gray" Thickness="0.25"/>
-                                                            </GeometryDrawing.Pen>
-                                                            <GeometryDrawing.Geometry>
-                                                                <LineGeometry StartPoint="0,0" EndPoint="13,0"/>
-                                                            </GeometryDrawing.Geometry>
-                                                        </GeometryDrawing>
-                                                    </DrawingBrush.Drawing>
-                                                </DrawingBrush>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="BorderBrush" Value="#00ffffff" />
-                                        <Setter Property="HorizontalAlignment" Value="Left" />
-                                        <Setter Property="VerticalAlignment" Value="Top" />
-                                        <Setter Property="AcceptsReturn" Value="True" />
-                                        <Setter Property="TextWrapping" Value="Wrap" />
-                                        <Setter Property="TextAlignment" Value="Left" />
-                                        <Setter Property="FontSize" Value="11" />
-                                        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
-                                    </Style>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource RuledTextBox11}" />
                                 </Grid.Resources>
                                 <TextBox Text="{Binding PersonalityTraits, UpdateSourceTrigger=PropertyChanged}" Width="196" Height="55" Margin="490,169,0,0" />
                                 <TextBox Text="{Binding Ideals, UpdateSourceTrigger=PropertyChanged}" Width="196" Height="47" Margin="490,245,0,0" />
@@ -376,34 +320,7 @@
                         </Button>
                         <Grid>
                             <Grid.Resources>
-                                <Style TargetType="TextBox">
-                                    <Setter Property="Padding" Value="5" />
-                                    <Setter Property="TextBlock.LineHeight" Value="12" />
-                                    <Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <DrawingBrush TileMode="Tile" Viewbox="0,0.5,1,1" Stretch="None" Viewport="0,0,12,12" ViewportUnits="Absolute">
-                                                <DrawingBrush.Drawing>
-                                                    <GeometryDrawing>
-                                                        <GeometryDrawing.Pen>
-                                                            <Pen Brush="Gray" Thickness="0.25"/>
-                                                        </GeometryDrawing.Pen>
-                                                        <GeometryDrawing.Geometry>
-                                                            <LineGeometry StartPoint="0,0" EndPoint="12,0"/>
-                                                        </GeometryDrawing.Geometry>
-                                                    </GeometryDrawing>
-                                                </DrawingBrush.Drawing>
-                                            </DrawingBrush>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="BorderBrush" Value="#00ffffff" />
-                                    <Setter Property="HorizontalAlignment" Value="Left" />
-                                    <Setter Property="VerticalAlignment" Value="Top" />
-                                    <Setter Property="AcceptsReturn" Value="True" />
-                                    <Setter Property="TextWrapping" Value="Wrap" />
-                                    <Setter Property="TextAlignment" Value="Left" />
-                                    <Setter Property="FontSize" Value="10" />
-                                </Style>
+                                <Style TargetType="TextBox" BasedOn="{StaticResource RuledTextBox_Base}" />
                                 <Style TargetType="GroupBox" BasedOn="{StaticResource OrnateBox2}">
                                     <Setter Property="HorizontalAlignment" Value="Left" />
                                     <Setter Property="VerticalAlignment" Value="Top" />

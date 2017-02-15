@@ -1372,6 +1372,47 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="TextBox" x:Key="RuledTextBox_Base">
+        <Setter Property="Padding" Value="5,0" />
+        <Setter Property="TextBlock.LineHeight" Value="12" />
+        <Setter Property="TextBlock.LineStackingStrategy" Value="BlockLineHeight" />
+        <Setter Property="BorderBrush" Value="#00ffffff" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <VisualBrush TileMode="Tile" Stretch="None" ViewportUnits="Absolute" Viewport="0,0,10,12">
+                    <VisualBrush.Visual>
+                        <Canvas Width="10" Height="12">
+                            <Rectangle Fill="#00FFFFFF" Width="10" Height="12" />
+                            <Line Stroke="Gray" StrokeThickness="0.25" X1="0" X2="10" Y1="0" Y2="0" />
+                        </Canvas>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="TextBox" x:Key="RuledTextBox11" BasedOn="{StaticResource RuledTextBox_Base}">
+        <Setter Property="TextBlock.LineHeight" Value="13" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <VisualBrush TileMode="Tile" Stretch="None" ViewportUnits="Absolute" Viewport="0,0,10,13">
+                    <VisualBrush.Visual>
+                        <Canvas Width="10" Height="13">
+                            <Rectangle Width="10" Height="13" Fill="#00FFFFFF" />
+                            <Line Stroke="Gray" StrokeThickness="0.25" X1="0" X2="10" Y1="0" Y2="0" />
+                        </Canvas>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style TargetType="GroupBox" x:Key="OrnateBox1">
         <Setter Property="Template">
             <Setter.Value>
