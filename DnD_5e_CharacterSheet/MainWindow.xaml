@@ -67,7 +67,7 @@
                         <TextBox Text="{Binding ClassAndLevel, UpdateSourceTrigger=PropertyChanged}" Width="140" Margin="315,55,0,0" />
                         <TextBox Text="{Binding Background, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="455,55,0,0" />
                         <TextBox Text="{Binding PlayerName, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,55,0,0" />
-                        <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="312,84,0,0"/>
+                        <TextBox Text="{Binding Race}" Width="130" Margin="315,87,0,0"/>
                         <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="447,84,0,0" />
                         <TextBox Text="{Binding ExperiencePoints, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="91" Margin="585,87,0,0" />
                         <Grid>

@@ -1347,19 +1347,6 @@ namespace DnD_5e_CharacterSheet.ViewModels
 
         #region Tables
 
-        public List<string> Races { get; set; } = new List<string>(new string[]
-        {
-            "Dwarf",
-            "Elf",
-            "Halfling",
-            "Human",
-            "Dragonborn",
-            "Gnome",
-            "Half-Elf",
-            "Half-Orc",
-            "Tiefling"
-        });
-
         public List<string> Classes { get; set; } = new List<string>(new string[]
         {
             "Barbarian",
