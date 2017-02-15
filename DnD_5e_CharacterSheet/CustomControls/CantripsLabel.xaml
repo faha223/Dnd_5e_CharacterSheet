@@ -50,6 +50,7 @@
                 </Path>
             </Canvas>
         </Canvas>
+        <TextBlock Text="0" Margin="3,0,0,0" Width="15" FontSize="14" />
         <TextBlock Text="CANTRIPS" Margin="90,0,0,0" />
     </Grid>
 </UserControl>

@@ -54,6 +54,7 @@
                                 <Setter Property="BorderBrush" Value="#00ffffff" />
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="BorderThickness" Value="0,0,0,1" />
                             </Style>
                             <Style TargetType="ComboBox">
                                 <Setter Property="HorizontalAlignment" Value="Left" />
@@ -67,7 +68,7 @@
                         <TextBox Text="{Binding PlayerName, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,55,0,0" />
                         <ComboBox SelectedValue="{Binding Race}" ItemsSource="{Binding Races}" Width="130" Margin="312,84,0,0"/>
                         <ComboBox SelectedValue="{Binding Alignment}" ItemsSource="{Binding Alignments}" Width="130" Margin="447,84,0,0" />
-                        <TextBox Text="{Binding ExperiencePoints, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="91" Margin="585,86,0,0" />
+                        <TextBox Text="{Binding ExperiencePoints, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Width="91" Margin="585,87,0,0" />
                         <Grid>
                             <Grid.Resources>
                                 <Style TargetType="TextBox">
@@ -297,6 +298,7 @@
                                 <Setter Property="BorderBrush" Value="#00ffffff" />
                                 <Setter Property="HorizontalAlignment" Value="Left" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
+                                <Setter Property="BorderThickness" Value="0,0,0,1" />
                             </Style>
                             <Style TargetType="ComboBox">
                                 <Setter Property="HorizontalAlignment" Value="Left" />
@@ -305,12 +307,12 @@
                             </Style>
                         </Grid.Resources>
                         <TextBox Text="{Binding CharacterName, UpdateSourceTrigger=PropertyChanged}" FontSize="19" Width="215" Margin="42,68,0,0" />
-                        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,53,0,0" />
-                        <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,53,0,0" />
-                        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,53,0,0" />
-                        <TextBox Text="{Binding Eyes, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,84,0,0"/>
-                        <TextBox Text="{Binding Skin, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,84,0,0" />
-                        <TextBox Text="{Binding Hair, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,84,0,0" />
+                        <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,54,0,0" />
+                        <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,54,0,0" />
+                        <TextBox Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,55,0,0" />
+                        <TextBox Text="{Binding Eyes, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="315,86,0,0"/>
+                        <TextBox Text="{Binding Skin, UpdateSourceTrigger=PropertyChanged}" Width="130" Margin="450,86,0,0" />
+                        <TextBox Text="{Binding Hair, UpdateSourceTrigger=PropertyChanged}" Width="91" Margin="585,86,0,0" />
                         <Button Style="{StaticResource ImageButton}" Height="270" Width="200" Margin="30,146,0,0" Command="{Binding LoadPortraitCommand}">
                             <Image Source="{Binding PortraitSource}" />
                         </Button>
@@ -391,6 +393,7 @@
                                 <Setter Property="VerticalAlignment" Value="Top" />
                                 <Setter Property="TextAlignment" Value="Center" />
                                 <Setter Property="FontSize" Value="14" />
+                                <Setter Property="BorderThickness" Value="0,0,0,1" />
                             </Style>
                             <Style TargetType="ComboBox">
                                 <Setter Property="HorizontalAlignment" Value="Left" />
