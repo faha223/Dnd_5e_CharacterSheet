@@ -310,6 +310,7 @@ namespace DnD_5e_CharacterSheet.ViewModels
                     OnPropertyChanged("Stealth");
                     OnPropertyChanged("SpellSaveDC");
                     OnPropertyChanged("SpellAttackBonus");
+                    OnPropertyChanged("Initiative");
                 }
             }
         }
