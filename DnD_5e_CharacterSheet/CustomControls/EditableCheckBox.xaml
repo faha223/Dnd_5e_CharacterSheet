@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DnD_5e_CharacterSheet.CustomControls"
+             xmlns:UI="clr-namespace:DnD_5e_CharacterSheet.UIHelpers"
              mc:Ignorable="d" 
              d:DesignWidth="300" VerticalAlignment="Top" HorizontalAlignment="Left">
     <Grid Margin="0,0,0,3">
@@ -18,10 +19,12 @@
                 <Setter Property="BorderBrush" Value="Black" />
                 <Setter Property="FontSize" Value="10" />
                 <Setter Property="Margin" Value="-1,0,0,0" />
-                <Setter Property="TextAlignment" Value="Center" />
+                <Setter Property="TextAlignment" Value="Left" />
+                <Setter Property="UI:FocusAdvancement.AdvancesByEnterKey" Value="True" />
             </Style>
             <Style TargetType="CheckBox">
                 <Setter Property="VerticalAlignment" Value="Bottom" />
+                <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="CheckBox">

@@ -101,6 +101,7 @@
     <Compile Include="DnD_Constants.cs" />
     <Compile Include="Models\CharacterSheetModel.cs" />
     <Compile Include="MVVM\ParameteredCommandRouter.cs" />
+    <Compile Include="UIHelpers\FocusAdvancement.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.BackgroundInfo.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.Spellcasting.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.CharacterSheet.cs" />
